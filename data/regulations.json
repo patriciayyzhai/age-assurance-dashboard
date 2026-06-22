@@ -1,0 +1,671 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-06-22T00:00:00Z",
+  "regulations": [
+    {
+      "id": "AU-OSA-2024",
+      "name": "Online Safety Amendment (Social Media Minimum Age) Act 2024",
+      "jurisdiction_id": "AU",
+      "summary": "Australia's landmark legislation banning children under 16 from using social media platforms. Platforms must take reasonable steps to prevent underage users from holding accounts. Non-compliance penalties up to AUD 50 million.",
+      "status": "passed",
+      "service_type_ids": ["social_media"],
+      "year": 2024,
+      "source_url": "https://www.legislation.gov.au/C2024A00157/asmade",
+      "tags": ["social_media_ban", "minimum_age_16", "platform_obligation"],
+      "obligations": [
+        {
+          "id": "AU-OSA-2024-OBL-1",
+          "regulation_id": "AU-OSA-2024",
+          "type": "age_verification",
+          "description": "Platforms must take reasonable steps to prevent children under 16 from holding accounts",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "AU-OSA-2024-OBL-2",
+          "regulation_id": "AU-OSA-2024",
+          "type": "access_restriction",
+          "description": "End-to-end age assurance systems required before account creation",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "AU-OSA-2024-OBL-3",
+          "regulation_id": "AU-OSA-2024",
+          "type": "reporting_obligation",
+          "description": "Platforms must report on age assurance compliance measures annually",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "AU-OSA-2024-MS-1", "regulation_id": "AU-OSA-2024", "type": "introduced", "date": "2024-09-09", "description": "Bill introduced to Parliament as Online Safety Amendment Bill", "source_url": null },
+        { "id": "AU-OSA-2024-MS-2", "regulation_id": "AU-OSA-2024", "type": "committee_review", "date": "2024-11-18", "description": "Senate Environment and Communications References Committee report", "source_url": null },
+        { "id": "AU-OSA-2024-MS-3", "regulation_id": "AU-OSA-2024", "type": "passed", "date": "2024-11-29", "description": "Passed both houses of Parliament with bipartisan support", "source_url": null },
+        { "id": "AU-OSA-2024-MS-4", "regulation_id": "AU-OSA-2024", "type": "signed", "date": "2024-12-10", "description": "Received Royal Assent", "source_url": null },
+        { "id": "AU-OSA-2024-MS-5", "regulation_id": "AU-OSA-2024", "type": "implementation_period", "date": "2024-12-10", "description": "12-month implementation period begins; effective date set for late 2025", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "UK-OSA-2023",
+      "name": "Online Safety Act 2023",
+      "jurisdiction_id": "GB",
+      "summary": "UK's comprehensive online safety legislation requiring platforms to protect children from harmful content. Includes age assurance requirements for services likely to be accessed by children. Ofcom is the regulator.",
+      "status": "enforced",
+      "service_type_ids": ["social_media", "streaming", "adult_content", "pornography"],
+      "year": 2023,
+      "source_url": "https://www.legislation.gov.uk/ukpga/2023/50/contents",
+      "tags": ["online_safety", "child_protection", "age_assurance", "ofcom"],
+      "obligations": [
+        {
+          "id": "UK-OSA-2023-OBL-1",
+          "regulation_id": "UK-OSA-2023",
+          "type": "age_verification",
+          "description": "Services likely to be accessed by children must use highly effective age assurance to prevent children from encountering harmful content",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "streaming", "adult_content", "pornography"]
+        },
+        {
+          "id": "UK-OSA-2023-OBL-2",
+          "regulation_id": "UK-OSA-2023",
+          "type": "age_estimation",
+          "description": "Platforms must use age estimation or verification technologies to determine user age",
+          "threshold_age": 13,
+          "applies_to_service_types": ["social_media", "streaming"]
+        },
+        {
+          "id": "UK-OSA-2023-OBL-3",
+          "regulation_id": "UK-OSA-2023",
+          "type": "content_moderation",
+          "description": "Platforms must remove illegal content and content harmful to children",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "streaming"]
+        },
+        {
+          "id": "UK-OSA-2023-OBL-4",
+          "regulation_id": "UK-OSA-2023",
+          "type": "reporting_obligation",
+          "description": "Platforms must conduct and publish annual children's safety risk assessments",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "streaming", "adult_content", "pornography"]
+        },
+        {
+          "id": "UK-OSA-2023-OBL-5",
+          "regulation_id": "UK-OSA-2023",
+          "type": "design_restrictions",
+          "description": "Platforms must implement safety-by-design features for child users",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "UK-OSA-2023-MS-1", "regulation_id": "UK-OSA-2023", "type": "introduced", "date": "2019-04-08", "description": "Online Harms White Paper published", "source_url": null },
+        { "id": "UK-OSA-2023-MS-2", "regulation_id": "UK-OSA-2023", "type": "introduced", "date": "2022-03-17", "description": "Online Safety Bill introduced to Parliament", "source_url": null },
+        { "id": "UK-OSA-2023-MS-3", "regulation_id": "UK-OSA-2023", "type": "passed", "date": "2023-09-19", "description": "Passed Parliament", "source_url": null },
+        { "id": "UK-OSA-2023-MS-4", "regulation_id": "UK-OSA-2023", "type": "signed", "date": "2023-10-26", "description": "Received Royal Assent", "source_url": null },
+        { "id": "UK-OSA-2023-MS-5", "regulation_id": "UK-OSA-2023", "type": "effective", "date": "2024-03-16", "description": "First wave of duties came into force", "source_url": null },
+        { "id": "UK-OSA-2023-MS-6", "regulation_id": "UK-OSA-2023", "type": "enforced", "date": "2025-01-16", "description": "Ofcom begins enforcement of children's safety duties", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "EU-DSA-2022",
+      "name": "Digital Services Act (DSA) — Age Assurance Provisions",
+      "jurisdiction_id": "EU",
+      "summary": "EU regulation requiring online platforms to protect minors. Platforms must put in place appropriate age verification and parental consent mechanisms. Very Large Online Platforms (VLOPs) face additional obligations.",
+      "status": "enforced",
+      "service_type_ids": ["social_media", "online_marketplace", "streaming", "app_store"],
+      "year": 2022,
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj",
+      "tags": ["dsa", "child_protection", "age_verification", "vlop"],
+      "obligations": [
+        {
+          "id": "EU-DSA-2022-OBL-1",
+          "regulation_id": "EU-DSA-2022",
+          "type": "age_verification",
+          "description": "Platforms must verify age for services that may pose risks to minors",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "streaming"]
+        },
+        {
+          "id": "EU-DSA-2022-OBL-2",
+          "regulation_id": "EU-DSA-2022",
+          "type": "parental_consent",
+          "description": "Parental consent required for minors to use certain platform features",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media", "online_marketplace"]
+        },
+        {
+          "id": "EU-DSA-2022-OBL-3",
+          "regulation_id": "EU-DSA-2022",
+          "type": "design_restrictions",
+          "description": "VLOPs must design systems to ensure high level of privacy, safety and security for minors",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "EU-DSA-2022-OBL-4",
+          "regulation_id": "EU-DSA-2022",
+          "type": "reporting_obligation",
+          "description": "Platforms must report on measures taken to protect minors in annual transparency reports",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "online_marketplace", "streaming", "app_store"]
+        }
+      ],
+      "milestones": [
+        { "id": "EU-DSA-2022-MS-1", "regulation_id": "EU-DSA-2022", "type": "proposed", "date": "2020-12-15", "description": "European Commission proposed the DSA", "source_url": null },
+        { "id": "EU-DSA-2022-MS-2", "regulation_id": "EU-DSA-2022", "type": "passed", "date": "2022-10-19", "description": "Adopted by EU legislature", "source_url": null },
+        { "id": "EU-DSA-2022-MS-3", "regulation_id": "EU-DSA-2022", "type": "effective", "date": "2023-02-17", "description": "DSA entered into force", "source_url": null },
+        { "id": "EU-DSA-2022-MS-4", "regulation_id": "EU-DSA-2022", "type": "enforced", "date": "2024-02-17", "description": "Full applicability date for all platforms", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "US-CA-AB-2273",
+      "name": "California Age-Appropriate Design Code Act (AB 2273)",
+      "jurisdiction_id": "US-CA",
+      "summary": "California law requiring businesses to design products likely to be accessed by children with privacy and safety in mind. Includes age estimation requirements and data protection obligations for minors.",
+      "status": "enjoined",
+      "service_type_ids": ["social_media", "gaming", "streaming", "online_marketplace"],
+      "year": 2022,
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB2273",
+      "tags": ["age_appropriate_design", "child_privacy", "netchoice"],
+      "obligations": [
+        {
+          "id": "US-CA-AB-2273-OBL-1",
+          "regulation_id": "US-CA-AB-2273",
+          "type": "age_estimation",
+          "description": "Businesses must estimate the age of child users with a reasonable level of certainty",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming", "streaming", "online_marketplace"]
+        },
+        {
+          "id": "US-CA-AB-2273-OBL-2",
+          "regulation_id": "US-CA-AB-2273",
+          "type": "data_protection",
+          "description": "Configure privacy settings to highest level by default for minors",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming", "streaming", "online_marketplace"]
+        },
+        {
+          "id": "US-CA-AB-2273-OBL-3",
+          "regulation_id": "US-CA-AB-2273",
+          "type": "design_restrictions",
+          "description": "Prohibit use of children's data for profiling, targeted advertising, or dark patterns",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming"]
+        }
+      ],
+      "milestones": [
+        { "id": "US-CA-AB-2273-MS-1", "regulation_id": "US-CA-AB-2273", "type": "introduced", "date": "2022-02-15", "description": "AB 2273 introduced in California Assembly", "source_url": null },
+        { "id": "US-CA-AB-2273-MS-2", "regulation_id": "US-CA-AB-2273", "type": "passed", "date": "2022-08-30", "description": "Passed California Legislature", "source_url": null },
+        { "id": "US-CA-AB-2273-MS-3", "regulation_id": "US-CA-AB-2273", "type": "signed", "date": "2022-09-15", "description": "Signed by Governor Newsom", "source_url": null },
+        { "id": "US-CA-AB-2273-MS-4", "regulation_id": "US-CA-AB-2273", "type": "enjoined", "date": "2023-09-29", "description": "Federal court granted preliminary injunction in NetChoice v. Bonta", "source_url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2024/03/27/23-55181.pdf" }
+      ],
+      "litigations": [
+        {
+          "id": "US-CA-AB-2273-LIT-1",
+          "regulation_id": "US-CA-AB-2273",
+          "name": "NetChoice v. Bonta",
+          "status": "pending",
+          "court": "U.S. Court of Appeals for the Ninth Circuit",
+          "plaintiff": "NetChoice LLC",
+          "defendant": "California Attorney General Rob Bonta",
+          "filed_date": "2022-12-14",
+          "description": "NetChoice challenged the law as violating the First Amendment. District court granted preliminary injunction in September 2023; appeal pending.",
+          "source_url": null
+        }
+      ],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "US-FL-HB-3",
+      "name": "Florida HB 3 — Social Media Age Verification Act",
+      "jurisdiction_id": "US-FL",
+      "summary": "Florida law prohibiting children under 14 from having social media accounts and requiring parental consent for 14-15 year olds. Platforms must terminate underage accounts and implement age verification.",
+      "status": "enforced",
+      "service_type_ids": ["social_media"],
+      "year": 2024,
+      "source_url": "https://www.flsenate.gov/Session/Bill/2024/3",
+      "tags": ["social_media_ban", "age_verification", "parental_consent"],
+      "obligations": [
+        {
+          "id": "US-FL-HB-3-OBL-1",
+          "regulation_id": "US-FL-HB-3",
+          "type": "age_verification",
+          "description": "Platforms must verify age of account holders",
+          "threshold_age": 14,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "US-FL-HB-3-OBL-2",
+          "regulation_id": "US-FL-HB-3",
+          "type": "access_restriction",
+          "description": "Prohibit accounts for children under 14; require parental consent for 14-15 year olds",
+          "threshold_age": 14,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "US-FL-HB-3-OBL-3",
+          "regulation_id": "US-FL-HB-3",
+          "type": "reporting_obligation",
+          "description": "Platforms must provide mechanisms for reporting underage accounts and terminate them within 10 days",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "US-FL-HB-3-MS-1", "regulation_id": "US-FL-HB-3", "type": "introduced", "date": "2024-01-09", "description": "HB 3 filed in Florida House", "source_url": null },
+        { "id": "US-FL-HB-3-MS-2", "regulation_id": "US-FL-HB-3", "type": "passed", "date": "2024-03-07", "description": "Passed Florida Legislature", "source_url": null },
+        { "id": "US-FL-HB-3-MS-3", "regulation_id": "US-FL-HB-3", "type": "signed", "date": "2024-03-25", "description": "Signed by Governor DeSantis", "source_url": null },
+        { "id": "US-FL-HB-3-MS-4", "regulation_id": "US-FL-HB-3", "type": "effective", "date": "2025-01-01", "description": "Law took effect", "source_url": null },
+        { "id": "US-FL-HB-3-MS-5", "regulation_id": "US-FL-HB-3", "type": "enforced", "date": "2025-01-01", "description": "Enforcement by Florida AG begins", "source_url": null }
+      ],
+      "litigations": [
+        {
+          "id": "US-FL-HB-3-LIT-1",
+          "regulation_id": "US-FL-HB-3",
+          "name": "CCDH v. Uthmeier",
+          "status": "pending",
+          "court": "U.S. District Court for the Northern District of Florida",
+          "plaintiff": "Center for Countering Digital Hate",
+          "defendant": "Florida Attorney General James Uthmeier",
+          "filed_date": "2025-02-04",
+          "description": "CCDH challenged the law on First Amendment grounds. Preliminary injunction denied.",
+          "source_url": null
+        }
+      ],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "US-TX-HB-18",
+      "name": "Texas SCOPE Act (HB 18)",
+      "jurisdiction_id": "US-TX",
+      "summary": "Texas Securing Children Online through Parental Empowerment (SCOPE) Act requiring digital service providers to verify age and obtain parental consent for minors. Mandates content filtering for minors.",
+      "status": "effective",
+      "service_type_ids": ["social_media", "gaming", "streaming"],
+      "year": 2023,
+      "source_url": "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00018F.htm",
+      "tags": ["scope_act", "parental_consent", "content_filtering"],
+      "obligations": [
+        {
+          "id": "US-TX-HB-18-OBL-1",
+          "regulation_id": "US-TX-HB-18",
+          "type": "age_verification",
+          "description": "Digital service providers must verify user age before allowing access",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
+        },
+        {
+          "id": "US-TX-HB-18-OBL-2",
+          "regulation_id": "US-TX-HB-18",
+          "type": "parental_consent",
+          "description": "Parental consent required for minors under 18",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming"]
+        },
+        {
+          "id": "US-TX-HB-18-OBL-3",
+          "regulation_id": "US-TX-HB-18",
+          "type": "content_moderation",
+          "description": "Filter harmful content for minors including content promoting suicide, self-harm, eating disorders, substance abuse, and grooming",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "streaming"]
+        }
+      ],
+      "milestones": [
+        { "id": "US-TX-HB-18-MS-1", "regulation_id": "US-TX-HB-18", "type": "introduced", "date": "2023-02-13", "description": "HB 18 introduced in Texas House", "source_url": null },
+        { "id": "US-TX-HB-18-MS-2", "regulation_id": "US-TX-HB-18", "type": "passed", "date": "2023-05-29", "description": "Passed Texas Legislature", "source_url": null },
+        { "id": "US-TX-HB-18-MS-3", "regulation_id": "US-TX-HB-18", "type": "signed", "date": "2023-06-13", "description": "Signed by Governor Abbott", "source_url": null },
+        { "id": "US-TX-HB-18-MS-4", "regulation_id": "US-TX-HB-18", "type": "effective", "date": "2024-07-01", "description": "Law took effect after court ruling allowed enforcement", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "FR-SMA-2023",
+      "name": "France Social Media Age Verification Law (SREN Bill)",
+      "jurisdiction_id": "FR",
+      "summary": "French law requiring social media platforms to verify user age and obtain parental consent for children under 15. Platforms must use certified age verification systems approved by ARCOM.",
+      "status": "effective",
+      "service_type_ids": ["social_media", "pornography"],
+      "year": 2024,
+      "source_url": "https://www.legifrance.gouv.fr/dossierlegislatif/JORFDOLE000046765772/",
+      "tags": ["sren", "age_verification", "arcom", "parental_consent"],
+      "obligations": [
+        {
+          "id": "FR-SMA-2023-OBL-1",
+          "regulation_id": "FR-SMA-2023",
+          "type": "age_verification",
+          "description": "Social media platforms must verify user age using ARCOM-certified systems",
+          "threshold_age": 15,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "FR-SMA-2023-OBL-2",
+          "regulation_id": "FR-SMA-2023",
+          "type": "parental_consent",
+          "description": "Parental consent required for users under 15 to create social media accounts",
+          "threshold_age": 15,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "FR-SMA-2023-OBL-3",
+          "regulation_id": "FR-SMA-2023",
+          "type": "age_verification",
+          "description": "Pornographic sites must use certified age verification to prevent minors from accessing content",
+          "threshold_age": 18,
+          "applies_to_service_types": ["pornography"]
+        }
+      ],
+      "milestones": [
+        { "id": "FR-SMA-2023-MS-1", "regulation_id": "FR-SMA-2023", "type": "introduced", "date": "2023-07-19", "description": "SREN bill introduced to French Senate", "source_url": null },
+        { "id": "FR-SMA-2023-MS-2", "regulation_id": "FR-SMA-2023", "type": "passed", "date": "2024-02-15", "description": "Passed French Parliament", "source_url": null },
+        { "id": "FR-SMA-2023-MS-3", "regulation_id": "FR-SMA-2023", "type": "signed", "date": "2024-05-21", "description": "Promulgated by President Macron", "source_url": null },
+        { "id": "FR-SMA-2023-MS-4", "regulation_id": "FR-SMA-2023", "type": "effective", "date": "2024-07-25", "description": "Age verification provisions came into force", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "KR-YOUTH-2024",
+      "name": "South Korea Youth Protection Act Amendments — Gaming & Social Media",
+      "jurisdiction_id": "KR",
+      "summary": "South Korean amendments strengthening youth protection online, including age verification for social media and gaming platforms. Expands the existing Cinderella Law framework.",
+      "status": "effective",
+      "service_type_ids": ["social_media", "gaming"],
+      "year": 2024,
+      "source_url": "https://www.law.go.kr/lsInfoP.do?lsiSeq=253000",
+      "tags": ["youth_protection", "cinderella_law", "gaming", "age_verification"],
+      "obligations": [
+        {
+          "id": "KR-YOUTH-2024-OBL-1",
+          "regulation_id": "KR-YOUTH-2024",
+          "type": "age_verification",
+          "description": "Gaming and social media platforms must verify age using identity verification systems",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "gaming"]
+        },
+        {
+          "id": "KR-YOUTH-2024-OBL-2",
+          "regulation_id": "KR-YOUTH-2024",
+          "type": "access_restriction",
+          "description": "Late-night access restrictions for minors under 16 on gaming platforms",
+          "threshold_age": 16,
+          "applies_to_service_types": ["gaming"]
+        },
+        {
+          "id": "KR-YOUTH-2024-OBL-3",
+          "regulation_id": "KR-YOUTH-2024",
+          "type": "reporting_obligation",
+          "description": "Platforms must report on youth protection measures to the Korea Communications Standards Commission",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "gaming"]
+        }
+      ],
+      "milestones": [
+        { "id": "KR-YOUTH-2024-MS-1", "regulation_id": "KR-YOUTH-2024", "type": "proposed", "date": "2023-06-01", "description": "Amendments proposed by Ministry of Gender Equality and Family", "source_url": null },
+        { "id": "KR-YOUTH-2024-MS-2", "regulation_id": "KR-YOUTH-2024", "type": "passed", "date": "2024-01-09", "description": "Passed National Assembly", "source_url": null },
+        { "id": "KR-YOUTH-2024-MS-3", "regulation_id": "KR-YOUTH-2024", "type": "effective", "date": "2024-07-01", "description": "Amendments came into effect", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "US-UT-SMA-2024",
+      "name": "Utah Social Media Regulation Act (SB 152 & HB 311)",
+      "jurisdiction_id": "US-UT",
+      "summary": "Utah laws requiring social media companies to verify user age, obtain parental consent for minors, and restrict features addictive to youth. Includes design restrictions for minor accounts.",
+      "status": "effective",
+      "service_type_ids": ["social_media"],
+      "year": 2023,
+      "source_url": "https://le.utah.gov/~2023/bills/static/SB0152.html",
+      "tags": ["social_media_regulation", "parental_consent", "design_restrictions"],
+      "obligations": [
+        {
+          "id": "US-UT-SMA-2024-OBL-1",
+          "regulation_id": "US-UT-SMA-2024",
+          "type": "age_verification",
+          "description": "Social media companies must verify Utah user ages",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "US-UT-SMA-2024-OBL-2",
+          "regulation_id": "US-UT-SMA-2024",
+          "type": "parental_consent",
+          "description": "Parental consent required for minors to create or maintain social media accounts",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "US-UT-SMA-2024-OBL-3",
+          "regulation_id": "US-UT-SMA-2024",
+          "type": "design_restrictions",
+          "description": "Restrict features addictive to minors including autoplay, infinite scroll, and push notifications after certain hours",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "US-UT-SMA-2024-OBL-4",
+          "regulation_id": "US-UT-SMA-2024",
+          "type": "access_restriction",
+          "description": "Prohibit direct messaging between minors and non-connected users",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "US-UT-SMA-2024-MS-1", "regulation_id": "US-UT-SMA-2024", "type": "introduced", "date": "2023-01-23", "description": "SB 152 and HB 311 introduced in Utah Legislature", "source_url": null },
+        { "id": "US-UT-SMA-2024-MS-2", "regulation_id": "US-UT-SMA-2024", "type": "passed", "date": "2023-03-23", "description": "Passed Utah Legislature", "source_url": null },
+        { "id": "US-UT-SMA-2024-MS-3", "regulation_id": "US-UT-SMA-2024", "type": "signed", "date": "2023-03-23", "description": "Signed by Governor Cox", "source_url": null },
+        { "id": "US-UT-SMA-2024-MS-4", "regulation_id": "US-UT-SMA-2024", "type": "effective", "date": "2024-10-01", "description": "Laws took effect after delayed implementation", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "CN-PIPL-2021",
+      "name": "China Personal Information Protection Law (PIPL) — Minor Protection Provisions",
+      "jurisdiction_id": "CN",
+      "summary": "China's comprehensive data protection law includes specific provisions for minors under 14, requiring parental consent and special data handling. Combined with gaming restrictions and real-name verification requirements.",
+      "status": "enforced",
+      "service_type_ids": ["social_media", "gaming", "ai_service", "streaming"],
+      "year": 2021,
+      "source_url": "http://www.npc.gov.cn/npc/c30834/202108/a8c4e3672c74491a80b53a172bb753fe.shtml",
+      "tags": ["pipl", "minor_protection", "real_name_verification", "gaming_restrictions"],
+      "obligations": [
+        {
+          "id": "CN-PIPL-2021-OBL-1",
+          "regulation_id": "CN-PIPL-2021",
+          "type": "age_verification",
+          "description": "Platforms must verify user identity and age through real-name registration systems",
+          "threshold_age": 14,
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
+        },
+        {
+          "id": "CN-PIPL-2021-OBL-2",
+          "regulation_id": "CN-PIPL-2021",
+          "type": "parental_consent",
+          "description": "Parental consent required for processing personal information of minors under 14",
+          "threshold_age": 14,
+          "applies_to_service_types": ["social_media", "gaming", "ai_service", "streaming"]
+        },
+        {
+          "id": "CN-PIPL-2021-OBL-3",
+          "regulation_id": "CN-PIPL-2021",
+          "type": "access_restriction",
+          "description": "Gaming time restrictions for minors: 3 hours per week (Fri/Sat/Sun 8-9pm)",
+          "threshold_age": 18,
+          "applies_to_service_types": ["gaming"]
+        },
+        {
+          "id": "CN-PIPL-2021-OBL-4",
+          "regulation_id": "CN-PIPL-2021",
+          "type": "data_protection",
+          "description": "Platforms must implement special personal information processing rules for minors",
+          "threshold_age": 14,
+          "applies_to_service_types": ["social_media", "gaming", "ai_service", "streaming"]
+        }
+      ],
+      "milestones": [
+        { "id": "CN-PIPL-2021-MS-1", "regulation_id": "CN-PIPL-2021", "type": "proposed", "date": "2020-10-21", "description": "Draft PIPL released for public comment", "source_url": null },
+        { "id": "CN-PIPL-2021-MS-2", "regulation_id": "CN-PIPL-2021", "type": "passed", "date": "2021-08-20", "description": "Passed by Standing Committee of NPC", "source_url": null },
+        { "id": "CN-PIPL-2021-MS-3", "regulation_id": "CN-PIPL-2021", "type": "effective", "date": "2021-11-01", "description": "PIPL came into effect", "source_url": null },
+        { "id": "CN-PIPL-2021-MS-4", "regulation_id": "CN-PIPL-2021", "type": "enforced", "date": "2021-11-01", "description": "Enforcement began immediately with CAC oversight", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "BR-OSA-2024",
+      "name": "Brazil Internet Safety Framework for Minors (PL 2630)",
+      "jurisdiction_id": "BR",
+      "summary": "Brazilian bill establishing a framework for internet safety including age verification requirements and platform obligations to protect minors from harmful content. Under consideration in Congress.",
+      "status": "under_review",
+      "service_type_ids": ["social_media", "streaming", "ai_service"],
+      "year": 2024,
+      "source_url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233",
+      "tags": ["internet_safety", "age_verification", "minor_protection"],
+      "obligations": [
+        {
+          "id": "BR-OSA-2024-OBL-1",
+          "regulation_id": "BR-OSA-2024",
+          "type": "age_verification",
+          "description": "Platforms must implement age verification systems for content inappropriate for minors",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media", "streaming"]
+        },
+        {
+          "id": "BR-OSA-2024-OBL-2",
+          "regulation_id": "BR-OSA-2024",
+          "type": "content_moderation",
+          "description": "Platforms must remove content harmful to minors within 24 hours of notification",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "streaming", "ai_service"]
+        },
+        {
+          "id": "BR-OSA-2024-OBL-3",
+          "regulation_id": "BR-OSA-2024",
+          "type": "reporting_obligation",
+          "description": "Platforms must publish transparency reports on child safety measures",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "streaming", "ai_service"]
+        }
+      ],
+      "milestones": [
+        { "id": "BR-OSA-2024-MS-1", "regulation_id": "BR-OSA-2024", "type": "introduced", "date": "2020-07-01", "description": "PL 2630 originally introduced in Senate", "source_url": null },
+        { "id": "BR-OSA-2024-MS-2", "regulation_id": "BR-OSA-2024", "type": "committee_review", "date": "2024-06-26", "description": "Senate approved amended bill; moved to Chamber of Deputies", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "SG-OSO-2024",
+      "name": "Singapore Code of Practice for Online Safety",
+      "jurisdiction_id": "SG",
+      "summary": "Singapore's Code of Practice requiring designated social media services to implement systems and processes to enhance online safety for users, especially children. Includes age assurance and content moderation obligations.",
+      "status": "enforced",
+      "service_type_ids": ["social_media"],
+      "year": 2023,
+      "source_url": "https://www.imda.gov.sg/regulations-and-licensing-listing/regulatory-guidances-and-frameworks/code-of-practice-for-online-safety",
+      "tags": ["online_safety", "child_protection", "age_assurance", "imdsg"],
+      "obligations": [
+        {
+          "id": "SG-OSO-2024-OBL-1",
+          "regulation_id": "SG-OSO-2024",
+          "type": "age_estimation",
+          "description": "Social media services must implement age-determination measures to identify child users",
+          "threshold_age": 18,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "SG-OSO-2024-OBL-2",
+          "regulation_id": "SG-OSO-2024",
+          "type": "content_moderation",
+          "description": "Platforms must implement measures to moderate and remove content harmful to children",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "SG-OSO-2024-OBL-3",
+          "regulation_id": "SG-OSO-2024",
+          "type": "reporting_obligation",
+          "description": "Platforms must publish annual online safety reports including child safety metrics",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "SG-OSO-2024-MS-1", "regulation_id": "SG-OSO-2024", "type": "introduced", "date": "2022-07-18", "description": "IMDA launched public consultation on Code of Practice", "source_url": null },
+        { "id": "SG-OSO-2024-MS-2", "regulation_id": "SG-OSO-2024", "type": "passed", "date": "2023-01-18", "description": "Code of Practice issued by IMDA", "source_url": null },
+        { "id": "SG-OSO-2024-MS-3", "regulation_id": "SG-OSO-2024", "type": "effective", "date": "2023-07-18", "description": "Code came into effect for designated social media services", "source_url": null },
+        { "id": "SG-OSO-2024-MS-4", "regulation_id": "SG-OSO-2024", "type": "enforced", "date": "2023-07-18", "description": "IMDA begins enforcement", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "id": "EU-AIA-2024",
+      "name": "EU AI Act — Age Assurance for AI Systems",
+      "jurisdiction_id": "EU",
+      "summary": "EU AI Act provisions requiring providers of AI systems, including generative AI chatbots, to implement age verification and protect minors. Certain AI systems may be classified as high-risk when used by or targeting children.",
+      "status": "implementation_period",
+      "service_type_ids": ["ai_service", "social_media"],
+      "year": 2024,
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "tags": ["ai_act", "age_verification", "high_risk_ai", "generative_ai"],
+      "obligations": [
+        {
+          "id": "EU-AIA-2024-OBL-1",
+          "regulation_id": "EU-AIA-2024",
+          "type": "age_verification",
+          "description": "AI system providers must verify age of users when systems may pose risks to minors",
+          "threshold_age": 18,
+          "applies_to_service_types": ["ai_service"]
+        },
+        {
+          "id": "EU-AIA-2024-OBL-2",
+          "regulation_id": "EU-AIA-2024",
+          "type": "design_restrictions",
+          "description": "AI systems must be designed to ensure safety when used by or accessible to children",
+          "threshold_age": null,
+          "applies_to_service_types": ["ai_service", "social_media"]
+        },
+        {
+          "id": "EU-AIA-2024-OBL-3",
+          "regulation_id": "EU-AIA-2024",
+          "type": "reporting_obligation",
+          "description": "Providers of high-risk AI systems must conduct fundamental rights impact assessments including impact on children",
+          "threshold_age": null,
+          "applies_to_service_types": ["ai_service"]
+        }
+      ],
+      "milestones": [
+        { "id": "EU-AIA-2024-MS-1", "regulation_id": "EU-AIA-2024", "type": "proposed", "date": "2021-04-21", "description": "European Commission proposed the AI Act", "source_url": null },
+        { "id": "EU-AIA-2024-MS-2", "regulation_id": "EU-AIA-2024", "type": "passed", "date": "2024-06-13", "description": "Adopted by EU legislature", "source_url": null },
+        { "id": "EU-AIA-2024-MS-3", "regulation_id": "EU-AIA-2024", "type": "effective", "date": "2024-08-01", "description": "AI Act entered into force", "source_url": null },
+        { "id": "EU-AIA-2024-MS-4", "regulation_id": "EU-AIA-2024", "type": "implementation_period", "date": "2025-08-02", "description": "Provisions on high-risk AI systems become applicable", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-06-22T00:00:00Z"
+    }
+  ]
+}

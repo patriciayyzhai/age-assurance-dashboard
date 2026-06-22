@@ -1,0 +1,142 @@
+name: Daily Update Pipeline
+
+on:
+  schedule:
+    # 01:00 UTC = 09:00 SGT (Singapore Time, UTC+8), Mon-Fri
+    - cron: '0 1 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    outputs:
+      auto_updates: ${{ steps.pipeline.outputs.auto_updates }}
+      review_items: ${{ steps.pipeline.outputs.review_items }}
+      has_changes: ${{ steps.check_changes.outputs.has_changes }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Run pipeline
+        id: pipeline
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
+        run: |
+          cd scripts && python pipeline.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet data/regulations.json data/seen_urls.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No data changes detected."
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Data changes detected."
+          fi
+
+      - name: Commit data updates
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "data: automated regulation database update [skip ci]"
+          file_pattern: "data/*.json"
+          commit_user_name: "Age Assurance Bot"
+          commit_user_email: "actions@github.com"
+
+      - name: Create PR for low-confidence items
+        if: steps.pipeline.outputs.review_items != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "data: items pending manual review"
+          title: "📋 Review: ${REVIEW_ITEMS} items need manual verification"
+          body: |
+            ## Items Pending Review
+
+            The automated pipeline found ${{ steps.pipeline.outputs.review_items }} news items that need manual review before being added to the database.
+
+            Please review the classified items and either:
+            1. Approve by merging this PR (the items will be added to regulations.json)
+            2. Edit the data as needed before merging
+            3. Close this PR if the items are not relevant
+
+            See the pipeline run logs for details on each item.
+          branch: review-pending
+          branch-suffix: timestamp
+          labels: |
+            review-needed
+            automated
+
+  build-and-deploy:
+    needs: run-pipeline
+    if: always()
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Merge data
+        run: cd scripts && python merge_data.py
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE_PATH: '/${{ github.event.repository.name }}/'
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

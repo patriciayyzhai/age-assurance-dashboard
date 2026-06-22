@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Regulations Database",
+  "description": "Auto-updated database of age assurance regulations worldwide",
+  "type": "object",
+  "required": ["version", "last_updated", "regulations"],
+  "properties": {
+    "version": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date-time" },
+    "regulations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "jurisdiction_id", "summary", "status", "service_type_ids", "year", "obligations", "milestones", "litigations", "created_at", "updated_at"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "jurisdiction_id": { "type": "string" },
+          "summary": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["proposed", "under_review", "passed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed"]
+          },
+          "service_type_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["social_media", "gaming", "ai_service", "direct_messaging", "app_store", "os_provider", "adult_content", "pornography", "online_marketplace", "streaming", "other"]
+            }
+          },
+          "year": { "type": "integer" },
+          "source_url": { "type": ["string", "null"] },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "obligations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "regulation_id", "type", "description", "applies_to_service_types"],
+              "properties": {
+                "id": { "type": "string" },
+                "regulation_id": { "type": "string" },
+                "type": {
+                  "type": "string",
+                  "enum": ["age_verification", "age_estimation", "parental_consent", "access_restriction", "upstream_age_signal", "design_restrictions", "data_protection", "content_moderation", "reporting_obligation", "other"]
+                },
+                "description": { "type": "string" },
+                "threshold_age": { "type": ["integer", "null"] },
+                "applies_to_service_types": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          },
+          "milestones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "regulation_id", "type", "date", "description"],
+              "properties": {
+                "id": { "type": "string" },
+                "regulation_id": { "type": "string" },
+                "type": {
+                  "type": "string",
+                  "enum": ["proposed", "introduced", "committee_review", "passed", "signed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed", "amended"]
+                },
+                "date": { "type": "string", "format": "date" },
+                "description": { "type": "string" },
+                "source_url": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "litigations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "regulation_id", "name", "status"],
+              "properties": {
+                "id": { "type": "string" },
+                "regulation_id": { "type": "string" },
+                "name": { "type": "string" },
+                "status": {
+                  "type": "string",
+                  "enum": ["filed", "pending", "granted", "denied", "appealed", "withdrawn", "settled"]
+                },
+                "court": { "type": ["string", "null"] },
+                "plaintiff": { "type": ["string", "null"] },
+                "defendant": { "type": ["string", "null"] },
+                "filed_date": { "type": ["string", "null"] },
+                "description": { "type": ["string", "null"] },
+                "source_url": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}

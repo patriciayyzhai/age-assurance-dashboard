@@ -1,0 +1,151 @@
+# Age Assurance Regulation Dashboard
+
+A web-based dashboard for tracking age assurance-related regulations worldwide. Features a global risk heatmap, filterable regulation database, and LLM-powered news tracker with automated daily updates.
+
+## Features
+
+- **Global Risk Heatmap** — Choropleth world map showing regulatory risk severity by country, based on platform obligations and implementation status. Filter by service type, click to drill down.
+- **Regulation Database** — Sortable, filterable table of age assurance regulations with expandable detail rows showing obligations, milestones, and litigation history.
+- **News Tracker** — LLM-classified news feed that categorizes articles into: new regulation proposals, existing regulation developments, and regulatory reports. Includes confidence scoring and auto-apply routing.
+- **Automated Daily Updates** — GitHub Actions pipeline runs at 9:00 AM SGT (Mon–Fri) to fetch news, classify with OpenAI, update the database, and redeploy.
+- **Manual Override System** — JSON-based override file ensures manual corrections are never overwritten by automated updates.
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 19 + TypeScript + Vite |
+| Styling | Tailwind CSS v4 |
+| Visualization | ECharts (choropleth heatmap) |
+| Data Pipeline | Python (OpenAI GPT-4o-mini, NewsAPI.org) |
+| CI/CD | GitHub Actions + GitHub Pages |
+| Notifications | WeCom Webhook |
+
+## Project Structure
+
+```
+├── data/                    # JSON database (source of truth)
+│   ├── regulations.json     # Base regulation data
+│   ├── overrides.json       # Manual corrections (never auto-overwritten)
+│   ├── seen_urls.json       # URL deduplication tracker
+│   ├── seed/                # Static reference data
+│   │   ├── jurisdictions.json
+│   │   └── service_types.json
+│   └── schema/              # JSON Schema validators
+├── scripts/                 # Python data pipeline
+│   ├── config.py            # Shared configuration
+│   ├── pipeline.py          # Orchestrator
+│   ├── fetch_news.py        # NewsAPI.org fetcher
+│   ├── classify_news.py     # LLM two-stage classifier
+│   ├── update_data.py       # Database updater
+│   ├── notify.py            # WeCom notifications
+│   ├── merge_data.py        # Build-time data merge
+│   └── validate_schemas.py  # JSON schema validator
+├── src/                     # React frontend
+│   ├── components/          # UI components
+│   ├── context/             # React contexts
+│   ├── data/                # Data loading & utilities
+│   ├── pages/               # Route pages
+│   └── types/               # TypeScript definitions
+├── .github/workflows/       # CI/CD pipelines
+└── public/                  # Static assets
+```
+
+## Local Development
+
+### Prerequisites
+
+- Node.js 22+
+- Python 3.12+
+
+### Setup
+
+```bash
+# Install frontend dependencies
+npm install
+
+# Generate merged data for development
+cd scripts && python merge_data.py && cd ..
+
+# Start dev server
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build    # Type-check + production build
+npm run preview  # Preview production build locally
+```
+
+## Data Pipeline
+
+The automated pipeline runs daily and follows this flow:
+
+1. **Validate** — Check all JSON files against schemas
+2. **Fetch** — Pull news from NewsAPI.org (8 keyword sets, 24h lookback)
+3. **Classify** — Two-stage LLM classification:
+   - Stage 1: Binary "is this regulatory?" filter
+   - Stage 2: Full classification with structured data extraction
+4. **Update** — Apply classified news to database:
+   - Confidence ≥ 0.7: Auto-commit
+   - Confidence 0.5–0.7: Create PR for manual review
+   - Confidence < 0.5: Discard
+5. **Notify** — Send WeCom webhook (daily digest + urgent alerts)
+6. **Merge** — Combine regulations.json + overrides.json → merged.json
+7. **Deploy** — Build and deploy to GitHub Pages
+
+## Manual Overrides
+
+Edit `data/overrides.json` to correct or add regulations without fear of automated overwrites:
+
+```json
+{
+  "overrides": [
+    {
+      "id": "AU-OSA-2024",
+      "_partial": true,
+      "status": "effective",
+      "summary": "Corrected summary text..."
+    },
+    {
+      "id": "OUTDATED-REG-001",
+      "_deleted": true
+    },
+    {
+      "id": "NEW-REG-2025",
+      "name": "New Regulation",
+      "jurisdiction_id": "GB",
+      "status": "proposed",
+      "summary": "...",
+      "service_type_ids": ["social_media"],
+      "year": 2025,
+      "obligations": [],
+      "milestones": [],
+      "litigations": []
+    }
+  ]
+}
+```
+
+## GitHub Secrets
+
+Configure these in your repository settings:
+
+| Secret | Description |
+|--------|-------------|
+| `NEWS_API_KEY` | NewsAPI.org API key |
+| `OPENAI_API_KEY` | OpenAI API key |
+| `WECOM_WEBHOOK_URL` | WeCom group webhook URL |
+
+## GitHub Actions
+
+| Workflow | Trigger | Description |
+|----------|---------|-------------|
+| `daily-update.yml` | Cron (9 AM SGT, Mon–Fri) + Manual | Full pipeline: fetch → classify → update → notify → deploy |
+| `deploy.yml` | Push to `main` | Build and deploy to GitHub Pages |
+| `validate.yml` | Pull request | Validate JSON schemas + type check + build |
+
+## License
+
+MIT

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Overrides Database",
+  "description": "Human-edited overrides for regulations data. Never touched by automated pipeline.",
+  "type": "object",
+  "required": ["version", "last_updated", "overrides"],
+  "properties": {
+    "version": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date-time" },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "_partial": { "type": "boolean" },
+          "_deleted": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}
