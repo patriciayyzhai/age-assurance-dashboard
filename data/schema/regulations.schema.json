@@ -48,6 +48,7 @@
                 },
                 "description": { "type": "string" },
                 "threshold_age": { "type": ["integer", "null"] },
+                "threshold_label": { "type": ["string", "null"] },
                 "applies_to_service_types": {
                   "type": "array",
                   "items": { "type": "string" }

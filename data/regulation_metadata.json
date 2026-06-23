@@ -1,71 +1,71 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-06-23T06:49:17.939263+00:00",
+  "last_updated": "2026-06-23T07:20:30.774618+00:00",
   "regulations": {
     "AU-OSA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "7078d51e8e11e11cc0d9f81ffe73f54ce681470652e58275758eaeeda6316486"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "9b2a037381ea3063e1b4eb40e7770a45f59b871b3951e75461ee082fa65712c2"
     },
     "UK-OSA-2023": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "8649c1adfde00654e80d8e03c0c611aea0e0f48c98fd0569452ad2da06f74b5c"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "1d87f630a1f80dec0ce63de0c974c377d7213ce9920b12b8b06160da0ae29e2a"
     },
     "EU-DSA-2022": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "fa809e0c259e820b1680d4ebc7d20c4685778acedcb91e30c086676fb96bf761"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "87fc7eea58998881420f254df7c2173caa6d0fbd45ecdc1acd0db8fe252a4c71"
     },
     "US-CA-AB-2273": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "ae7005f3586e0c480ee29c1bba6c5f1d4aa1e2b0776eaa86c4dc486f555a72f9"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "7072fe06f1b4f435bee5b80c290d20e2cd1e6fad67cfea20d8de2c40021d4a67"
     },
     "US-FL-HB-3": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "1136cdc51ac46b9a1dde84b0c34d819afb3e6860f299dc8f23463e28dcafedf7"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "f468c21b883e8b326895b543fa7ef9a69a6c95ebe38ae8b9d6e7f37bcdbd2adb"
     },
     "US-TX-HB-18": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "a6aca8dc77584144c01a73d2d64333307a1a023d478c6e9f388d8c70b54c9697"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "6c8e249ee69c009decd3b404c21efad527aa1ecc60f25263cea523727501d300"
     },
     "FR-SMA-2023": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "27b7ffcbd3750f21bcb2dac1dbcc9734579033b8f7466bb506841799f26d8644"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "8e6aed5d08ae5b711eed058c2942a51c34ba024d777920bc3c7beaeb3552af79"
     },
     "KR-YOUTH-2024": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "db218183c713972b9c60d443772f31967735eff32564ff1133f0f2dfe81dc935"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "395e96205b89e64b2523730991c5705a4bd2891b63e33a9538d2b2fd05b06b3b"
     },
     "US-UT-SMA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "4e9b1aa5dd541cb735ca82cf8247a0931c854bc51aa6eaa1b701b35c5e31305d"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "0af9add3c45975c0b3115e978434730c551293e116d4e7596585739c12c2e530"
     },
     "CN-PIPL-2021": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "ee7432ea757d969cc37e3d4a4e8e36cbfad904c444149207502fe99dd2d48396"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "4820ff6fbd637697ea02663e9a023b3dba80e793c785555ef15557fdba1565f6"
     },
     "CA-C34-2026": {
       "created_at": "2026-06-23T00:00:00Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "e7440821726d34e338584730eae6463ad6eb5bde1d217dceb2fea1a9244008f0"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "4a96d2e516d1607ef820d5b9238eeaad6c4488bba1441894c29e1f032e02f9be"
     },
     "ID-SOCIAL-2026": {
       "created_at": "2026-06-23T00:00:00Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "0102cca439ad169651eb09ecd2b64b3d75d7c52bdc0c092ef393ce1aecef57b4"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "cc5971bd4f49221e6988cddf3b4021911900fea871b9d133847f7e897dcc7d36"
     },
     "MY-SOCIAL-2026": {
       "created_at": "2026-06-23T00:00:00Z",
-      "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "ebdacc12b5cd876a65bf898e1f43e8fb2de636363e33d2ec1819731ab039edd6"
+      "updated_at": "2026-06-23T07:20:30.772848+00:00",
+      "content_hash": "94906c400afdb63bcf1ffa66cb4815d912c255f60b861580fe50db701e8efe5b"
     },
     "SG-OSO-2024": {
       "created_at": "2026-06-22T15:40:51Z",

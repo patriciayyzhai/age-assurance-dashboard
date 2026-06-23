@@ -95,6 +95,7 @@ export interface Obligation {
   type: ObligationType;
   description: string;
   threshold_age?: number | null;
+  threshold_label?: string | null;
   applies_to_service_types: ServiceTypeId[];
 }
 

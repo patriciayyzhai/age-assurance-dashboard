@@ -4,11 +4,16 @@ import { OBLIGATION_TYPE_META } from '../../types'
 interface ObligationTagProps {
   type: ObligationType
   thresholdAge?: number | null
+  thresholdLabel?: string | null
 }
 
-export default function ObligationTag({ type, thresholdAge }: ObligationTagProps) {
+export default function ObligationTag({ type, thresholdAge, thresholdLabel }: ObligationTagProps) {
   const meta = OBLIGATION_TYPE_META[type]
   if (!meta) return <span className="text-xs text-slate-400">{type}</span>
+  void thresholdAge
+
+  const resolvedThresholdLabel =
+    thresholdLabel?.trim() || null
 
   return (
     <span
@@ -19,8 +24,8 @@ export default function ObligationTag({ type, thresholdAge }: ObligationTagProps
       }}
     >
       {meta.label}
-      {thresholdAge != null && thresholdAge > 0 && (
-        <span className="opacity-70">({thresholdAge}+)</span>
+      {resolvedThresholdLabel && (
+        <span className="opacity-70">({resolvedThresholdLabel})</span>
       )}
     </span>
   )

@@ -73,9 +73,15 @@ export default function RegulationDetail({ regulation: reg }: RegulationDetailPr
             {reg.obligations.map((obl) => (
               <div key={obl.id} className="bg-white rounded-lg border border-slate-200 p-2.5">
                 <div className="flex items-center justify-between mb-1">
-                  <ObligationTag type={obl.type} thresholdAge={obl.threshold_age} />
-                  {obl.threshold_age != null && obl.threshold_age > 0 && (
-                    <span className="text-xs text-slate-400">Age threshold: {obl.threshold_age}+</span>
+                  <ObligationTag
+                    type={obl.type}
+                    thresholdAge={obl.threshold_age}
+                    thresholdLabel={obl.threshold_label}
+                  />
+                  {(obl.threshold_label?.trim() || (obl.threshold_age != null && obl.threshold_age > 0)) && (
+                    <span className="text-xs text-slate-400">
+                      Threshold: {obl.threshold_label?.trim() || `Age ${obl.threshold_age}`}
+                    </span>
                   )}
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">{obl.description}</p>

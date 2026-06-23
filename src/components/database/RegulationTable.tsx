@@ -171,7 +171,12 @@ function FragmentRow({
         <td className="px-3 py-2.5">
           <div className="flex flex-wrap gap-1 max-w-xs">
             {reg.obligations.slice(0, 3).map((obl) => (
-              <ObligationTag key={obl.id} type={obl.type} thresholdAge={obl.threshold_age} />
+              <ObligationTag
+                key={obl.id}
+                type={obl.type}
+                thresholdAge={obl.threshold_age}
+                thresholdLabel={obl.threshold_label}
+              />
             ))}
             {reg.obligations.length > 3 && (
               <span className="text-xs text-slate-400">

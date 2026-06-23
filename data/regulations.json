@@ -17,16 +17,18 @@
           "id": "AU-OSA-2024-OBL-1",
           "regulation_id": "AU-OSA-2024",
           "type": "age_verification",
-          "description": "Platforms must take reasonable steps to prevent children under 16 from holding accounts",
+          "description": "Platforms must take reasonable steps, which may include age-assurance measures, to prevent children under 16 from holding age-restricted social media accounts",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media"]
         },
         {
           "id": "AU-OSA-2024-OBL-2",
           "regulation_id": "AU-OSA-2024",
           "type": "access_restriction",
-          "description": "End-to-end age assurance systems required before account creation",
+          "description": "Covered social media services must prevent children under 16 from opening or holding accounts",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -64,16 +66,17 @@
           "id": "UK-OSA-2023-OBL-1",
           "regulation_id": "UK-OSA-2023",
           "type": "age_verification",
-          "description": "Services likely to be accessed by children must use highly effective age assurance to prevent children from encountering harmful content",
+          "description": "Covered services must use highly effective age assurance where needed to prevent under-18 users from accessing pornography and other age-inappropriate harmful content",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "streaming", "adult_content", "pornography"]
         },
         {
           "id": "UK-OSA-2023-OBL-2",
           "regulation_id": "UK-OSA-2023",
           "type": "age_estimation",
-          "description": "Platforms must use age estimation or verification technologies to determine user age",
-          "threshold_age": 13,
+          "description": "Age estimation is one of the methods services may use as part of highly effective age assurance for child-safety duties",
+          "threshold_age": null,
           "applies_to_service_types": ["social_media", "streaming"]
         },
         {
@@ -127,34 +130,34 @@
         {
           "id": "EU-DSA-2022-OBL-1",
           "regulation_id": "EU-DSA-2022",
-          "type": "age_verification",
-          "description": "Platforms must verify age for services that may pose risks to minors",
-          "threshold_age": 18,
+          "type": "design_restrictions",
+          "description": "Online platforms accessible to minors must put in place appropriate and proportionate measures to ensure a high level of privacy, safety, and security of minors",
+          "threshold_age": null,
           "applies_to_service_types": ["social_media", "streaming"]
         },
         {
           "id": "EU-DSA-2022-OBL-2",
           "regulation_id": "EU-DSA-2022",
-          "type": "parental_consent",
-          "description": "Parental consent required for minors to use certain platform features",
-          "threshold_age": 16,
-          "applies_to_service_types": ["social_media", "online_marketplace"]
+          "type": "data_protection",
+          "description": "Platforms may not present profiling-based advertising when they are aware with reasonable certainty that the recipient is a minor",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "online_marketplace", "streaming", "app_store"]
         },
         {
           "id": "EU-DSA-2022-OBL-3",
           "regulation_id": "EU-DSA-2022",
-          "type": "design_restrictions",
-          "description": "VLOPs must design systems to ensure high level of privacy, safety and security for minors",
+          "type": "reporting_obligation",
+          "description": "Very large online platforms must assess systemic risks, including negative effects on the protection of minors, and document mitigation measures",
           "threshold_age": null,
           "applies_to_service_types": ["social_media"]
         },
         {
           "id": "EU-DSA-2022-OBL-4",
           "regulation_id": "EU-DSA-2022",
-          "type": "reporting_obligation",
-          "description": "Platforms must report on measures taken to protect minors in annual transparency reports",
+          "type": "design_restrictions",
+          "description": "Platforms should design recommender systems and interfaces in ways that support minors' privacy, safety, and security",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "online_marketplace", "streaming", "app_store"]
+          "applies_to_service_types": ["social_media", "streaming", "app_store"]
         }
       ],
       "milestones": [
@@ -184,6 +187,7 @@
           "type": "age_estimation",
           "description": "Businesses must estimate the age of child users with a reasonable level of certainty",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming", "streaming", "online_marketplace"]
         },
         {
@@ -192,6 +196,7 @@
           "type": "data_protection",
           "description": "Configure privacy settings to highest level by default for minors",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming", "streaming", "online_marketplace"]
         },
         {
@@ -200,6 +205,7 @@
           "type": "design_restrictions",
           "description": "Prohibit use of children's data for profiling, targeted advertising, or dark patterns",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming"]
         }
       ],
@@ -240,24 +246,26 @@
         {
           "id": "US-FL-HB-3-OBL-1",
           "regulation_id": "US-FL-HB-3",
-          "type": "age_verification",
-          "description": "Platforms must verify age of account holders",
+          "type": "access_restriction",
+          "description": "Covered social media platforms must prohibit minors younger than 14 from becoming account holders and terminate those accounts",
           "threshold_age": 14,
+          "threshold_label": "Under 14",
           "applies_to_service_types": ["social_media"]
         },
         {
           "id": "US-FL-HB-3-OBL-2",
           "regulation_id": "US-FL-HB-3",
-          "type": "access_restriction",
-          "description": "Prohibit accounts for children under 14; require parental consent for 14-15 year olds",
+          "type": "parental_consent",
+          "description": "Minors aged 14 or 15 may become or remain account holders only with parental or guardian consent",
           "threshold_age": 14,
+          "threshold_label": "Ages 14-15",
           "applies_to_service_types": ["social_media"]
         },
         {
           "id": "US-FL-HB-3-OBL-3",
           "regulation_id": "US-FL-HB-3",
-          "type": "reporting_obligation",
-          "description": "Platforms must provide mechanisms for reporting underage accounts and terminate them within 10 days",
+          "type": "data_protection",
+          "description": "Platforms must delete personal information associated with terminated minor accounts unless retention is legally required",
           "threshold_age": null,
           "applies_to_service_types": ["social_media"]
         }
@@ -303,6 +311,7 @@
           "type": "age_verification",
           "description": "Digital service providers must verify user age before allowing access",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming", "streaming"]
         },
         {
@@ -311,6 +320,7 @@
           "type": "parental_consent",
           "description": "Parental consent required for minors under 18",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming"]
         },
         {
@@ -319,6 +329,7 @@
           "type": "content_moderation",
           "description": "Filter harmful content for minors including content promoting suicide, self-harm, eating disorders, substance abuse, and grooming",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "streaming"]
         }
       ],
@@ -349,6 +360,7 @@
           "type": "age_verification",
           "description": "Social media platforms must verify user age using ARCOM-certified systems",
           "threshold_age": 15,
+          "threshold_label": "Under 15",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -357,6 +369,7 @@
           "type": "parental_consent",
           "description": "Parental consent required for users under 15 to create social media accounts",
           "threshold_age": 15,
+          "threshold_label": "Under 15",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -365,6 +378,7 @@
           "type": "age_verification",
           "description": "Pornographic sites must use certified age verification to prevent minors from accessing content",
           "threshold_age": 18,
+          "threshold_label": "18+",
           "applies_to_service_types": ["pornography"]
         }
       ],
@@ -395,6 +409,7 @@
           "type": "age_verification",
           "description": "Services distributing youth-harmful online media must use age-gating or equivalent identity checks before allowing minors to access adult content",
           "threshold_age": 19,
+          "threshold_label": "Under 19",
           "applies_to_service_types": ["pornography"]
         },
         {
@@ -403,6 +418,7 @@
           "type": "access_restriction",
           "description": "Youth-harmful media must be labelled and kept unavailable to minors",
           "threshold_age": 19,
+          "threshold_label": "Under 19",
           "applies_to_service_types": ["pornography"]
         }
       ],
@@ -428,6 +444,7 @@
           "type": "age_verification",
           "description": "Social media companies must verify Utah user ages",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -436,6 +453,7 @@
           "type": "parental_consent",
           "description": "Parental consent required for minors to create or maintain social media accounts",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -444,6 +462,7 @@
           "type": "design_restrictions",
           "description": "Restrict features addictive to minors including autoplay, infinite scroll, and push notifications after certain hours",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -452,6 +471,7 @@
           "type": "access_restriction",
           "description": "Prohibit direct messaging between minors and non-connected users",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
         }
       ],
@@ -480,8 +500,8 @@
           "id": "CN-PIPL-2021-OBL-1",
           "regulation_id": "CN-PIPL-2021",
           "type": "age_verification",
-          "description": "Platforms must verify user identity and age through real-name registration systems",
-          "threshold_age": 14,
+          "description": "Many covered services use real-name registration and related identity checks to distinguish minors and adults under Chinese online-service rules",
+          "threshold_age": null,
           "applies_to_service_types": ["social_media", "gaming", "streaming"]
         },
         {
@@ -490,6 +510,7 @@
           "type": "parental_consent",
           "description": "Parental consent required for processing personal information of minors under 14",
           "threshold_age": 14,
+          "threshold_label": "Under 14",
           "applies_to_service_types": ["social_media", "gaming", "ai_service", "streaming"]
         },
         {
@@ -498,6 +519,7 @@
           "type": "access_restriction",
           "description": "Gaming time restrictions for minors: 3 hours per week (Fri/Sat/Sun 8-9pm)",
           "threshold_age": 18,
+          "threshold_label": "Under 18",
           "applies_to_service_types": ["gaming"]
         },
         {
@@ -506,6 +528,7 @@
           "type": "data_protection",
           "description": "Platforms must implement special personal information processing rules for minors",
           "threshold_age": 14,
+          "threshold_label": "Under 14",
           "applies_to_service_types": ["social_media", "gaming", "ai_service", "streaming"]
         }
       ],
@@ -536,6 +559,7 @@
           "type": "access_restriction",
           "description": "The government intends to impose a 16-year-old minimum age requirement for social media accounts, with possible commission exemptions for services that maintain sufficient safeguards for children",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -594,6 +618,7 @@
           "type": "age_estimation",
           "description": "Designated services must use age-assurance measures to identify users under 16",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media", "gaming", "streaming"]
         },
         {
@@ -602,6 +627,7 @@
           "type": "access_restriction",
           "description": "Platforms classified as harmful to children must block or suspend under-16 accounts",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media", "gaming", "streaming"]
         },
         {
@@ -638,6 +664,7 @@
           "type": "age_verification",
           "description": "Covered platforms must verify the age of new and existing users",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -646,6 +673,7 @@
           "type": "access_restriction",
           "description": "Children under 16 cannot open accounts on covered social media services",
           "threshold_age": 16,
+          "threshold_label": "Under 16",
           "applies_to_service_types": ["social_media"]
         }
       ],
