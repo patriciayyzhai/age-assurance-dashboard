@@ -74,6 +74,11 @@ Guidelines:
 - If a law takes effect or begins enforcement, that is "existing_regulation_development" with appropriate status_change.
 - Opinion pieces and analyses about existing laws without new actions are "existing_regulation_report".
 - Only classify as "new_regulation_proposed" if this is genuinely the first report of a new legislative proposal.
+- Do not infer exact age thresholds unless the article clearly states them.
+- Do not convert broad minors-protection duties into "age verification" or "parental consent" unless the article explicitly describes those mechanisms.
+- Treat "minimum age", "under X", and "X or older" carefully; do not reverse the direction of the threshold.
+- If the article is about a law that protects minors generally but does not give a concrete age threshold, describe it in broad terms rather than inventing a number.
+- If only high-level reporting is available, keep the summary conservative and avoid legal-detail hallucinations.
 
 Provide a confidence score (0-1) reflecting how certain you are of the classification.
 

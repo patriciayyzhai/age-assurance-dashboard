@@ -120,7 +120,7 @@
       "id": "EU-DSA-2022",
       "name": "Digital Services Act (DSA) — Age Assurance Provisions",
       "jurisdiction_id": "EU",
-      "summary": "EU regulation requiring online platforms to protect minors. Platforms must put in place appropriate age verification and parental consent mechanisms. Very Large Online Platforms (VLOPs) face additional obligations.",
+      "summary": "EU regulation requiring online platforms accessible to minors to protect minors' privacy, safety, and security. The DSA does not itself impose a general age-verification or parental-consent mandate, but it does impose minors-protection duties and additional systemic-risk obligations on very large platforms.",
       "status": "enforced",
       "service_type_ids": ["social_media", "online_marketplace", "streaming", "app_store"],
       "year": 2022,
@@ -185,7 +185,7 @@
           "id": "US-CA-AB-2273-OBL-1",
           "regulation_id": "US-CA-AB-2273",
           "type": "age_estimation",
-          "description": "Businesses must estimate the age of child users with a reasonable level of certainty",
+          "description": "A covered business must either estimate the age of child users with a reasonable level of certainty appropriate to the risks, or apply the child protections to all users",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming", "streaming", "online_marketplace"]
@@ -298,7 +298,7 @@
       "id": "US-TX-HB-18",
       "name": "Texas SCOPE Act (HB 18)",
       "jurisdiction_id": "US-TX",
-      "summary": "Texas Securing Children Online through Parental Empowerment (SCOPE) Act requiring digital service providers to verify age and obtain parental consent for minors. Mandates content filtering for minors.",
+      "summary": "Texas Securing Children Online through Parental Empowerment (SCOPE) Act requiring covered digital services to register user age, apply special duties toward known minors, provide parental tools, and prevent known minors' exposure to specified harmful content. It also separately requires 18+ age verification for services where more than one-third of content is harmful material or obscenity.",
       "status": "effective",
       "service_type_ids": ["social_media", "gaming", "streaming"],
       "year": 2023,
@@ -309,7 +309,7 @@
           "id": "US-TX-HB-18-OBL-1",
           "regulation_id": "US-TX-HB-18",
           "type": "age_verification",
-          "description": "Digital service providers must verify user age before allowing access",
+          "description": "A covered digital service may not create an account unless the user has registered the user's age; users who register as under 18 are treated as known minors",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "gaming", "streaming"]
@@ -317,17 +317,17 @@
         {
           "id": "US-TX-HB-18-OBL-2",
           "regulation_id": "US-TX-HB-18",
-          "type": "parental_consent",
-          "description": "Parental consent required for minors under 18",
+          "type": "data_protection",
+          "description": "For known minors, providers must limit data collection and use to what is reasonably necessary and may not allow purchases, share or sell data, collect precise geolocation, or serve targeted advertising",
           "threshold_age": 18,
           "threshold_label": "Under 18",
-          "applies_to_service_types": ["social_media", "gaming"]
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
         },
         {
           "id": "US-TX-HB-18-OBL-3",
           "regulation_id": "US-TX-HB-18",
           "type": "content_moderation",
-          "description": "Filter harmful content for minors including content promoting suicide, self-harm, eating disorders, substance abuse, and grooming",
+          "description": "Providers must develop and implement a strategy to prevent known minors from being exposed to specified harmful material, including content promoting suicide, self-harm, eating disorders, substance abuse, stalking, bullying, harassment, grooming, trafficking, child sexual abuse material, or other sexual exploitation",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "streaming"]
@@ -431,7 +431,7 @@
       "id": "US-UT-SMA-2024",
       "name": "Utah Social Media Regulation Act (SB 152 & HB 311)",
       "jurisdiction_id": "US-UT",
-      "summary": "Utah laws requiring social media companies to verify user age, obtain parental consent for minors, and restrict features addictive to youth. Includes design restrictions for minor accounts.",
+      "summary": "Utah's 2023 social media laws targeted minor social media accounts through age verification, parental oversight, and restrictions on certain features and interactions. The regime has been heavily litigated and later revised, so these obligations should be treated as historically specific rather than a clean current-state template.",
       "status": "effective",
       "service_type_ids": ["social_media"],
       "year": 2023,
@@ -442,7 +442,7 @@
           "id": "US-UT-SMA-2024-OBL-1",
           "regulation_id": "US-UT-SMA-2024",
           "type": "age_verification",
-          "description": "Social media companies must verify Utah user ages",
+          "description": "Social media companies were directed to verify whether a Utah user seeking an account was a minor or an adult",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
@@ -451,7 +451,7 @@
           "id": "US-UT-SMA-2024-OBL-2",
           "regulation_id": "US-UT-SMA-2024",
           "type": "parental_consent",
-          "description": "Parental consent required for minors to create or maintain social media accounts",
+          "description": "Minor social media accounts were tied to parental or guardian permission and oversight rights",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
@@ -460,7 +460,7 @@
           "id": "US-UT-SMA-2024-OBL-3",
           "regulation_id": "US-UT-SMA-2024",
           "type": "design_restrictions",
-          "description": "Restrict features addictive to minors including autoplay, infinite scroll, and push notifications after certain hours",
+          "description": "Minor accounts were subject to design and access restrictions intended to limit addictive or unsafe use patterns",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]
@@ -469,7 +469,7 @@
           "id": "US-UT-SMA-2024-OBL-4",
           "regulation_id": "US-UT-SMA-2024",
           "type": "access_restriction",
-          "description": "Prohibit direct messaging between minors and non-connected users",
+          "description": "Minor accounts faced restrictions on communications and interactions with accounts outside the minor's connected network",
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media"]

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-06-23T07:20:30.774618+00:00",
+  "last_updated": "2026-06-23T07:51:46.511846+00:00",
   "regulations": {
     "AU-OSA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
@@ -14,13 +14,13 @@
     },
     "EU-DSA-2022": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T07:20:30.772848+00:00",
-      "content_hash": "87fc7eea58998881420f254df7c2173caa6d0fbd45ecdc1acd0db8fe252a4c71"
+      "updated_at": "2026-06-23T07:51:46.510112+00:00",
+      "content_hash": "508740e49345e7ed7adc567d8fb116016dab6712e81237bcef04e53578f2839c"
     },
     "US-CA-AB-2273": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T07:20:30.772848+00:00",
-      "content_hash": "7072fe06f1b4f435bee5b80c290d20e2cd1e6fad67cfea20d8de2c40021d4a67"
+      "updated_at": "2026-06-23T07:51:46.510112+00:00",
+      "content_hash": "24823f2e32b01bf7619c9aa6d331c9791eb9979b119ecc95394ccff6444d63de"
     },
     "US-FL-HB-3": {
       "created_at": "2026-06-22T15:40:51Z",
@@ -29,8 +29,8 @@
     },
     "US-TX-HB-18": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T07:20:30.772848+00:00",
-      "content_hash": "6c8e249ee69c009decd3b404c21efad527aa1ecc60f25263cea523727501d300"
+      "updated_at": "2026-06-23T07:51:46.510112+00:00",
+      "content_hash": "ce30a6b031fc8ac21117de69b4a246b8b265c10713e15ac1feb795710595885e"
     },
     "FR-SMA-2023": {
       "created_at": "2026-06-22T15:40:51Z",
@@ -44,8 +44,8 @@
     },
     "US-UT-SMA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T07:20:30.772848+00:00",
-      "content_hash": "0af9add3c45975c0b3115e978434730c551293e116d4e7596585739c12c2e530"
+      "updated_at": "2026-06-23T07:51:46.510112+00:00",
+      "content_hash": "256c8cfa539c2ca7ee7e6c8777aa52467288f8e3b7febaed947549c31da3c519"
     },
     "CN-PIPL-2021": {
       "created_at": "2026-06-22T15:40:51Z",

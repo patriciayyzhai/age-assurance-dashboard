@@ -1,20 +1,49 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useFilters } from '../../context/FilterContext'
 import { useData } from '../../context/DataContext'
 import { useDebounce } from '../../data/loader'
 import type { RegulationStatus, ServiceTypeId, ObligationType } from '../../types'
 import { STATUS_META, SERVICE_TYPE_META, OBLIGATION_TYPE_META } from '../../types'
 
+function normalizeForSearch(value: string) {
+  return value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+function isFuzzyMatch(text: string, query: string) {
+  if (!query) return true
+
+  let queryIndex = 0
+  for (const char of text) {
+    if (char === query[queryIndex]) queryIndex += 1
+    if (queryIndex === query.length) return true
+  }
+  return false
+}
+
+function jurisdictionMatchScore(text: string, query: string) {
+  if (!query) return 0
+  if (text.startsWith(query)) return 0
+  if (text.includes(query)) return 1
+  if (isFuzzyMatch(text, query)) return 2
+  return 99
+}
+
 export default function FilterBar() {
   const { data } = useData()
   const { filters, dispatch } = useFilters()
   const [searchInput, setSearchInput] = useState(filters.search)
+  const [jurisdictionQuery, setJurisdictionQuery] = useState('')
   const debouncedSearch = useDebounce(searchInput, 300)
 
   // Sync debounced search to filter state
-  if (debouncedSearch !== filters.search) {
-    dispatch({ type: 'SET_SEARCH', value: debouncedSearch })
-  }
+  useEffect(() => {
+    if (debouncedSearch !== filters.search) {
+      dispatch({ type: 'SET_SEARCH', value: debouncedSearch })
+    }
+  }, [debouncedSearch, dispatch, filters.search])
 
   const activeFilterCount =
     filters.statuses.length +
@@ -31,6 +60,41 @@ export default function FilterBar() {
           : a.name.localeCompare(b.name)
       )
     : []
+
+  const normalizedJurisdictionQuery = normalizeForSearch(jurisdictionQuery.trim())
+  const visibleJurisdictions = jurisdictions
+    .filter((j) => {
+      if (!normalizedJurisdictionQuery) return true
+      const haystacks = [
+        normalizeForSearch(j.name),
+        normalizeForSearch(j.region),
+        normalizeForSearch(j.id),
+        normalizeForSearch(`${j.name} ${j.region} ${j.id}`),
+      ]
+      return haystacks.some((text) =>
+        text.includes(normalizedJurisdictionQuery) || isFuzzyMatch(text, normalizedJurisdictionQuery)
+      )
+    })
+    .sort((a, b) => {
+      if (!normalizedJurisdictionQuery) {
+        return a.region !== b.region
+          ? a.region.localeCompare(b.region)
+          : a.name.localeCompare(b.name)
+      }
+
+      const aScore = jurisdictionMatchScore(
+        normalizeForSearch(`${a.name} ${a.region} ${a.id}`),
+        normalizedJurisdictionQuery
+      )
+      const bScore = jurisdictionMatchScore(
+        normalizeForSearch(`${b.name} ${b.region} ${b.id}`),
+        normalizedJurisdictionQuery
+      )
+
+      if (aScore !== bScore) return aScore - bScore
+      if (a.region !== b.region) return a.region.localeCompare(b.region)
+      return a.name.localeCompare(b.name)
+    })
 
   // Get year range from data
   const minYear = data ? Math.min(...data.regulations.map((r) => r.year)) : 2020
@@ -155,24 +219,52 @@ export default function FilterBar() {
           <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">
             Jurisdiction {filters.jurisdiction_ids.length > 0 && `(${filters.jurisdiction_ids.length})`}
           </label>
-          <select
-            multiple
-            value={filters.jurisdiction_ids}
-            onChange={(e) => {
-              const selected = Array.from(e.target.selectedOptions).map((o) => o.value)
-              // For multi-select, we need to handle toggling
-              // Since native multi-select is awkward, we use SET_JURISDICTION
-              dispatch({ type: 'SET_JURISDICTION', value: selected })
-            }}
-            className="w-full text-sm border border-slate-300 rounded-lg p-2 h-28 overflow-y-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            {jurisdictions.map((j) => (
-              <option key={j.id} value={j.id}>
-                {j.flag_emoji ? `${j.flag_emoji} ` : ''}{j.name} ({j.region})
-              </option>
-            ))}
-          </select>
-          <p className="text-xs text-slate-400 mt-1">Hold Cmd/Ctrl to select multiple</p>
+          <div className="space-y-2">
+            <div className="relative">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                value={jurisdictionQuery}
+                onChange={(e) => setJurisdictionQuery(e.target.value)}
+                placeholder="Search country, region, or code..."
+                className="w-full pl-10 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+            <div className="rounded-lg border border-slate-300 bg-slate-50/50 p-1.5 h-36 overflow-y-auto">
+              <div className="space-y-1">
+                {visibleJurisdictions.map((j) => {
+                  const active = filters.jurisdiction_ids.includes(j.id)
+                  return (
+                    <button
+                      key={j.id}
+                      type="button"
+                      onClick={() => dispatch({ type: 'TOGGLE_JURISDICTION', value: j.id })}
+                      className={`w-full flex items-center justify-between rounded-md px-2.5 py-2 text-left text-sm transition-colors ${
+                        active
+                          ? 'bg-blue-600 text-white shadow-sm'
+                          : 'bg-white text-slate-700 hover:bg-slate-100'
+                      }`}
+                    >
+                      <span className="truncate pr-3">
+                        {j.flag_emoji ? `${j.flag_emoji} ` : ''}{j.name} ({j.region})
+                      </span>
+                      <span className={`text-xs ${active ? 'text-blue-100' : 'text-slate-400'}`}>
+                        {j.id}
+                      </span>
+                    </button>
+                  )
+                })}
+                {visibleJurisdictions.length === 0 && (
+                  <p className="px-2 py-6 text-center text-sm text-slate-400">
+                    No jurisdictions match "{jurisdictionQuery}".
+                  </p>
+                )}
+              </div>
+            </div>
+            <p className="text-xs text-slate-400">Search supports partial and fuzzy matches. Click to toggle multiple jurisdictions.</p>
+          </div>
         </div>
 
         {/* Year range */}
