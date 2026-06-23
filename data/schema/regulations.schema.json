@@ -11,7 +11,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "jurisdiction_id", "summary", "status", "service_type_ids", "year", "obligations", "milestones", "litigations", "created_at", "updated_at"],
+        "required": ["id", "name", "jurisdiction_id", "summary", "status", "service_type_ids", "year", "obligations", "milestones", "litigations"],
         "properties": {
           "id": { "type": "string" },
           "name": { "type": "string" },
@@ -19,7 +19,7 @@
           "summary": { "type": "string" },
           "status": {
             "type": "string",
-            "enum": ["proposed", "under_review", "passed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed"]
+            "enum": ["proposed", "inactive", "under_review", "passed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed"]
           },
           "service_type_ids": {
             "type": "array",
@@ -65,7 +65,7 @@
                 "regulation_id": { "type": "string" },
                 "type": {
                   "type": "string",
-                  "enum": ["proposed", "introduced", "committee_review", "passed", "signed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed", "amended"]
+                  "enum": ["proposed", "inactive", "introduced", "committee_review", "passed", "signed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed", "amended"]
                 },
                 "date": { "type": "string", "format": "date" },
                 "description": { "type": "string" },

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-06-22T00:00:00Z",
+  "last_updated": "2026-06-23T00:00:00Z",
   "regulations": [
     {
       "id": "AU-OSA-2024",
@@ -46,8 +46,8 @@
         { "id": "AU-OSA-2024-MS-5", "regulation_id": "AU-OSA-2024", "type": "implementation_period", "date": "2024-12-10", "description": "12-month implementation period begins; effective date set for late 2025", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "UK-OSA-2023",
@@ -110,8 +110,8 @@
         { "id": "UK-OSA-2023-MS-6", "regulation_id": "UK-OSA-2023", "type": "enforced", "date": "2025-01-16", "description": "Ofcom begins enforcement of children's safety duties", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "EU-DSA-2022",
@@ -164,8 +164,8 @@
         { "id": "EU-DSA-2022-MS-4", "regulation_id": "EU-DSA-2022", "type": "enforced", "date": "2024-02-17", "description": "Full applicability date for all platforms", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "US-CA-AB-2273",
@@ -223,8 +223,8 @@
           "source_url": null
         }
       ],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "US-FL-HB-3",
@@ -283,8 +283,8 @@
           "source_url": null
         }
       ],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "US-TX-HB-18",
@@ -329,8 +329,8 @@
         { "id": "US-TX-HB-18-MS-4", "regulation_id": "US-TX-HB-18", "type": "effective", "date": "2024-07-01", "description": "Law took effect after court ruling allowed enforcement", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "FR-SMA-2023",
@@ -375,53 +375,41 @@
         { "id": "FR-SMA-2023-MS-4", "regulation_id": "FR-SMA-2023", "type": "effective", "date": "2024-07-25", "description": "Age verification provisions came into force", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "KR-YOUTH-2024",
-      "name": "South Korea Youth Protection Act Amendments — Gaming & Social Media",
+      "name": "South Korea Youth Protection Act — Youth-Harmful Media Restrictions",
       "jurisdiction_id": "KR",
-      "summary": "South Korean amendments strengthening youth protection online, including age verification for social media and gaming platforms. Expands the existing Cinderella Law framework.",
-      "status": "effective",
-      "service_type_ids": ["social_media", "gaming"],
-      "year": 2024,
+      "summary": "South Korea's youth-protection framework restricts minors' access to youth-harmful media and adult content. It is not a general social-media minimum-age law, and the former late-night gaming 'shutdown law' was repealed in 2021.",
+      "status": "enforced",
+      "service_type_ids": ["pornography"],
+      "year": 2025,
       "source_url": "https://www.law.go.kr/lsInfoP.do?lsiSeq=253000",
-      "tags": ["youth_protection", "cinderella_law", "gaming", "age_verification"],
+      "tags": ["youth_protection", "harmful_media", "adult_content"],
       "obligations": [
         {
           "id": "KR-YOUTH-2024-OBL-1",
           "regulation_id": "KR-YOUTH-2024",
           "type": "age_verification",
-          "description": "Gaming and social media platforms must verify age using identity verification systems",
-          "threshold_age": 18,
-          "applies_to_service_types": ["social_media", "gaming"]
+          "description": "Services distributing youth-harmful online media must use age-gating or equivalent identity checks before allowing minors to access adult content",
+          "threshold_age": 19,
+          "applies_to_service_types": ["pornography"]
         },
         {
           "id": "KR-YOUTH-2024-OBL-2",
           "regulation_id": "KR-YOUTH-2024",
           "type": "access_restriction",
-          "description": "Late-night access restrictions for minors under 16 on gaming platforms",
-          "threshold_age": 16,
-          "applies_to_service_types": ["gaming"]
-        },
-        {
-          "id": "KR-YOUTH-2024-OBL-3",
-          "regulation_id": "KR-YOUTH-2024",
-          "type": "reporting_obligation",
-          "description": "Platforms must report on youth protection measures to the Korea Communications Standards Commission",
-          "threshold_age": null,
-          "applies_to_service_types": ["social_media", "gaming"]
+          "description": "Youth-harmful media must be labelled and kept unavailable to minors",
+          "threshold_age": 19,
+          "applies_to_service_types": ["pornography"]
         }
       ],
-      "milestones": [
-        { "id": "KR-YOUTH-2024-MS-1", "regulation_id": "KR-YOUTH-2024", "type": "proposed", "date": "2023-06-01", "description": "Amendments proposed by Ministry of Gender Equality and Family", "source_url": null },
-        { "id": "KR-YOUTH-2024-MS-2", "regulation_id": "KR-YOUTH-2024", "type": "passed", "date": "2024-01-09", "description": "Passed National Assembly", "source_url": null },
-        { "id": "KR-YOUTH-2024-MS-3", "regulation_id": "KR-YOUTH-2024", "type": "effective", "date": "2024-07-01", "description": "Amendments came into effect", "source_url": null }
-      ],
+      "milestones": [],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "US-UT-SMA-2024",
@@ -474,8 +462,8 @@
         { "id": "US-UT-SMA-2024-MS-4", "regulation_id": "US-UT-SMA-2024", "type": "effective", "date": "2024-10-01", "description": "Laws took effect after delayed implementation", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "CN-PIPL-2021",
@@ -528,70 +516,148 @@
         { "id": "CN-PIPL-2021-MS-4", "regulation_id": "CN-PIPL-2021", "type": "enforced", "date": "2021-11-01", "description": "Enforcement began immediately with CAC oversight", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
-      "id": "BR-OSA-2024",
-      "name": "Brazil Internet Safety Framework for Minors (PL 2630)",
-      "jurisdiction_id": "BR",
-      "summary": "Brazilian bill establishing a framework for internet safety including age verification requirements and platform obligations to protect minors from harmful content. Under consideration in Congress.",
-      "status": "under_review",
-      "service_type_ids": ["social_media", "streaming", "ai_service"],
+      "id": "CA-OHA-C63-2024",
+      "name": "Canada Online Harms Act (Bill C-63)",
+      "jurisdiction_id": "CA",
+      "summary": "Canada's federal Online Harms Act would have imposed child-safety, risk-mitigation, transparency, and content-inaccessibility duties on covered online platforms, including social media, livestreaming, and adult-content services. It did not pass and lapsed when Parliament was prorogued on January 6, 2025.",
+      "status": "inactive",
+      "service_type_ids": ["social_media", "streaming", "adult_content"],
       "year": 2024,
-      "source_url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233",
-      "tags": ["internet_safety", "age_verification", "minor_protection"],
+      "source_url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-63",
+      "tags": ["online_harms", "child_safety", "digital_safety_commission", "lapsed_bill"],
       "obligations": [
         {
-          "id": "BR-OSA-2024-OBL-1",
-          "regulation_id": "BR-OSA-2024",
-          "type": "age_verification",
-          "description": "Platforms must implement age verification systems for content inappropriate for minors",
-          "threshold_age": 18,
-          "applies_to_service_types": ["social_media", "streaming"]
+          "id": "CA-OHA-C63-2024-OBL-1",
+          "regulation_id": "CA-OHA-C63-2024",
+          "type": "design_restrictions",
+          "description": "Covered services would have been required to implement child-safety features and age-appropriate design measures set by regulation",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "streaming", "adult_content"]
         },
         {
-          "id": "BR-OSA-2024-OBL-2",
-          "regulation_id": "BR-OSA-2024",
+          "id": "CA-OHA-C63-2024-OBL-2",
+          "regulation_id": "CA-OHA-C63-2024",
           "type": "content_moderation",
-          "description": "Platforms must remove content harmful to minors within 24 hours of notification",
+          "description": "Covered services would have been required to reduce users' exposure to specified harmful content and make certain content inaccessible in Canada",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "streaming", "ai_service"]
+          "applies_to_service_types": ["social_media", "streaming", "adult_content"]
         },
         {
-          "id": "BR-OSA-2024-OBL-3",
-          "regulation_id": "BR-OSA-2024",
+          "id": "CA-OHA-C63-2024-OBL-3",
+          "regulation_id": "CA-OHA-C63-2024",
           "type": "reporting_obligation",
-          "description": "Platforms must publish transparency reports on child safety measures",
+          "description": "Covered services would have been required to file and publish Digital Safety Plans describing mitigation measures and effectiveness",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "streaming", "ai_service"]
+          "applies_to_service_types": ["social_media", "streaming", "adult_content"]
         }
       ],
       "milestones": [
-        { "id": "BR-OSA-2024-MS-1", "regulation_id": "BR-OSA-2024", "type": "introduced", "date": "2020-07-01", "description": "PL 2630 originally introduced in Senate", "source_url": null },
-        { "id": "BR-OSA-2024-MS-2", "regulation_id": "BR-OSA-2024", "type": "committee_review", "date": "2024-06-26", "description": "Senate approved amended bill; moved to Chamber of Deputies", "source_url": null }
+        { "id": "CA-OHA-C63-2024-MS-1", "regulation_id": "CA-OHA-C63-2024", "type": "introduced", "date": "2024-02-26", "description": "Bill C-63 received first reading in the House of Commons", "source_url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-63" },
+        { "id": "CA-OHA-C63-2024-MS-2", "regulation_id": "CA-OHA-C63-2024", "type": "inactive", "date": "2025-01-06", "description": "Bill lapsed when Parliament was prorogued before second reading was completed", "source_url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-63" }
+      ],
+      "litigations": []
+    },
+    {
+      "id": "ID-SOCIAL-2026",
+      "name": "Indonesia Under-16 Social Media and High-Risk Platform Restrictions",
+      "jurisdiction_id": "ID",
+      "summary": "Indonesia began implementing restrictions in March 2026 that require social media and other designated high-risk digital platforms to block or deactivate under-16 accounts and use age-assurance measures chosen by the service.",
+      "status": "enforced",
+      "service_type_ids": ["social_media", "gaming", "streaming"],
+      "year": 2026,
+      "source_url": "https://apnews.com/article/39630c776f947652cde619ad4ae56627",
+      "tags": ["under_16", "social_media_ban", "age_assurance", "platform_reporting"],
+      "obligations": [
+        {
+          "id": "ID-SOCIAL-2026-OBL-1",
+          "regulation_id": "ID-SOCIAL-2026",
+          "type": "age_estimation",
+          "description": "Designated services must use age-assurance measures to identify users under 16",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
+        },
+        {
+          "id": "ID-SOCIAL-2026-OBL-2",
+          "regulation_id": "ID-SOCIAL-2026",
+          "type": "access_restriction",
+          "description": "Platforms classified as harmful to children must block or suspend under-16 accounts",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
+        },
+        {
+          "id": "ID-SOCIAL-2026-OBL-3",
+          "regulation_id": "ID-SOCIAL-2026",
+          "type": "reporting_obligation",
+          "description": "Platforms are expected to disclose the number of under-16 accounts they have suspended or closed",
+          "threshold_age": null,
+          "applies_to_service_types": ["social_media", "gaming", "streaming"]
+        }
+      ],
+      "milestones": [
+        { "id": "ID-SOCIAL-2026-MS-1", "regulation_id": "ID-SOCIAL-2026", "type": "effective", "date": "2026-03-28", "description": "Indonesia began implementing the under-16 restrictions for designated digital platforms", "source_url": null },
+        { "id": "ID-SOCIAL-2026-MS-2", "regulation_id": "ID-SOCIAL-2026", "type": "enforced", "date": "2026-04-29", "description": "Minister publicly pressed platforms to disclose compliance figures and account removals", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-23T00:00:00Z",
+      "updated_at": "2026-06-23T00:00:00Z"
+    },
+    {
+      "id": "MY-SOCIAL-2026",
+      "name": "Malaysia Under-16 Social Media Account Restrictions",
+      "jurisdiction_id": "MY",
+      "summary": "Malaysia began enforcing rules on June 1, 2026 that bar children under 16 from opening social media accounts on large platforms, require age verification, and phase verification for existing users.",
+      "status": "enforced",
+      "service_type_ids": ["social_media"],
+      "year": 2026,
+      "source_url": "https://apnews.com/article/bfaa7b01163b61b5d53c4ecfa870d133",
+      "tags": ["under_16", "social_media_ban", "age_verification", "mcmc"],
+      "obligations": [
+        {
+          "id": "MY-SOCIAL-2026-OBL-1",
+          "regulation_id": "MY-SOCIAL-2026",
+          "type": "age_verification",
+          "description": "Covered platforms must verify the age of new and existing users",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media"]
+        },
+        {
+          "id": "MY-SOCIAL-2026-OBL-2",
+          "regulation_id": "MY-SOCIAL-2026",
+          "type": "access_restriction",
+          "description": "Children under 16 cannot open accounts on covered social media services",
+          "threshold_age": 16,
+          "applies_to_service_types": ["social_media"]
+        }
+      ],
+      "milestones": [
+        { "id": "MY-SOCIAL-2026-MS-1", "regulation_id": "MY-SOCIAL-2026", "type": "proposed", "date": "2026-03-04", "description": "Malaysia announced that under-16 social media restrictions would be rolled out nationally", "source_url": null },
+        { "id": "MY-SOCIAL-2026-MS-2", "regulation_id": "MY-SOCIAL-2026", "type": "enforced", "date": "2026-06-01", "description": "Regulator began enforcing the under-16 account restrictions", "source_url": null }
+      ],
+      "litigations": [],
+      "created_at": "2026-06-23T00:00:00Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "SG-OSO-2024",
       "name": "Singapore Code of Practice for Online Safety",
       "jurisdiction_id": "SG",
-      "summary": "Singapore's Code of Practice requiring designated social media services to implement systems and processes to enhance online safety for users, especially children. Includes age assurance and content moderation obligations.",
+      "summary": "Singapore's Code of Practice requires designated social media services to implement systems and processes that improve online safety for users, especially children. It is broader than age assurance and focuses on child-safety measures, reporting, and platform governance.",
       "status": "enforced",
       "service_type_ids": ["social_media"],
       "year": 2023,
       "source_url": "https://www.imda.gov.sg/regulations-and-licensing-listing/regulatory-guidances-and-frameworks/code-of-practice-for-online-safety",
-      "tags": ["online_safety", "child_protection", "age_assurance", "imdsg"],
+      "tags": ["online_safety", "child_protection", "platform_governance", "imda"],
       "obligations": [
         {
           "id": "SG-OSO-2024-OBL-1",
           "regulation_id": "SG-OSO-2024",
-          "type": "age_estimation",
-          "description": "Social media services must implement age-determination measures to identify child users",
-          "threshold_age": 18,
+          "type": "design_restrictions",
+          "description": "Designated social media services must provide safety features and account tools appropriate for child users",
+          "threshold_age": null,
           "applies_to_service_types": ["social_media"]
         },
         {
@@ -618,38 +684,30 @@
         { "id": "SG-OSO-2024-MS-4", "regulation_id": "SG-OSO-2024", "type": "enforced", "date": "2023-07-18", "description": "IMDA begins enforcement", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     },
     {
       "id": "EU-AIA-2024",
-      "name": "EU AI Act — Age Assurance for AI Systems",
+      "name": "EU AI Act — Child Safety and High-Risk AI Provisions",
       "jurisdiction_id": "EU",
-      "summary": "EU AI Act provisions requiring providers of AI systems, including generative AI chatbots, to implement age verification and protect minors. Certain AI systems may be classified as high-risk when used by or targeting children.",
+      "summary": "The EU AI Act contains child-safety and risk-management provisions for certain AI systems, but it is not a general age-verification law for AI services. Obligations phase in over time based on system category.",
       "status": "implementation_period",
-      "service_type_ids": ["ai_service", "social_media"],
+      "service_type_ids": ["ai_service"],
       "year": 2024,
       "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-      "tags": ["ai_act", "age_verification", "high_risk_ai", "generative_ai"],
+      "tags": ["ai_act", "child_safety", "high_risk_ai", "fundamental_rights"],
       "obligations": [
         {
           "id": "EU-AIA-2024-OBL-1",
           "regulation_id": "EU-AIA-2024",
-          "type": "age_verification",
-          "description": "AI system providers must verify age of users when systems may pose risks to minors",
-          "threshold_age": 18,
+          "type": "design_restrictions",
+          "description": "Providers must consider foreseeable vulnerabilities of children when designing and managing relevant AI systems",
+          "threshold_age": null,
           "applies_to_service_types": ["ai_service"]
         },
         {
           "id": "EU-AIA-2024-OBL-2",
-          "regulation_id": "EU-AIA-2024",
-          "type": "design_restrictions",
-          "description": "AI systems must be designed to ensure safety when used by or accessible to children",
-          "threshold_age": null,
-          "applies_to_service_types": ["ai_service", "social_media"]
-        },
-        {
-          "id": "EU-AIA-2024-OBL-3",
           "regulation_id": "EU-AIA-2024",
           "type": "reporting_obligation",
           "description": "Providers of high-risk AI systems must conduct fundamental rights impact assessments including impact on children",
@@ -660,12 +718,11 @@
       "milestones": [
         { "id": "EU-AIA-2024-MS-1", "regulation_id": "EU-AIA-2024", "type": "proposed", "date": "2021-04-21", "description": "European Commission proposed the AI Act", "source_url": null },
         { "id": "EU-AIA-2024-MS-2", "regulation_id": "EU-AIA-2024", "type": "passed", "date": "2024-06-13", "description": "Adopted by EU legislature", "source_url": null },
-        { "id": "EU-AIA-2024-MS-3", "regulation_id": "EU-AIA-2024", "type": "effective", "date": "2024-08-01", "description": "AI Act entered into force", "source_url": null },
-        { "id": "EU-AIA-2024-MS-4", "regulation_id": "EU-AIA-2024", "type": "implementation_period", "date": "2025-08-02", "description": "Provisions on high-risk AI systems become applicable", "source_url": null }
+        { "id": "EU-AIA-2024-MS-3", "regulation_id": "EU-AIA-2024", "type": "effective", "date": "2024-08-01", "description": "AI Act entered into force", "source_url": null }
       ],
       "litigations": [],
-      "created_at": "2025-01-01T00:00:00Z",
-      "updated_at": "2025-06-22T00:00:00Z"
+      "created_at": "2026-06-22T15:40:51Z",
+      "updated_at": "2026-06-23T00:00:00Z"
     }
   ]
 }

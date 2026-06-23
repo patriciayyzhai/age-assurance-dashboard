@@ -3,8 +3,8 @@ Pipeline orchestrator: runs all steps in sequence.
 1. Fetch news → 2. Classify → 3. Update data → 4. Notify → 5. Merge data
 """
 
-import json
 import sys
+import os
 from config import now_iso
 from fetch_news import run as fetch_news
 from classify_news import run as classify_news
@@ -73,8 +73,11 @@ def run():
     print("=" * 60)
     
     # Output summary for GitHub Actions
-    print(f"\n::set-output name=auto_updates::{len(summary['auto_updates'])}")
-    print(f"::set-output name=review_items::{len(summary['review_items'])}")
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as fh:
+            fh.write(f"auto_updates={len(summary['auto_updates'])}\n")
+            fh.write(f"review_items={len(summary['review_items'])}\n")
 
 
 if __name__ == "__main__":

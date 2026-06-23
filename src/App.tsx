@@ -1,10 +1,12 @@
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { DataProvider, useData } from './context/DataContext'
 import { FilterProvider } from './context/FilterContext'
-import HeatmapPage from './pages/HeatmapPage'
-import DatabasePage from './pages/DatabasePage'
-import NewsPage from './pages/NewsPage'
 import './styles/index.css'
+
+const HeatmapPage = lazy(() => import('./pages/HeatmapPage'))
+const DatabasePage = lazy(() => import('./pages/DatabasePage'))
+const NewsPage = lazy(() => import('./pages/NewsPage'))
 
 function Header() {
   const { loading, error, lastUpdated } = useData()
@@ -97,6 +99,14 @@ function Footer() {
   )
 }
 
+function PageFallback() {
+  return (
+    <div className="flex items-center justify-center min-h-[50vh] text-slate-500">
+      Loading page…
+    </div>
+  )
+}
+
 function AppContent() {
   const { error } = useData()
 
@@ -118,11 +128,13 @@ function AppContent() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
-        <Routes>
-          <Route path="/" element={<HeatmapPage />} />
-          <Route path="/database" element={<DatabasePage />} />
-          <Route path="/news" element={<NewsPage />} />
-        </Routes>
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<HeatmapPage />} />
+            <Route path="/database" element={<DatabasePage />} />
+            <Route path="/news" element={<NewsPage />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

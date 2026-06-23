@@ -3,9 +3,10 @@ Build-time merge: merge regulations.json + overrides.json → merged.json
 Also merges in seed data (jurisdictions, service_types).
 """
 
+import hashlib
 import json
 from config import (
-    REGULATIONS_FILE, OVERRIDES_FILE, JURISDICTIONS_FILE,
+    REGULATIONS_FILE, REGULATION_METADATA_FILE, OVERRIDES_FILE, JURISDICTIONS_FILE,
     SERVICE_TYPES_FILE, MERGED_FILE, load_json, save_json, now_iso,
 )
 
@@ -66,6 +67,51 @@ def merge_regulations(regulations: list[dict], overrides: list[dict]) -> list[di
     return merged
 
 
+def regulation_content_hash(reg: dict) -> str:
+    """Hash a regulation without volatile timestamp fields."""
+    payload = {k: v for k, v in reg.items() if k not in ("created_at", "updated_at")}
+    normalized = json.dumps(payload, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def apply_regulation_metadata(
+    regulations: list[dict],
+    existing_metadata: dict[str, dict],
+    fallback_timestamp: str,
+) -> tuple[list[dict], dict[str, dict]]:
+    """Keep record timestamps stable and only bump updated_at when content changes."""
+    next_metadata: dict[str, dict] = {}
+    stamped: list[dict] = []
+    now = now_iso()
+
+    for reg in regulations:
+        reg_copy = {**reg}
+        reg_id = reg_copy["id"]
+        content_hash = regulation_content_hash(reg_copy)
+        prior = existing_metadata.get(reg_id)
+
+        if prior and prior.get("content_hash") == content_hash:
+            created_at = prior.get("created_at") or reg_copy.get("created_at") or fallback_timestamp
+            updated_at = prior.get("updated_at") or reg_copy.get("updated_at") or created_at
+        elif prior:
+            created_at = prior.get("created_at") or reg_copy.get("created_at") or fallback_timestamp
+            updated_at = now
+        else:
+            created_at = reg_copy.get("created_at") or fallback_timestamp
+            updated_at = reg_copy.get("updated_at") or created_at
+
+        reg_copy["created_at"] = created_at
+        reg_copy["updated_at"] = updated_at
+        stamped.append(reg_copy)
+        next_metadata[reg_id] = {
+            "created_at": created_at,
+            "updated_at": updated_at,
+            "content_hash": content_hash,
+        }
+
+    return stamped, next_metadata
+
+
 def run() -> dict:
     """Main entry point: merge all data into merged.json."""
     # Load base data
@@ -84,11 +130,19 @@ def run() -> dict:
     service_types_data = load_json(SERVICE_TYPES_FILE) if SERVICE_TYPES_FILE.exists() else {
         "version": "1.0.0", "last_updated": now_iso(), "service_types": []
     }
+    metadata_data = load_json(REGULATION_METADATA_FILE) if REGULATION_METADATA_FILE.exists() else {
+        "version": "1.0.0", "last_updated": now_iso(), "regulations": {}
+    }
     
     # Merge regulations with overrides
     merged_regulations = merge_regulations(
         regs_data.get("regulations", []),
         overrides_data.get("overrides", []),
+    )
+    merged_regulations, next_metadata = apply_regulation_metadata(
+        merged_regulations,
+        metadata_data.get("regulations", {}),
+        regs_data.get("last_updated", now_iso()),
     )
     
     # Build merged output
@@ -103,6 +157,11 @@ def run() -> dict:
     
     # Save to public/data/merged.json
     save_json(MERGED_FILE, merged)
+    save_json(REGULATION_METADATA_FILE, {
+        "version": "1.0.0",
+        "last_updated": now_iso(),
+        "regulations": next_metadata,
+    })
     
     print(f"[merge_data] Merged {len(merged_regulations)} regulations → {MERGED_FILE}")
     return merged

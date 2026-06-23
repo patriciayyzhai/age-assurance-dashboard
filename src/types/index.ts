@@ -6,6 +6,7 @@
 
 export type RegulationStatus =
   | 'proposed'
+  | 'inactive'
   | 'under_review'
   | 'passed'
   | 'implementation_period'
@@ -42,6 +43,7 @@ export type ObligationType =
 
 export type MilestoneType =
   | 'proposed'
+  | 'inactive'
   | 'introduced'
   | 'committee_review'
   | 'passed'
@@ -235,14 +237,15 @@ export const STATUS_META: Record<RegulationStatus, {
   order: number;
 }> = {
   proposed:               { label: 'Proposed',                color: '#94a3b8', weight: 10,  order: 1 },
-  under_review:           { label: 'Under Review',            color: '#f59e0b', weight: 20,  order: 2 },
-  challenged:             { label: 'Challenged',              color: '#a78bfa', weight: 15,  order: 3 },
-  enjoined:               { label: 'Enjoined',                color: '#6366f1', weight: 5,   order: 4 },
-  passed:                 { label: 'Passed',                  color: '#3b82f6', weight: 40,  order: 5 },
-  implementation_period:  { label: 'Implementation Period',   color: '#06b6d4', weight: 60,  order: 6 },
-  effective:              { label: 'Effective',               color: '#10b981', weight: 70,  order: 7 },
-  enforced:               { label: 'Enforced',                 color: '#ef4444', weight: 100, order: 8 },
-  repealed:               { label: 'Repealed',                 color: '#6b7280', weight: 0,   order: 9 },
+  inactive:               { label: 'Inactive / Lapsed',       color: '#cbd5e1', weight: 0,   order: 2 },
+  under_review:           { label: 'Under Review',            color: '#f59e0b', weight: 20,  order: 3 },
+  challenged:             { label: 'Challenged',              color: '#a78bfa', weight: 15,  order: 4 },
+  enjoined:               { label: 'Enjoined',                color: '#6366f1', weight: 5,   order: 5 },
+  passed:                 { label: 'Passed',                  color: '#3b82f6', weight: 40,  order: 6 },
+  implementation_period:  { label: 'Implementation Period',   color: '#06b6d4', weight: 60,  order: 7 },
+  effective:              { label: 'Effective',               color: '#10b981', weight: 70,  order: 8 },
+  enforced:               { label: 'Enforced',                color: '#ef4444', weight: 100, order: 9 },
+  repealed:               { label: 'Repealed',                color: '#6b7280', weight: 0,   order: 10 },
 };
 
 export const ACTION_TYPE_META: Record<ActionType, {

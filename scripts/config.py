@@ -15,6 +15,7 @@ SEED_DIR = DATA_DIR / "seed"
 PUBLIC_DATA_DIR = ROOT_DIR / "public" / "data"
 
 REGULATIONS_FILE = DATA_DIR / "regulations.json"
+REGULATION_METADATA_FILE = DATA_DIR / "regulation_metadata.json"
 OVERRIDES_FILE = DATA_DIR / "overrides.json"
 SEEN_URLS_FILE = DATA_DIR / "seen_urls.json"
 JURISDICTIONS_FILE = SEED_DIR / "jurisdictions.json"

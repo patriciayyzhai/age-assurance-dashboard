@@ -73,7 +73,7 @@ def apply_update_to_regulation(regulations_data: dict, news_item: dict) -> dict 
             "summary": classification.get("summary", news_item.get("snippet", "")),
             "status": "proposed",
             "service_type_ids": [],
-            "year": int(news_item.get("published_at", "2025")[:4]),
+            "year": int(news_item.get("published_at", now)[:4]),
             "source_url": news_item.get("url"),
             "tags": [],
             "obligations": [],
@@ -119,6 +119,9 @@ def apply_update_to_regulation(regulations_data: dict, news_item: dict) -> dict 
         if not target_reg:
             print(f"  → Could not find matching regulation for: {classification.get('regulation_name')}")
             return None
+
+        target_reg.setdefault("created_at", now)
+        target_reg.setdefault("updated_at", target_reg["created_at"])
         
         # Add a milestone
         milestone = {

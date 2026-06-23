@@ -1,36 +1,18 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
-import ReactECharts from 'echarts-for-react'
-import * as echarts from 'echarts'
+import { lazy, Suspense, useState, useMemo } from 'react'
 import { useData } from '../context/DataContext'
 import { useFilters } from '../context/FilterContext'
 import { calculateRiskScores } from '../data/loader'
-import { getEchartsCountryName } from '../data/isoEchartsMap'
 import type { ServiceTypeId } from '../types'
 import { SERVICE_TYPE_META, STATUS_META } from '../types'
 import { useNavigate } from 'react-router-dom'
 
-// World map GeoJSON URL (ECharts-compatible)
-const WORLD_MAP_URL = 'https://raw.githubusercontent.com/apache/echarts/4.9.0/map/json/world.json'
+const HeatmapChart = lazy(() => import('../components/heatmap/HeatmapChart'))
 
 export default function HeatmapPage() {
   const { data, loading } = useData()
   const { dispatch } = useFilters()
   const navigate = useNavigate()
   const [serviceTypeFilter, setServiceTypeFilter] = useState<ServiceTypeId | 'all'>('all')
-  const [mapLoaded, setMapLoaded] = useState(false)
-  const chartRef = useRef<ReactECharts>(null)
-
-  // Load world map
-  useEffect(() => {
-    if (mapLoaded) return
-    fetch(WORLD_MAP_URL)
-      .then((r) => r.json())
-      .then((geoJson) => {
-        echarts.registerMap('world', geoJson)
-        setMapLoaded(true)
-      })
-      .catch((e) => console.error('Failed to load world map:', e))
-  }, [mapLoaded])
 
   // Calculate risk scores
   const riskScores = useMemo(() => {
@@ -42,77 +24,13 @@ export default function HeatmapPage() {
     )
   }, [data, serviceTypeFilter])
 
-  // Build chart option
-  const chartOption = useMemo(() => {
-    if (!riskScores.length || !mapLoaded) return {}
-
-    const mapData = riskScores
-      .map((rs) => ({
-        name: getEchartsCountryName(rs.iso_alpha2) || rs.country_name,
-        value: rs.risk_score,
-        rawData: rs,
-      }))
-      .filter((d) => d.name)
-
-    return {
-      tooltip: {
-        trigger: 'item',
-        formatter: (params: any) => {
-          if (!params.data?.rawData) return params.name
-          const rs = params.data.rawData
-          let html = `<div style="font-weight:600;margin-bottom:4px">${rs.country_name}</div>`
-          html += `<div style="font-size:12px;color:#64748b">Risk Score: <b style="color:${getRiskColor(rs.risk_score)}">${rs.risk_score}/100</b></div>`
-          html += `<div style="font-size:12px;color:#64748b">Regulations: <b>${rs.regulation_count}</b></div>`
-          html += `<div style="font-size:12px;color:#64748b">Obligations: <b>${rs.total_obligations}</b></div>`
-          if (rs.sub_national_breakdown?.length) {
-            html += '<div style="margin-top:4px;font-size:11px;color:#94a3b8">Sub-national:</div>'
-            for (const sub of rs.sub_national_breakdown) {
-              html += `<div style="font-size:11px;color:#94a3b8">• ${sub.name}: ${sub.regulation_count} reg(s)</div>`
-            }
-          }
-          html += '<div style="margin-top:4px;font-size:11px;color:#3b82f6">Click to view regulations →</div>'
-          return html
-        },
-      },
-      visualMap: {
-        min: 0,
-        max: 100,
-        left: 20,
-        bottom: 20,
-        text: ['High Risk', 'Low Risk'],
-        realtime: false,
-        calculable: true,
-        inRange: {
-          color: [
-            '#e0f2fe', '#bae6fd', '#7dd3fc', '#38bdf8',
-            '#fbbf24', '#f59e0b', '#f97316', '#ef4444', '#dc2626',
-          ],
-        },
-        textStyle: { fontSize: 11 },
-      },
-      series: [
-        {
-          name: 'Regulatory Risk',
-          type: 'map',
-          map: 'world',
-          roam: true,
-          emphasis: {
-            label: { show: false },
-            itemStyle: { areaColor: '#fbbf24', borderColor: '#fff', borderWidth: 1 },
-          },
-          select: {
-            disabled: true,
-          },
-          itemStyle: {
-            areaColor: '#f1f5f9',
-            borderColor: '#cbd5e1',
-            borderWidth: 0.5,
-          },
-          data: mapData,
-        },
-      ],
-    }
-  }, [riskScores, mapLoaded])
+  const heatmapRegulations = useMemo(() => {
+    if (!data) return []
+    if (serviceTypeFilter === 'all') return data.regulations
+    return data.regulations.filter((reg) =>
+      reg.service_type_ids.includes(serviceTypeFilter)
+    )
+  }, [data, serviceTypeFilter])
 
   const onChartClick = (params: any) => {
     if (!params.data?.rawData) return
@@ -126,14 +44,6 @@ export default function HeatmapPage() {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-slate-500">Loading heatmap data...</div>
-      </div>
-    )
-  }
-
-  if (!mapLoaded) {
-    return (
-      <div className="flex items-center justify-center h-96">
-        <div className="text-slate-500">Loading world map...</div>
       </div>
     )
   }
@@ -183,19 +93,15 @@ export default function HeatmapPage() {
           </p>
         </div>
         <div style={{ height: '600px' }}>
-          {riskScores.length > 0 ? (
-            <ReactECharts
-              ref={chartRef}
-              option={chartOption}
-              onEvents={{ click: onChartClick }}
-              style={{ height: '100%', width: '100%' }}
-              opts={{ renderer: 'svg' }}
-            />
-          ) : (
-            <div className="flex items-center justify-center h-full text-slate-500">
-              No regulations match the current filter
-            </div>
-          )}
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center h-full text-slate-500">
+                Loading heatmap…
+              </div>
+            }
+          >
+            <HeatmapChart riskScores={riskScores} onChartClick={onChartClick} />
+          </Suspense>
         </div>
       </div>
 
@@ -257,7 +163,7 @@ export default function HeatmapPage() {
           <h3 className="text-sm font-semibold text-slate-900 mb-3">Status Distribution</h3>
           <div className="space-y-1.5">
             {data && Object.entries(STATUS_META).map(([status, meta]) => {
-              const count = data.regulations.filter((r) => r.status === status).length
+              const count = heatmapRegulations.filter((r) => r.status === status).length
               if (count === 0) return null
               return (
                 <div key={status} className="flex items-center justify-between text-sm">
