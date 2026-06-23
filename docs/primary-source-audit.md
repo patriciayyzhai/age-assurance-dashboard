@@ -56,28 +56,44 @@ This note tracks which market entries have been tightened directly against prima
 
 ### Utah — `US-UT-SMA-2024`
 
-- Source currently linked: [Utah SB 152 bill page](https://le.utah.gov/~2023/bills/static/SB0152.html)
-- Confidence: medium
-- Current record has been kept broader because the accessible bill page is weaker for line-by-line duty extraction in this workflow.
-- Follow-up need:
-  - official engrossed/enrolled text or chaptered statutory text for the exact parental, curfew, messaging, and design restrictions.
+- Sources:
+  - [Utah SB 152 bill page](https://le.utah.gov/~2023/bills/static/SB0152.html)
+- Confidence: medium-high on legislative existence and status, medium on precise obligation wording
+- What improved:
+  - the official Utah Legislature bill page clearly confirms the bill title, session history, governor signature date, and effective date.
+- Remaining gap:
+  - the current browsing workflow did not surface a clean text view of the enrolled provisions themselves, so duty-level wording still benefits from a direct enrolled-text or codified-statute pass.
 
 ### South Korea — `KR-YOUTH-2024`
 
-- Source currently linked: [law.go.kr page](https://www.law.go.kr/lsInfoP.do?lsiSeq=253000)
+- Sources:
+  - [South Korea law.go.kr source already used in the dataset](https://www.law.go.kr/lsInfoP.do?lsiSeq=253000)
+  - [Korea Media Rating Board official site](https://www.kmrb.or.kr/eng/Main.do)
 - Confidence: medium
-- Current record is intentionally narrow: youth-harmful media restrictions, not a general social-media minimum-age law.
-- Follow-up need:
-  - stronger official English-accessible text or regulator guidance for the exact online age-gating mechanism and age definition.
+- What improved:
+  - the existing `law.go.kr` source remains the most authoritative legal source in the set.
+  - the KMRB official site reinforces the prevalence of `19`-based youth/adult content classification in Korean media regulation.
+- Remaining gap:
+  - we still need a cleaner official legal or regulator text that expressly ties online youth-harmful media access controls to account-level age-gating in language we can quote or paraphrase with confidence.
 
 ### Indonesia — `ID-SOCIAL-2026`
 
-- Source currently linked: AP reporting
+- Best source currently surfaced:
+  - [AP report on implementation and minister statements](https://apnews.com/article/39630c776f947652cde619ad4ae56627)
 - Confidence: medium-low
-- Current record should be treated as reporting-backed until an official regulation, ministry notice, or regulator circular is added.
+- What improved:
+  - the AP reporting is detailed and names the ministry, the implementation date, and the platforms affected.
+- Remaining gap:
+  - I was not able to surface an indexed official Komdigi regulation page, ministry circular, or gazetted regulation through the current tools.
+  - Until we have that, Indonesia should remain marked as reporting-backed rather than primary-source-backed.
 
 ### Malaysia — `MY-SOCIAL-2026`
 
-- Source currently linked: AP reporting
+- Best source currently surfaced:
+  - [AP report on enforcement details](https://apnews.com/article/bfaa7b01163b61b5d53c4ecfa870d133)
 - Confidence: medium-low
-- Current record should be treated as reporting-backed until an official MCMC or ministry source is added.
+- What improved:
+  - the AP reporting is specific on enforcement date, covered platforms, age-verification rollout, grace period, and fines.
+- Remaining gap:
+  - I was not able to surface an indexed official MCMC or Ministry of Communications source page through the current tools.
+  - Until we have that, Malaysia should remain reporting-backed rather than primary-source-backed.
