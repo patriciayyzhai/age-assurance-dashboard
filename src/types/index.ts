@@ -30,6 +30,7 @@ export type ServiceTypeId =
   | 'other';
 
 export type ObligationType =
+  | 'age_registration'
   | 'age_verification'
   | 'age_estimation'
   | 'parental_consent'
@@ -281,6 +282,7 @@ export const OBLIGATION_TYPE_META: Record<ObligationType, {
   label: string;
   color: string;
 }> = {
+  age_registration:      { label: 'Age Registration',      color: '#0f766e' },
   age_verification:       { label: 'Age Verification',       color: '#ef4444' },
   age_estimation:         { label: 'Age Estimation',         color: '#f59e0b' },
   parental_consent:       { label: 'Parental Consent',       color: '#8b5cf6' },

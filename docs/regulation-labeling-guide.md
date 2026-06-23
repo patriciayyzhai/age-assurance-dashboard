@@ -26,8 +26,11 @@ Do not treat every threshold as `X+`.
 
 Use the narrowest defensible label.
 
+- `age_registration`
+  Use when the law explicitly requires the user to register or declare age and the legal consequences flow from that declaration, but the source does not clearly require independent proof-of-age verification for general access.
+
 - `age_verification`
-  Use when the law explicitly requires age checks, age-gating, age registration, or equivalent proof of age.
+  Use when the law explicitly requires age checks, age-gating, or equivalent proof of age.
   Do not use when the law merely mentions child safety without a user-age determination step.
 
 - `age_estimation`

@@ -44,7 +44,7 @@
                 "regulation_id": { "type": "string" },
                 "type": {
                   "type": "string",
-                  "enum": ["age_verification", "age_estimation", "parental_consent", "access_restriction", "upstream_age_signal", "design_restrictions", "data_protection", "content_moderation", "reporting_obligation", "other"]
+                  "enum": ["age_registration", "age_verification", "age_estimation", "parental_consent", "access_restriction", "upstream_age_signal", "design_restrictions", "data_protection", "content_moderation", "reporting_obligation", "other"]
                 },
                 "description": { "type": "string" },
                 "threshold_age": { "type": ["integer", "null"] },

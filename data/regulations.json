@@ -300,7 +300,7 @@
       "jurisdiction_id": "US-TX",
       "summary": "Texas Securing Children Online through Parental Empowerment (SCOPE) Act requiring covered digital services to register user age, apply special duties toward known minors, provide parental tools, and prevent known minors' exposure to specified harmful content. It also separately requires 18+ age verification for services where more than one-third of content is harmful material or obscenity.",
       "status": "effective",
-      "service_type_ids": ["social_media", "gaming", "streaming"],
+      "service_type_ids": ["social_media", "gaming", "streaming", "adult_content"],
       "year": 2023,
       "source_url": "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00018F.htm",
       "tags": ["scope_act", "parental_consent", "content_filtering"],
@@ -308,7 +308,7 @@
         {
           "id": "US-TX-HB-18-OBL-1",
           "regulation_id": "US-TX-HB-18",
-          "type": "age_verification",
+          "type": "age_registration",
           "description": "A covered digital service may not create an account unless the user has registered the user's age; users who register as under 18 are treated as known minors",
           "threshold_age": 18,
           "threshold_label": "Under 18",
@@ -331,6 +331,15 @@
           "threshold_age": 18,
           "threshold_label": "Under 18",
           "applies_to_service_types": ["social_media", "streaming"]
+        },
+        {
+          "id": "US-TX-HB-18-OBL-4",
+          "regulation_id": "US-TX-HB-18",
+          "type": "age_verification",
+          "description": "A digital service that knowingly publishes or distributes content that is more than one-third harmful material or obscenity must use a commercially reasonable age verification method and deny access to users who are not 18 or older",
+          "threshold_age": 18,
+          "threshold_label": "18+",
+          "applies_to_service_types": ["adult_content"]
         }
       ],
       "milestones": [

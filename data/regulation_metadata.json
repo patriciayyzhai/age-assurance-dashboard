@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-06-23T07:51:46.511846+00:00",
+  "last_updated": "2026-06-23T08:51:32.987444+00:00",
   "regulations": {
     "AU-OSA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
@@ -29,8 +29,8 @@
     },
     "US-TX-HB-18": {
       "created_at": "2026-06-22T15:40:51Z",
-      "updated_at": "2026-06-23T07:51:46.510112+00:00",
-      "content_hash": "ce30a6b031fc8ac21117de69b4a246b8b265c10713e15ac1feb795710595885e"
+      "updated_at": "2026-06-23T08:51:32.985465+00:00",
+      "content_hash": "ce154282a59d1828766b21ed06da9c21d78df8903b566ce5f7c064c0fa801d06"
     },
     "FR-SMA-2023": {
       "created_at": "2026-06-22T15:40:51Z",
