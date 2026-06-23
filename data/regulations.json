@@ -520,52 +520,60 @@
       "updated_at": "2026-06-23T00:00:00Z"
     },
     {
-      "id": "CA-SMA-2026",
-      "name": "Canada Social Media Act / Digital Safety Act Package",
+      "id": "CA-C34-2026",
+      "name": "Bill C-34, the Safe Social Media Act",
       "jurisdiction_id": "CA",
-      "summary": "Canada tabled new legislation on June 10, 2026 to create a Digital Safety Act and the Digital Safety Commission of Canada Act. The package proposes an under-16 social media ban, safety duties for social media operators and AI chatbot services, risk assessments, mitigation measures, age-appropriate design, public user guidance, digital safety plans, and user blocking and content-flagging tools.",
+      "summary": "Canada introduced Bill C-34 on June 10, 2026. The bill would enact the Digital Safety Act and the Digital Safety Commission of Canada Act. It would regulate social media services and AI chatbot services through child-safety duties, digital safety plans, design obligations, complaint-handling tools, and an intended 16-year-old minimum age requirement for social media accounts, subject to commission exemptions for sufficiently safe services.",
       "status": "proposed",
-      "service_type_ids": ["social_media", "ai_service"],
+      "service_type_ids": ["social_media", "ai_service", "adult_content", "streaming"],
       "year": 2026,
-      "source_url": "https://apnews.com/article/292444c9dd8773aeb4119aaa9eae5990",
-      "tags": ["social_media_ban", "under_16", "digital_safety_act", "digital_safety_commission", "ai_chatbots"],
+      "source_url": "https://www.canada.ca/en/canadian-heritage/services/safe-social-media-act.html",
+      "tags": ["safe_social_media_act", "bill_c34", "under_16", "digital_safety_act", "digital_safety_commission", "ai_chatbots"],
       "obligations": [
         {
-          "id": "CA-SMA-2026-OBL-1",
-          "regulation_id": "CA-SMA-2026",
+          "id": "CA-C34-2026-OBL-1",
+          "regulation_id": "CA-C34-2026",
           "type": "access_restriction",
-          "description": "Social media platforms would be prohibited from allowing users under 16 unless they qualify for a safety-based exemption",
+          "description": "The government intends to impose a 16-year-old minimum age requirement for social media accounts, with possible commission exemptions for services that maintain sufficient safeguards for children",
           "threshold_age": 16,
           "applies_to_service_types": ["social_media"]
         },
         {
-          "id": "CA-SMA-2026-OBL-2",
-          "regulation_id": "CA-SMA-2026",
+          "id": "CA-C34-2026-OBL-2",
+          "regulation_id": "CA-C34-2026",
           "type": "design_restrictions",
-          "description": "Covered operators would need to integrate age-appropriate design and safety-by-design features for minors",
+          "description": "Regulated services would be subject to a core Duty to Protect Children, requiring safety-focused and age-appropriate design features",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "ai_service"]
+          "applies_to_service_types": ["social_media", "ai_service", "adult_content", "streaming"]
         },
         {
-          "id": "CA-SMA-2026-OBL-3",
-          "regulation_id": "CA-SMA-2026",
+          "id": "CA-C34-2026-OBL-3",
+          "regulation_id": "CA-C34-2026",
           "type": "reporting_obligation",
-          "description": "Covered operators would need to assess platform risks, adopt mitigation measures, and publish digital safety plans and user guidelines",
+          "description": "Regulated services would need to identify platform risks, adopt mitigation measures, make user guidelines available, and publish Digital Safety Plans",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "ai_service"]
+          "applies_to_service_types": ["social_media", "ai_service", "adult_content", "streaming"]
         },
         {
-          "id": "CA-SMA-2026-OBL-4",
-          "regulation_id": "CA-SMA-2026",
+          "id": "CA-C34-2026-OBL-4",
+          "regulation_id": "CA-C34-2026",
           "type": "content_moderation",
-          "description": "Covered operators would need to provide user blocking and content-flagging tools and address specified harmful content risks",
+          "description": "Social media services would be subject to duties to make certain content inaccessible and to act responsibly by mitigating harmful-content exposure, labelling synthetic content, and providing flagging and blocking tools",
           "threshold_age": null,
-          "applies_to_service_types": ["social_media", "ai_service"]
+          "applies_to_service_types": ["social_media", "adult_content", "streaming"]
+        },
+        {
+          "id": "CA-C34-2026-OBL-5",
+          "regulation_id": "CA-C34-2026",
+          "type": "content_moderation",
+          "description": "AI chatbot services would be required to act responsibly by mitigating harmful chatbot output, implementing emergency measures in crisis situations, and reducing harmful behaviour risks",
+          "threshold_age": null,
+          "applies_to_service_types": ["ai_service"]
         }
       ],
       "milestones": [
-        { "id": "CA-SMA-2026-MS-1", "regulation_id": "CA-SMA-2026", "type": "introduced", "date": "2026-06-10", "description": "Canada tabled the Social Media Act package, including the Digital Safety Act and the Digital Safety Commission of Canada Act", "source_url": "https://apnews.com/article/292444c9dd8773aeb4119aaa9eae5990" },
-        { "id": "CA-SMA-2026-MS-2", "regulation_id": "CA-SMA-2026", "type": "inactive", "date": "2025-01-06", "description": "The earlier Online Harms Act (Bill C-63) lapsed when Parliament was prorogued", "source_url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-63" }
+        { "id": "CA-C34-2026-MS-1", "regulation_id": "CA-C34-2026", "type": "introduced", "date": "2026-06-10", "description": "Bill C-34, the Safe Social Media Act, was introduced", "source_url": "https://www.canada.ca/en/canadian-heritage/services/safe-social-media-act.html" },
+        { "id": "CA-C34-2026-MS-2", "regulation_id": "CA-C34-2026", "type": "inactive", "date": "2025-01-06", "description": "The earlier Online Harms Act (Bill C-63) lapsed when Parliament was prorogued", "source_url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-63" }
       ],
       "litigations": []
     },

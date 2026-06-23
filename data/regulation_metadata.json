@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-06-23T06:40:07.117547+00:00",
+  "last_updated": "2026-06-23T06:49:17.939263+00:00",
   "regulations": {
     "AU-OSA-2024": {
       "created_at": "2026-06-22T15:40:51Z",
@@ -52,10 +52,10 @@
       "updated_at": "2026-06-23T00:00:00Z",
       "content_hash": "ee7432ea757d969cc37e3d4a4e8e36cbfad904c444149207502fe99dd2d48396"
     },
-    "CA-SMA-2026": {
+    "CA-C34-2026": {
       "created_at": "2026-06-23T00:00:00Z",
       "updated_at": "2026-06-23T00:00:00Z",
-      "content_hash": "28b4de3b7e3ca44b2282684bcd7856cc3b98c869f3b8befe36296abf6a7ad4bd"
+      "content_hash": "e7440821726d34e338584730eae6463ad6eb5bde1d217dceb2fea1a9244008f0"
     },
     "ID-SOCIAL-2026": {
       "created_at": "2026-06-23T00:00:00Z",
