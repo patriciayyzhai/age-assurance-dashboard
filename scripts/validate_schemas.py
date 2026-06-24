@@ -5,8 +5,8 @@ CI validation: validate JSON files against their schemas.
 import sys
 from jsonschema import validate, ValidationError
 from config import (
-    REGULATIONS_FILE, OVERRIDES_FILE, SEEN_URLS_FILE,
-    REGULATIONS_SCHEMA, OVERRIDES_SCHEMA, SEEN_URLS_SCHEMA,
+    REGULATIONS_FILE, OVERRIDES_FILE, SEEN_URLS_FILE, NEWS_ITEMS_FILE,
+    REGULATIONS_SCHEMA, OVERRIDES_SCHEMA, SEEN_URLS_SCHEMA, NEWS_ITEMS_SCHEMA,
     load_json,
 )
 
@@ -44,6 +44,7 @@ def run() -> bool:
     all_valid &= validate_file(REGULATIONS_FILE, REGULATIONS_SCHEMA, "regulations.json")
     all_valid &= validate_file(OVERRIDES_FILE, OVERRIDES_SCHEMA, "overrides.json")
     all_valid &= validate_file(SEEN_URLS_FILE, SEEN_URLS_SCHEMA, "seen_urls.json")
+    all_valid &= validate_file(NEWS_ITEMS_FILE, NEWS_ITEMS_SCHEMA, "news_items.json")
     
     if all_valid:
         print("\n[validate] All files valid ✓")

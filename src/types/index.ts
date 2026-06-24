@@ -154,6 +154,8 @@ export interface NewsItem {
     proposed_regulation_name?: string;
     proposed_jurisdiction_id?: string;
     proposed_status?: RegulationStatus;
+    status_change?: RegulationStatus;
+    summary?: string;
     auto_applied: boolean;        // Whether this was auto-committed
   };
   processed_at: string;           // ISO 8601 datetime

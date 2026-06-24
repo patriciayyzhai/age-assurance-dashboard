@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "News Items Database",
+  "description": "Persisted classified news items displayed in the dashboard news tab",
+  "type": "object",
+  "required": ["version", "last_updated", "news_items"],
+  "properties": {
+    "version": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date-time" },
+    "news_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url", "source", "published_at", "classification", "processed_at"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" },
+          "published_at": { "type": "string" },
+          "snippet": { "type": ["string", "null"] },
+          "classification": {
+            "type": "object",
+            "required": ["action_type", "confidence", "auto_applied"],
+            "properties": {
+              "action_type": {
+                "type": "string",
+                "enum": [
+                  "new_regulation_proposed",
+                  "existing_regulation_development",
+                  "existing_regulation_report",
+                  "not_relevant"
+                ]
+              },
+              "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+              "reasoning": { "type": ["string", "null"] },
+              "regulation_id": { "type": ["string", "null"] },
+              "proposed_regulation_name": { "type": ["string", "null"] },
+              "proposed_jurisdiction_id": { "type": ["string", "null"] },
+              "proposed_status": {
+                "type": ["string", "null"],
+                "enum": [null, "proposed", "inactive", "under_review", "passed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed"]
+              },
+              "status_change": {
+                "type": ["string", "null"],
+                "enum": [null, "proposed", "inactive", "under_review", "passed", "implementation_period", "effective", "enforced", "challenged", "enjoined", "repealed"]
+              },
+              "summary": { "type": ["string", "null"] },
+              "auto_applied": { "type": "boolean" }
+            }
+          },
+          "processed_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}

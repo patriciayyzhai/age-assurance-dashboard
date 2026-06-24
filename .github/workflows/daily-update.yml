@@ -49,7 +49,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet data/regulations.json data/seen_urls.json; then
+          if git diff --quiet data/regulations.json data/seen_urls.json data/news_items.json; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No data changes detected."
           else

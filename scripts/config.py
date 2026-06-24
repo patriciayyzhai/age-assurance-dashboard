@@ -18,6 +18,7 @@ REGULATIONS_FILE = DATA_DIR / "regulations.json"
 REGULATION_METADATA_FILE = DATA_DIR / "regulation_metadata.json"
 OVERRIDES_FILE = DATA_DIR / "overrides.json"
 SEEN_URLS_FILE = DATA_DIR / "seen_urls.json"
+NEWS_ITEMS_FILE = DATA_DIR / "news_items.json"
 JURISDICTIONS_FILE = SEED_DIR / "jurisdictions.json"
 SERVICE_TYPES_FILE = SEED_DIR / "service_types.json"
 MERGED_FILE = PUBLIC_DATA_DIR / "merged.json"
@@ -25,6 +26,7 @@ MERGED_FILE = PUBLIC_DATA_DIR / "merged.json"
 REGULATIONS_SCHEMA = SCHEMA_DIR / "regulations.schema.json"
 OVERRIDES_SCHEMA = SCHEMA_DIR / "overrides.schema.json"
 SEEN_URLS_SCHEMA = SCHEMA_DIR / "seen_urls.schema.json"
+NEWS_ITEMS_SCHEMA = SCHEMA_DIR / "news_items.schema.json"
 
 # --- Environment Variables (GitHub Secrets) ---
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")

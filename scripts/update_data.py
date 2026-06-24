@@ -6,14 +6,90 @@ High-confidence items are auto-committed; low-confidence items create PRs.
 import hashlib
 from config import (
     CONFIDENCE_AUTO_THRESHOLD, CONFIDENCE_REVIEW_THRESHOLD,
-    REGULATIONS_FILE, SEEN_URLS_FILE, load_json, save_json, now_iso,
+    REGULATIONS_FILE, SEEN_URLS_FILE, NEWS_ITEMS_FILE, load_json, save_json, now_iso,
 )
+
+MAX_NEWS_ITEMS = 250
 
 
 def generate_id(prefix: str, name: str) -> str:
     """Generate a stable ID from a prefix and name."""
     hash_part = hashlib.md5(name.encode()).hexdigest()[:8]
     return f"{prefix}-{hash_part}"
+
+
+def normalize_url(url: str) -> str:
+    """Normalize a URL for stable deduplication."""
+    return url.strip().lower().rstrip("/")
+
+
+def build_news_item(item: dict, *, auto_applied: bool) -> dict:
+    """Normalize a classified item into the frontend news shape."""
+    classification = item["classification"]
+    norm_url = normalize_url(item.get("url", ""))
+    news_id = generate_id("NEWS", norm_url or item.get("title", ""))
+    action_type = classification["action_type"]
+
+    proposed_name = None
+    proposed_jurisdiction = None
+    proposed_status = None
+    linked_regulation_id = classification.get("matched_regulation_id")
+
+    if action_type == "new_regulation_proposed":
+        proposed_name = classification.get("regulation_name")
+        proposed_jurisdiction = classification.get("jurisdiction")
+        proposed_status = classification.get("status_change") or "proposed"
+
+    return {
+        "id": news_id,
+        "title": item.get("title", ""),
+        "url": item.get("url", ""),
+        "source": item.get("source", "Unknown"),
+        "published_at": item.get("published_at", ""),
+        "snippet": item.get("snippet", ""),
+        "classification": {
+            "action_type": action_type,
+            "confidence": classification.get("confidence", 0),
+            "reasoning": classification.get("reasoning"),
+            "regulation_id": linked_regulation_id,
+            "proposed_regulation_name": proposed_name,
+            "proposed_jurisdiction_id": proposed_jurisdiction,
+            "proposed_status": proposed_status,
+            "status_change": classification.get("status_change"),
+            "summary": classification.get("summary"),
+            "auto_applied": auto_applied,
+        },
+        "processed_at": now_iso(),
+    }
+
+
+def update_news_items(news_items: list[dict]) -> dict:
+    """Persist classified news items for the frontend news tab."""
+    news_data = load_json(NEWS_ITEMS_FILE) if NEWS_ITEMS_FILE.exists() else {
+        "version": "1.0.0",
+        "last_updated": now_iso(),
+        "news_items": [],
+    }
+
+    by_url = {
+        normalize_url(item.get("url", "")): item
+        for item in news_data.get("news_items", [])
+        if item.get("url")
+    }
+
+    for news_item in news_items:
+        by_url[normalize_url(news_item["url"])] = news_item
+
+    merged_items = sorted(
+        by_url.values(),
+        key=lambda item: item.get("published_at", ""),
+        reverse=True,
+    )[:MAX_NEWS_ITEMS]
+
+    news_data["last_updated"] = now_iso()
+    news_data["news_items"] = merged_items
+    save_json(NEWS_ITEMS_FILE, news_data)
+    return news_data
 
 
 def update_seen_urls(articles: list[dict], classified_items: list[dict]) -> dict:
@@ -191,9 +267,20 @@ def run(classified_items: list[dict], all_articles: list[dict]) -> dict:
     if auto_updates:
         regulations_data["last_updated"] = now_iso()
         save_json(REGULATIONS_FILE, regulations_data)
-    
+
+    persisted_news_items = [
+        build_news_item(entry["news_item"], auto_applied=True)
+        for entry in auto_updates
+    ] + [
+        build_news_item(item, auto_applied=False)
+        for item in review_items
+    ]
+
+    if persisted_news_items:
+        update_news_items(persisted_news_items)
+
     # Update seen URLs
-    update_seen_urls(all_articles, auto_updates)
+    update_seen_urls(all_articles, persisted_news_items)
     
     summary = {
         "auto_updates": auto_updates,
