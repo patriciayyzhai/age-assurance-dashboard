@@ -2,6 +2,8 @@
 
 A web-based dashboard for tracking age assurance-related regulations worldwide. Features a global risk heatmap, filterable regulation database, and LLM-powered news tracker with automated daily updates.
 
+Live site: [https://patriciayyzhai.github.io/age-assurance-dashboard/](https://patriciayyzhai.github.io/age-assurance-dashboard/)
+
 ## Features
 
 - **Global Risk Heatmap** — Choropleth world map showing regulatory risk severity by country, based on platform obligations and implementation status. Filter by service type, click to drill down.
