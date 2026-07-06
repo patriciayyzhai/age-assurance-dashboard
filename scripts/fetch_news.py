@@ -83,8 +83,14 @@ def deduplicate(articles: list[dict], seen_urls: dict) -> list[dict]:
 
 def run() -> list[dict]:
     """Main entry point: fetch and deduplicate news articles."""
+    # Diagnostic: log key status without revealing the key
+    key_len = len(NEWS_API_KEY) if NEWS_API_KEY else 0
+    print(f"[fetch_news] NEWS_API_KEY present: {'YES' if key_len > 0 else 'NO'} (length={key_len})")
+    print(f"[fetch_news] OPENAI_API_KEY present: {'YES' if OPENAI_API_KEY else 'NO'}")
+
     if not NEWS_API_KEY:
-        print("[fetch_news] WARNING: NEWS_API_KEY not set, skipping news fetch")
+        print("[fetch_news] ERROR: NEWS_API_KEY is empty. News fetch will be skipped.")
+        print("[fetch_news] Ensure the secret is set in GitHub Settings > Secrets and Variables > Actions")
         return []
 
     # Load seen URLs
@@ -107,7 +113,13 @@ def run() -> list[dict]:
             all_articles.extend(articles)
             print(f"  → {len(articles)} articles")
         except Exception as e:
-            print(f"  → ERROR: {e}")
+            print(f"  → ERROR ({type(e).__name__}): {e}")
+            resp_text = getattr(e, 'response', None)
+            if resp_text is not None:
+                try:
+                    print(f"  → API response: {resp_text.text[:300]}")
+                except Exception:
+                    pass
 
     print(f"[fetch_news] Total fetched: {len(all_articles)}")
 

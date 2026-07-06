@@ -1,0 +1,82 @@
+name: New Regulation
+description: Submit a new age assurance regulation for the database
+title: "[New Regulation] "
+labels: ["data-contribution", "new-regulation"]
+body:
+  - type: input
+    id: regulation_name
+    attributes:
+      label: Regulation Name
+      description: Official name of the regulation, act, or bill
+      placeholder: e.g., California Age-Appropriate Design Code Act
+    validations:
+      required: true
+  - type: dropdown
+    id: jurisdiction
+    attributes:
+      label: Jurisdiction
+      description: Country or region where this regulation applies
+      options:
+        - United States (US)
+        - United Kingdom (GB)
+        - European Union (EU)
+        - Australia (AU)
+        - Canada (CA)
+        - Singapore (SG)
+        - China (CN)
+        - Japan (JP)
+        - South Korea (KR)
+        - Brazil (BR)
+        - India (IN)
+        - Other (please specify in notes)
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current Status
+      options:
+        - proposed
+        - under_review
+        - passed
+        - effective
+        - enforced
+        - challenged
+        - enjoined
+        - implementation_period
+        - repealed
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Link to official announcement, news article, or legislation text
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Brief description of what this regulation does (2-3 sentences)
+      placeholder: This regulation requires...
+    validations:
+      required: true
+  - type: checkboxes
+    id: service_types
+    attributes:
+      label: Applicable Service Types
+      options:
+        - label: Social Media Platforms
+        - label: Gaming Platforms
+        - label: Video Streaming
+        - label: Messaging Apps
+        - label: Online Marketplaces
+        - label: Educational Platforms
+        - label: General Internet Services
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant details (effective date, key requirements, related regulations)

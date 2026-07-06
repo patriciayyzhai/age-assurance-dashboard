@@ -29,9 +29,9 @@ SEEN_URLS_SCHEMA = SCHEMA_DIR / "seen_urls.schema.json"
 NEWS_ITEMS_SCHEMA = SCHEMA_DIR / "news_items.schema.json"
 
 # --- Environment Variables (GitHub Secrets) ---
-NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
-WECOM_WEBHOOK_URL = os.environ.get("WECOM_WEBHOOK_URL", "")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "").strip()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+WECOM_WEBHOOK_URL = os.environ.get("WECOM_WEBHOOK_URL", "").strip()
 
 # --- LLM Config ---
 LLM_MODEL = "gpt-4o-mini"

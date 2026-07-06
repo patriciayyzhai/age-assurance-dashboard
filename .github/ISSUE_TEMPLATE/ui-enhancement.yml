@@ -1,0 +1,42 @@
+name: UI Enhancement
+description: Suggest an improvement to the dashboard interface
+title: "[UI] "
+labels: ["enhancement", "ui"]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page/component?
+      options:
+        - Heatmap Page
+        - Database Table
+        - News Feed
+        - Filter Bar
+        - Navigation / Layout
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current behavior
+      description: What does the dashboard currently do?
+    validations:
+      required: true
+  - type: textarea
+    id: desired_behavior
+    attributes:
+      label: Desired behavior
+      description: What should it do instead? Include mockups or screenshots if helpful.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Nice to have
+        - Would be useful soon
+        - Important / blocking workflow
+    validations:
+      required: true

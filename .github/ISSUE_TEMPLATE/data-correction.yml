@@ -1,0 +1,51 @@
+name: Data Correction
+description: Report an error or outdated info in the regulation database
+title: "[Correction] "
+labels: ["data-contribution", "correction"]
+body:
+  - type: input
+    id: regulation_name
+    attributes:
+      label: Which regulation needs correction?
+      description: Name of the regulation as it appears on the dashboard
+    validations:
+      required: true
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: What needs to change?
+      options:
+        - Status update (e.g., proposed → effective)
+        - Name correction
+        - Jurisdiction correction
+        - Summary update
+        - Source link is broken
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current_value
+    attributes:
+      label: Current (incorrect) information
+      description: What the dashboard currently shows
+    validations:
+      required: true
+  - type: textarea
+    id: correct_value
+    attributes:
+      label: Correct information
+      description: What the dashboard should show instead
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source confirming the correction
+      description: Link to official source or news article
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
