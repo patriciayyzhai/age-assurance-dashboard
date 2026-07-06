@@ -8,7 +8,7 @@ import hashlib
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from config import (
-    NEWS_API_KEY, NEWS_API_BASE, NEWS_LOOKBACK_HOURS,
+    NEWS_API_KEY, OPENAI_API_KEY, NEWS_API_BASE, NEWS_LOOKBACK_HOURS,
     NEWS_LANGUAGE, NEWS_SORT_BY, NEWS_PAGE_SIZE,
     NEWS_KEYWORD_SETS, SEEN_URLS_FILE, load_json, save_json, now_iso,
 )
