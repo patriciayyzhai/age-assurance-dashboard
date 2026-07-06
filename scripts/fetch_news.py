@@ -93,6 +93,39 @@ def run() -> list[dict]:
         print("[fetch_news] Ensure the secret is set in GitHub Settings > Secrets and Variables > Actions")
         return []
 
+    # Format check: NewsAPI standard keys are 32-char hex (UUID-like)
+    if key_len != 32:
+        print(f"[fetch_news] WARNING: NewsAPI keys are normally 32 hex chars. Got {key_len}.")
+    if not all(c in '0123456789abcdefABCDEF' for c in NEWS_API_KEY):
+        non_hex = [c for c in NEWS_API_KEY if c not in '0123456789abcdefABCDEF']
+        print(f"[fetch_news] WARNING: key contains non-hex characters: {non_hex[:5]}{'...' if len(non_hex) > 5 else ''}")
+
+    # Live API test: verify key with cheapest endpoint (/sources) before main fetches
+    print("[fetch_news] Validating key with NewsAPI /sources endpoint...")
+    try:
+        test_resp = requests.get(
+            f"{NEWS_API_BASE}/sources",
+            params={"apiKey": NEWS_API_KEY, "language": NEWS_LANGUAGE},
+            timeout=15,
+        )
+        test_resp.raise_for_status()
+        test_data = test_resp.json()
+        if test_data.get("status") == "ok":
+            print(f"[fetch_news] ✓ Key valid — {len(test_data.get('sources', []))} sources accessible")
+        else:
+            print(f"[fetch_news] ✗ Key rejected: {test_data.get('message', 'unknown error')}")
+            return []
+    except requests.exceptions.HTTPError as e:
+        print(f"[fetch_news] ✗ API call FAILED: HTTP {e.response.status_code}")
+        try:
+            print(f"[fetch_news] Response: {e.response.text[:300]}")
+        except Exception:
+            pass
+        return []
+    except Exception as e:
+        print(f"[fetch_news] ✗ Connection error: {type(e).__name__}: {e}")
+        return []
+
     # Load seen URLs
     seen_data = load_json(SEEN_URLS_FILE) if SEEN_URLS_FILE.exists() else {
         "version": "1.0.0",
