@@ -5,26 +5,26 @@ Outputs a list of new, unique news articles for classification.
 
 import requests
 import hashlib
-from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from config import (
-    NEWS_API_KEY, OPENAI_API_KEY, NEWS_API_BASE, NEWS_LOOKBACK_HOURS,
-    NEWS_LANGUAGE, NEWS_SORT_BY, NEWS_PAGE_SIZE,
-    NEWS_KEYWORD_SETS, SEEN_URLS_FILE, load_json, save_json, now_iso,
+    NEWS_API_KEY, OPENAI_API_KEY, NEWS_API_BASE,
+    NEWS_PAGE_SIZE, NEWS_KEYWORD_SETS, SEEN_URLS_FILE,
+    load_json, save_json, now_iso,
 )
 
 
-def fetch_news_for_keyword(keyword_set: str, from_time: str) -> list[dict]:
-    """Fetch news articles from NewsAPI.org for a given keyword set."""
+def fetch_news_for_keyword(keyword_set: str) -> list[dict]:
+    """Fetch news articles from NewsAPI.org /top-headlines (free-plan compatible).
+
+    /top-headlines does NOT support date filtering (from/to), sortBy, or
+    language params — those are only available on paid /everything plans.
+    """
     params = {
         "q": keyword_set,
-        "from": from_time,
-        "language": NEWS_LANGUAGE,
-        "sortBy": NEWS_SORT_BY,
         "pageSize": NEWS_PAGE_SIZE,
         "apiKey": NEWS_API_KEY,
     }
-    resp = requests.get(f"{NEWS_API_BASE}/everything", params=params, timeout=30)
+    resp = requests.get(f"{NEWS_API_BASE}/top-headlines", params=params, timeout=30)
     resp.raise_for_status()
     data = resp.json()
     return data.get("articles", [])
@@ -100,18 +100,19 @@ def run() -> list[dict]:
         non_hex = [c for c in NEWS_API_KEY if c not in '0123456789abcdefABCDEF']
         print(f"[fetch_news] WARNING: key contains non-hex characters: {non_hex[:5]}{'...' if len(non_hex) > 5 else ''}")
 
-    # Live API test: verify key with cheapest endpoint (/sources) before main fetches
-    print("[fetch_news] Validating key with NewsAPI /sources endpoint...")
+    # Live API test: verify key with /top-headlines (works on free plan)
+    print("[fetch_news] Validating key with NewsAPI /top-headlines endpoint...")
     try:
         test_resp = requests.get(
-            f"{NEWS_API_BASE}/sources",
-            params={"apiKey": NEWS_API_KEY, "language": NEWS_LANGUAGE},
+            f"{NEWS_API_BASE}/top-headlines",
+            params={"apiKey": NEWS_API_KEY, "q": "technology", "pageSize": 1},
             timeout=15,
         )
         test_resp.raise_for_status()
         test_data = test_resp.json()
         if test_data.get("status") == "ok":
-            print(f"[fetch_news] ✓ Key valid — {len(test_data.get('sources', []))} sources accessible")
+            n = test_data.get("totalResults", 0)
+            print(f"[fetch_news] ✓ Key valid — top-headlines returned totalResults={n}")
         else:
             print(f"[fetch_news] ✗ Key rejected: {test_data.get('message', 'unknown error')}")
             return []
@@ -135,14 +136,11 @@ def run() -> list[dict]:
     }
     seen_urls = seen_data.get("urls", {})
 
-    # Calculate lookback time
-    from_time = (datetime.now(timezone.utc) - timedelta(hours=NEWS_LOOKBACK_HOURS)).strftime("%Y-%m-%dT%H:%M:%S")
-
     all_articles = []
     for keyword_set in NEWS_KEYWORD_SETS:
         print(f"[fetch_news] Fetching: {keyword_set}")
         try:
-            articles = fetch_news_for_keyword(keyword_set, from_time)
+            articles = fetch_news_for_keyword(keyword_set)
             all_articles.extend(articles)
             print(f"  → {len(articles)} articles")
         except Exception as e:
