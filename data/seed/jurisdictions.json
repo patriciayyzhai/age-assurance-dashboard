@@ -1,42 +1,1270 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2026-06-23T00:00:00Z",
+  "version": "2.0.0",
+  "last_updated": "2026-07-15T16:12:11Z",
   "jurisdictions": [
-    { "id": "AU", "name": "Australia", "parent_id": null, "iso_alpha2": "AU", "region": "Asia Pacific", "flag_emoji": "🇦🇺" },
-    { "id": "AT", "name": "Austria", "parent_id": null, "iso_alpha2": "AT", "region": "Europe", "flag_emoji": "🇦🇹" },
-    { "id": "BE", "name": "Belgium", "parent_id": null, "iso_alpha2": "BE", "region": "Europe", "flag_emoji": "🇧🇪" },
-    { "id": "BR", "name": "Brazil", "parent_id": null, "iso_alpha2": "BR", "region": "South America", "flag_emoji": "🇧🇷" },
-    { "id": "CA", "name": "Canada", "parent_id": null, "iso_alpha2": "CA", "region": "North America", "flag_emoji": "🇨🇦" },
-    { "id": "CN", "name": "China", "parent_id": null, "iso_alpha2": "CN", "region": "Asia Pacific", "flag_emoji": "🇨🇳" },
-    { "id": "DK", "name": "Denmark", "parent_id": null, "iso_alpha2": "DK", "region": "Europe", "flag_emoji": "🇩🇰" },
-    { "id": "EU", "name": "European Union", "parent_id": null, "iso_alpha2": "EU", "region": "Europe", "flag_emoji": "🇪🇺" },
-    { "id": "FR", "name": "France", "parent_id": null, "iso_alpha2": "FR", "region": "Europe", "flag_emoji": "🇫🇷" },
-    { "id": "DE", "name": "Germany", "parent_id": null, "iso_alpha2": "DE", "region": "Europe", "flag_emoji": "🇩🇪" },
-    { "id": "GB", "name": "United Kingdom", "parent_id": null, "iso_alpha2": "GB", "region": "Europe", "flag_emoji": "🇬🇧" },
-    { "id": "ID", "name": "Indonesia", "parent_id": null, "iso_alpha2": "ID", "region": "Asia Pacific", "flag_emoji": "🇮🇩" },
-    { "id": "IE", "name": "Ireland", "parent_id": null, "iso_alpha2": "IE", "region": "Europe", "flag_emoji": "🇮🇪" },
-    { "id": "IT", "name": "Italy", "parent_id": null, "iso_alpha2": "IT", "region": "Europe", "flag_emoji": "🇮🇹" },
-    { "id": "JP", "name": "Japan", "parent_id": null, "iso_alpha2": "JP", "region": "Asia Pacific", "flag_emoji": "🇯🇵" },
-    { "id": "KR", "name": "South Korea", "parent_id": null, "iso_alpha2": "KR", "region": "Asia Pacific", "flag_emoji": "🇰🇷" },
-    { "id": "MY", "name": "Malaysia", "parent_id": null, "iso_alpha2": "MY", "region": "Asia Pacific", "flag_emoji": "🇲🇾" },
-    { "id": "NL", "name": "Netherlands", "parent_id": null, "iso_alpha2": "NL", "region": "Europe", "flag_emoji": "🇳🇱" },
-    { "id": "NZ", "name": "New Zealand", "parent_id": null, "iso_alpha2": "NZ", "region": "Asia Pacific", "flag_emoji": "🇳🇿" },
-    { "id": "NO", "name": "Norway", "parent_id": null, "iso_alpha2": "NO", "region": "Europe", "flag_emoji": "🇳🇴" },
-    { "id": "PH", "name": "Philippines", "parent_id": null, "iso_alpha2": "PH", "region": "Asia Pacific", "flag_emoji": "🇵🇭" },
-    { "id": "SG", "name": "Singapore", "parent_id": null, "iso_alpha2": "SG", "region": "Asia Pacific", "flag_emoji": "🇸🇬" },
-    { "id": "ES", "name": "Spain", "parent_id": null, "iso_alpha2": "ES", "region": "Europe", "flag_emoji": "🇪🇸" },
-    { "id": "SE", "name": "Sweden", "parent_id": null, "iso_alpha2": "SE", "region": "Europe", "flag_emoji": "🇸🇪" },
-    { "id": "TW", "name": "Taiwan, China", "parent_id": null, "iso_alpha2": "TW", "region": "Asia Pacific", "flag_emoji": "🇨🇳" },
-    { "id": "US", "name": "United States", "parent_id": null, "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-CA", "name": "California", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-FL", "name": "Florida", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-TX", "name": "Texas", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-UT", "name": "Utah", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-AR", "name": "Arkansas", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-OH", "name": "Ohio", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-LA", "name": "Louisiana", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "US-MS", "name": "Mississippi", "parent_id": "US", "iso_alpha2": "US", "region": "North America", "flag_emoji": "🇺🇸" },
-    { "id": "IN", "name": "India", "parent_id": null, "iso_alpha2": "IN", "region": "Asia Pacific", "flag_emoji": "🇮🇳" },
-    { "id": "TR", "name": "Turkey", "parent_id": null, "iso_alpha2": "TR", "region": "Asia Pacific", "flag_emoji": "🇹🇷" }
+    {
+      "id": "DZ",
+      "name": "Algeria",
+      "parent_id": null,
+      "iso_alpha2": "DZ",
+      "region": "Africa",
+      "flag_emoji": "🇩🇿"
+    },
+    {
+      "id": "AO",
+      "name": "Angola",
+      "parent_id": null,
+      "iso_alpha2": "AO",
+      "region": "Africa",
+      "flag_emoji": "🇦🇴"
+    },
+    {
+      "id": "BJ",
+      "name": "Benin",
+      "parent_id": null,
+      "iso_alpha2": "BJ",
+      "region": "Africa",
+      "flag_emoji": "🇧🇯"
+    },
+    {
+      "id": "BW",
+      "name": "Botswana",
+      "parent_id": null,
+      "iso_alpha2": "BW",
+      "region": "Africa",
+      "flag_emoji": "🇧🇼"
+    },
+    {
+      "id": "BF",
+      "name": "Burkina Faso",
+      "parent_id": null,
+      "iso_alpha2": "BF",
+      "region": "Africa",
+      "flag_emoji": "🇧🇫"
+    },
+    {
+      "id": "CM",
+      "name": "Cameroon",
+      "parent_id": null,
+      "iso_alpha2": "CM",
+      "region": "Africa",
+      "flag_emoji": "🇨🇲"
+    },
+    {
+      "id": "CF",
+      "name": "Central African Republic",
+      "parent_id": null,
+      "iso_alpha2": "CF",
+      "region": "Africa",
+      "flag_emoji": "🇨🇫"
+    },
+    {
+      "id": "TD",
+      "name": "Chad",
+      "parent_id": null,
+      "iso_alpha2": "TD",
+      "region": "Africa",
+      "flag_emoji": "🇹🇩"
+    },
+    {
+      "id": "CG",
+      "name": "Congo",
+      "parent_id": null,
+      "iso_alpha2": "CG",
+      "region": "Africa",
+      "flag_emoji": "🇨🇬"
+    },
+    {
+      "id": "CD",
+      "name": "DR Congo",
+      "parent_id": null,
+      "iso_alpha2": "CD",
+      "region": "Africa",
+      "flag_emoji": "🇨🇩"
+    },
+    {
+      "id": "DJ",
+      "name": "Djibouti",
+      "parent_id": null,
+      "iso_alpha2": "DJ",
+      "region": "Africa",
+      "flag_emoji": "🇩🇯"
+    },
+    {
+      "id": "GQ",
+      "name": "Equatorial Guinea",
+      "parent_id": null,
+      "iso_alpha2": "GQ",
+      "region": "Africa",
+      "flag_emoji": "🇬🇶"
+    },
+    {
+      "id": "ER",
+      "name": "Eritrea",
+      "parent_id": null,
+      "iso_alpha2": "ER",
+      "region": "Africa",
+      "flag_emoji": "🇪🇷"
+    },
+    {
+      "id": "SZ",
+      "name": "Eswatini",
+      "parent_id": null,
+      "iso_alpha2": "SZ",
+      "region": "Africa",
+      "flag_emoji": "🇸🇿"
+    },
+    {
+      "id": "ET",
+      "name": "Ethiopia",
+      "parent_id": null,
+      "iso_alpha2": "ET",
+      "region": "Africa",
+      "flag_emoji": "🇪🇹"
+    },
+    {
+      "id": "GA",
+      "name": "Gabon",
+      "parent_id": null,
+      "iso_alpha2": "GA",
+      "region": "Africa",
+      "flag_emoji": "🇬🇦"
+    },
+    {
+      "id": "GH",
+      "name": "Ghana",
+      "parent_id": null,
+      "iso_alpha2": "GH",
+      "region": "Africa",
+      "flag_emoji": "🇬🇭"
+    },
+    {
+      "id": "GN",
+      "name": "Guinea",
+      "parent_id": null,
+      "iso_alpha2": "GN",
+      "region": "Africa",
+      "flag_emoji": "🇬🇳"
+    },
+    {
+      "id": "CI",
+      "name": "Ivory Coast",
+      "parent_id": null,
+      "iso_alpha2": "CI",
+      "region": "Africa",
+      "flag_emoji": "🇨🇮"
+    },
+    {
+      "id": "KE",
+      "name": "Kenya",
+      "parent_id": null,
+      "iso_alpha2": "KE",
+      "region": "Africa",
+      "flag_emoji": "🇰🇪"
+    },
+    {
+      "id": "LS",
+      "name": "Lesotho",
+      "parent_id": null,
+      "iso_alpha2": "LS",
+      "region": "Africa",
+      "flag_emoji": "🇱🇸"
+    },
+    {
+      "id": "LR",
+      "name": "Liberia",
+      "parent_id": null,
+      "iso_alpha2": "LR",
+      "region": "Africa",
+      "flag_emoji": "🇱🇷"
+    },
+    {
+      "id": "LY",
+      "name": "Libya",
+      "parent_id": null,
+      "iso_alpha2": "LY",
+      "region": "Africa",
+      "flag_emoji": "🇱🇾"
+    },
+    {
+      "id": "MG",
+      "name": "Madagascar",
+      "parent_id": null,
+      "iso_alpha2": "MG",
+      "region": "Africa",
+      "flag_emoji": "🇲🇬"
+    },
+    {
+      "id": "MW",
+      "name": "Malawi",
+      "parent_id": null,
+      "iso_alpha2": "MW",
+      "region": "Africa",
+      "flag_emoji": "🇲🇼"
+    },
+    {
+      "id": "ML",
+      "name": "Mali",
+      "parent_id": null,
+      "iso_alpha2": "ML",
+      "region": "Africa",
+      "flag_emoji": "🇲🇱"
+    },
+    {
+      "id": "MR",
+      "name": "Mauritania",
+      "parent_id": null,
+      "iso_alpha2": "MR",
+      "region": "Africa",
+      "flag_emoji": "🇲🇷"
+    },
+    {
+      "id": "MU",
+      "name": "Mauritius",
+      "parent_id": null,
+      "iso_alpha2": "MU",
+      "region": "Africa",
+      "flag_emoji": "🇲🇺"
+    },
+    {
+      "id": "MA",
+      "name": "Morocco",
+      "parent_id": null,
+      "iso_alpha2": "MA",
+      "region": "Africa",
+      "flag_emoji": "🇲🇦"
+    },
+    {
+      "id": "MZ",
+      "name": "Mozambique",
+      "parent_id": null,
+      "iso_alpha2": "MZ",
+      "region": "Africa",
+      "flag_emoji": "🇲🇿"
+    },
+    {
+      "id": "NA",
+      "name": "Namibia",
+      "parent_id": null,
+      "iso_alpha2": "NA",
+      "region": "Africa",
+      "flag_emoji": "🇳🇦"
+    },
+    {
+      "id": "NE",
+      "name": "Niger",
+      "parent_id": null,
+      "iso_alpha2": "NE",
+      "region": "Africa",
+      "flag_emoji": "🇳🇪"
+    },
+    {
+      "id": "NG",
+      "name": "Nigeria",
+      "parent_id": null,
+      "iso_alpha2": "NG",
+      "region": "Africa",
+      "flag_emoji": "🇳🇬"
+    },
+    {
+      "id": "RW",
+      "name": "Rwanda",
+      "parent_id": null,
+      "iso_alpha2": "RW",
+      "region": "Africa",
+      "flag_emoji": "🇷🇼"
+    },
+    {
+      "id": "SN",
+      "name": "Senegal",
+      "parent_id": null,
+      "iso_alpha2": "SN",
+      "region": "Africa",
+      "flag_emoji": "🇸🇳"
+    },
+    {
+      "id": "SL",
+      "name": "Sierra Leone",
+      "parent_id": null,
+      "iso_alpha2": "SL",
+      "region": "Africa",
+      "flag_emoji": "🇸🇱"
+    },
+    {
+      "id": "SO",
+      "name": "Somalia",
+      "parent_id": null,
+      "iso_alpha2": "SO",
+      "region": "Africa",
+      "flag_emoji": "🇸🇴"
+    },
+    {
+      "id": "ZA",
+      "name": "South Africa",
+      "parent_id": null,
+      "iso_alpha2": "ZA",
+      "region": "Africa",
+      "flag_emoji": "🇿🇦"
+    },
+    {
+      "id": "SS",
+      "name": "South Sudan",
+      "parent_id": null,
+      "iso_alpha2": "SS",
+      "region": "Africa",
+      "flag_emoji": "🇸🇸"
+    },
+    {
+      "id": "SD",
+      "name": "Sudan",
+      "parent_id": null,
+      "iso_alpha2": "SD",
+      "region": "Africa",
+      "flag_emoji": "🇸🇩"
+    },
+    {
+      "id": "TZ",
+      "name": "Tanzania",
+      "parent_id": null,
+      "iso_alpha2": "TZ",
+      "region": "Africa",
+      "flag_emoji": "🇹🇿"
+    },
+    {
+      "id": "TG",
+      "name": "Togo",
+      "parent_id": null,
+      "iso_alpha2": "TG",
+      "region": "Africa",
+      "flag_emoji": "🇹🇬"
+    },
+    {
+      "id": "TN",
+      "name": "Tunisia",
+      "parent_id": null,
+      "iso_alpha2": "TN",
+      "region": "Africa",
+      "flag_emoji": "🇹🇳"
+    },
+    {
+      "id": "UG",
+      "name": "Uganda",
+      "parent_id": null,
+      "iso_alpha2": "UG",
+      "region": "Africa",
+      "flag_emoji": "🇺🇬"
+    },
+    {
+      "id": "ZM",
+      "name": "Zambia",
+      "parent_id": null,
+      "iso_alpha2": "ZM",
+      "region": "Africa",
+      "flag_emoji": "🇿🇲"
+    },
+    {
+      "id": "ZW",
+      "name": "Zimbabwe",
+      "parent_id": null,
+      "iso_alpha2": "ZW",
+      "region": "Africa",
+      "flag_emoji": "🇿🇼"
+    },
+    {
+      "id": "AF",
+      "name": "Afghanistan",
+      "parent_id": null,
+      "iso_alpha2": "AF",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇦🇫"
+    },
+    {
+      "id": "AU",
+      "name": "Australia",
+      "parent_id": null,
+      "iso_alpha2": "AU",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇦🇺"
+    },
+    {
+      "id": "AZ",
+      "name": "Azerbaijan",
+      "parent_id": null,
+      "iso_alpha2": "AZ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇦🇿"
+    },
+    {
+      "id": "BD",
+      "name": "Bangladesh",
+      "parent_id": null,
+      "iso_alpha2": "BD",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇧🇩"
+    },
+    {
+      "id": "BT",
+      "name": "Bhutan",
+      "parent_id": null,
+      "iso_alpha2": "BT",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇧🇹"
+    },
+    {
+      "id": "BN",
+      "name": "Brunei",
+      "parent_id": null,
+      "iso_alpha2": "BN",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇧🇳"
+    },
+    {
+      "id": "KH",
+      "name": "Cambodia",
+      "parent_id": null,
+      "iso_alpha2": "KH",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇰🇭"
+    },
+    {
+      "id": "FJ",
+      "name": "Fiji",
+      "parent_id": null,
+      "iso_alpha2": "FJ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇫🇯"
+    },
+    {
+      "id": "IN",
+      "name": "India",
+      "parent_id": null,
+      "iso_alpha2": "IN",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇮🇳"
+    },
+    {
+      "id": "ID",
+      "name": "Indonesia",
+      "parent_id": null,
+      "iso_alpha2": "ID",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇮🇩"
+    },
+    {
+      "id": "JP",
+      "name": "Japan",
+      "parent_id": null,
+      "iso_alpha2": "JP",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇯🇵"
+    },
+    {
+      "id": "KZ",
+      "name": "Kazakhstan",
+      "parent_id": null,
+      "iso_alpha2": "KZ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇰🇿"
+    },
+    {
+      "id": "KG",
+      "name": "Kyrgyzstan",
+      "parent_id": null,
+      "iso_alpha2": "KG",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇰🇬"
+    },
+    {
+      "id": "LA",
+      "name": "Laos",
+      "parent_id": null,
+      "iso_alpha2": "LA",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇱🇦"
+    },
+    {
+      "id": "MY",
+      "name": "Malaysia",
+      "parent_id": null,
+      "iso_alpha2": "MY",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇲🇾"
+    },
+    {
+      "id": "MN",
+      "name": "Mongolia",
+      "parent_id": null,
+      "iso_alpha2": "MN",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇲🇳"
+    },
+    {
+      "id": "MM",
+      "name": "Myanmar",
+      "parent_id": null,
+      "iso_alpha2": "MM",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇲🇲"
+    },
+    {
+      "id": "NP",
+      "name": "Nepal",
+      "parent_id": null,
+      "iso_alpha2": "NP",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇳🇵"
+    },
+    {
+      "id": "NZ",
+      "name": "New Zealand",
+      "parent_id": null,
+      "iso_alpha2": "NZ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇳🇿"
+    },
+    {
+      "id": "KP",
+      "name": "North Korea",
+      "parent_id": null,
+      "iso_alpha2": "KP",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇰🇵"
+    },
+    {
+      "id": "PK",
+      "name": "Pakistan",
+      "parent_id": null,
+      "iso_alpha2": "PK",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇵🇰"
+    },
+    {
+      "id": "PG",
+      "name": "Papua New Guinea",
+      "parent_id": null,
+      "iso_alpha2": "PG",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇵🇬"
+    },
+    {
+      "id": "PH",
+      "name": "Philippines",
+      "parent_id": null,
+      "iso_alpha2": "PH",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇵🇭"
+    },
+    {
+      "id": "SG",
+      "name": "Singapore",
+      "parent_id": null,
+      "iso_alpha2": "SG",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇸🇬"
+    },
+    {
+      "id": "KR",
+      "name": "South Korea",
+      "parent_id": null,
+      "iso_alpha2": "KR",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇰🇷"
+    },
+    {
+      "id": "LK",
+      "name": "Sri Lanka",
+      "parent_id": null,
+      "iso_alpha2": "LK",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇱🇰"
+    },
+    {
+      "id": "TJ",
+      "name": "Tajikistan",
+      "parent_id": null,
+      "iso_alpha2": "TJ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇹🇯"
+    },
+    {
+      "id": "TH",
+      "name": "Thailand",
+      "parent_id": null,
+      "iso_alpha2": "TH",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇹🇭"
+    },
+    {
+      "id": "TL",
+      "name": "Timor-Leste",
+      "parent_id": null,
+      "iso_alpha2": "TL",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇹🇱"
+    },
+    {
+      "id": "TM",
+      "name": "Turkmenistan",
+      "parent_id": null,
+      "iso_alpha2": "TM",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇹🇲"
+    },
+    {
+      "id": "UZ",
+      "name": "Uzbekistan",
+      "parent_id": null,
+      "iso_alpha2": "UZ",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇺🇿"
+    },
+    {
+      "id": "VN",
+      "name": "Vietnam",
+      "parent_id": null,
+      "iso_alpha2": "VN",
+      "region": "Asia Pacific",
+      "flag_emoji": "🇻🇳"
+    },
+    {
+      "id": "AL",
+      "name": "Albania",
+      "parent_id": null,
+      "iso_alpha2": "AL",
+      "region": "Europe",
+      "flag_emoji": "🇦🇱"
+    },
+    {
+      "id": "AD",
+      "name": "Andorra",
+      "parent_id": null,
+      "iso_alpha2": "AD",
+      "region": "Europe",
+      "flag_emoji": "🇦🇩"
+    },
+    {
+      "id": "AM",
+      "name": "Armenia",
+      "parent_id": null,
+      "iso_alpha2": "AM",
+      "region": "Europe",
+      "flag_emoji": "🇦🇲"
+    },
+    {
+      "id": "AT",
+      "name": "Austria",
+      "parent_id": null,
+      "iso_alpha2": "AT",
+      "region": "Europe",
+      "flag_emoji": "🇦🇹"
+    },
+    {
+      "id": "BY",
+      "name": "Belarus",
+      "parent_id": null,
+      "iso_alpha2": "BY",
+      "region": "Europe",
+      "flag_emoji": "🇧🇾"
+    },
+    {
+      "id": "BA",
+      "name": "Bosnia and Herzegovina",
+      "parent_id": null,
+      "iso_alpha2": "BA",
+      "region": "Europe",
+      "flag_emoji": "🇧🇦"
+    },
+    {
+      "id": "BG",
+      "name": "Bulgaria",
+      "parent_id": null,
+      "iso_alpha2": "BG",
+      "region": "Europe",
+      "flag_emoji": "🇧🇬"
+    },
+    {
+      "id": "HR",
+      "name": "Croatia",
+      "parent_id": null,
+      "iso_alpha2": "HR",
+      "region": "Europe",
+      "flag_emoji": "🇭🇷"
+    },
+    {
+      "id": "CZ",
+      "name": "Czech Republic",
+      "parent_id": null,
+      "iso_alpha2": "CZ",
+      "region": "Europe",
+      "flag_emoji": "🇨🇿"
+    },
+    {
+      "id": "DK",
+      "name": "Denmark",
+      "parent_id": null,
+      "iso_alpha2": "DK",
+      "region": "Europe",
+      "flag_emoji": "🇩🇰"
+    },
+    {
+      "id": "FI",
+      "name": "Finland",
+      "parent_id": null,
+      "iso_alpha2": "FI",
+      "region": "Europe",
+      "flag_emoji": "🇫🇮"
+    },
+    {
+      "id": "FR",
+      "name": "France",
+      "parent_id": null,
+      "iso_alpha2": "FR",
+      "region": "Europe",
+      "flag_emoji": "🇫🇷"
+    },
+    {
+      "id": "GE",
+      "name": "Georgia",
+      "parent_id": null,
+      "iso_alpha2": "GE",
+      "region": "Europe",
+      "flag_emoji": "🇬🇪"
+    },
+    {
+      "id": "DE",
+      "name": "Germany",
+      "parent_id": null,
+      "iso_alpha2": "DE",
+      "region": "Europe",
+      "flag_emoji": "🇩🇪"
+    },
+    {
+      "id": "GR",
+      "name": "Greece",
+      "parent_id": null,
+      "iso_alpha2": "GR",
+      "region": "Europe",
+      "flag_emoji": "🇬🇷"
+    },
+    {
+      "id": "HU",
+      "name": "Hungary",
+      "parent_id": null,
+      "iso_alpha2": "HU",
+      "region": "Europe",
+      "flag_emoji": "🇭🇺"
+    },
+    {
+      "id": "IS",
+      "name": "Iceland",
+      "parent_id": null,
+      "iso_alpha2": "IS",
+      "region": "Europe",
+      "flag_emoji": "🇮🇸"
+    },
+    {
+      "id": "IE",
+      "name": "Ireland",
+      "parent_id": null,
+      "iso_alpha2": "IE",
+      "region": "Europe",
+      "flag_emoji": "🇮🇪"
+    },
+    {
+      "id": "IT",
+      "name": "Italy",
+      "parent_id": null,
+      "iso_alpha2": "IT",
+      "region": "Europe",
+      "flag_emoji": "🇮🇹"
+    },
+    {
+      "id": "LI",
+      "name": "Liechtenstein",
+      "parent_id": null,
+      "iso_alpha2": "LI",
+      "region": "Europe",
+      "flag_emoji": "🇱🇮"
+    },
+    {
+      "id": "LT",
+      "name": "Lithuania",
+      "parent_id": null,
+      "iso_alpha2": "LT",
+      "region": "Europe",
+      "flag_emoji": "🇱🇹"
+    },
+    {
+      "id": "MK",
+      "name": "Macedonia",
+      "parent_id": null,
+      "iso_alpha2": "MK",
+      "region": "Europe",
+      "flag_emoji": "🇲🇰"
+    },
+    {
+      "id": "MD",
+      "name": "Moldova",
+      "parent_id": null,
+      "iso_alpha2": "MD",
+      "region": "Europe",
+      "flag_emoji": "🇲🇩"
+    },
+    {
+      "id": "ME",
+      "name": "Montenegro",
+      "parent_id": null,
+      "iso_alpha2": "ME",
+      "region": "Europe",
+      "flag_emoji": "🇲🇪"
+    },
+    {
+      "id": "NL",
+      "name": "Netherlands",
+      "parent_id": null,
+      "iso_alpha2": "NL",
+      "region": "Europe",
+      "flag_emoji": "🇳🇱"
+    },
+    {
+      "id": "NO",
+      "name": "Norway",
+      "parent_id": null,
+      "iso_alpha2": "NO",
+      "region": "Europe",
+      "flag_emoji": "🇳🇴"
+    },
+    {
+      "id": "PL",
+      "name": "Poland",
+      "parent_id": null,
+      "iso_alpha2": "PL",
+      "region": "Europe",
+      "flag_emoji": "🇵🇱"
+    },
+    {
+      "id": "PT",
+      "name": "Portugal",
+      "parent_id": null,
+      "iso_alpha2": "PT",
+      "region": "Europe",
+      "flag_emoji": "🇵🇹"
+    },
+    {
+      "id": "RO",
+      "name": "Romania",
+      "parent_id": null,
+      "iso_alpha2": "RO",
+      "region": "Europe",
+      "flag_emoji": "🇷🇴"
+    },
+    {
+      "id": "RU",
+      "name": "Russia",
+      "parent_id": null,
+      "iso_alpha2": "RU",
+      "region": "Europe",
+      "flag_emoji": "🇷🇺"
+    },
+    {
+      "id": "RS",
+      "name": "Serbia",
+      "parent_id": null,
+      "iso_alpha2": "RS",
+      "region": "Europe",
+      "flag_emoji": "🇷🇸"
+    },
+    {
+      "id": "SK",
+      "name": "Slovakia",
+      "parent_id": null,
+      "iso_alpha2": "SK",
+      "region": "Europe",
+      "flag_emoji": "🇸🇰"
+    },
+    {
+      "id": "ES",
+      "name": "Spain",
+      "parent_id": null,
+      "iso_alpha2": "ES",
+      "region": "Europe",
+      "flag_emoji": "🇪🇸"
+    },
+    {
+      "id": "SE",
+      "name": "Sweden",
+      "parent_id": null,
+      "iso_alpha2": "SE",
+      "region": "Europe",
+      "flag_emoji": "🇸🇪"
+    },
+    {
+      "id": "CH",
+      "name": "Switzerland",
+      "parent_id": null,
+      "iso_alpha2": "CH",
+      "region": "Europe",
+      "flag_emoji": "🇨🇭"
+    },
+    {
+      "id": "UA",
+      "name": "Ukraine",
+      "parent_id": null,
+      "iso_alpha2": "UA",
+      "region": "Europe",
+      "flag_emoji": "🇺🇦"
+    },
+    {
+      "id": "GB",
+      "name": "United Kingdom",
+      "parent_id": null,
+      "iso_alpha2": "GB",
+      "region": "Europe",
+      "flag_emoji": "🇬🇧"
+    },
+    {
+      "id": "BH",
+      "name": "Bahrain",
+      "parent_id": null,
+      "iso_alpha2": "BH",
+      "region": "Middle East",
+      "flag_emoji": "🇧🇭"
+    },
+    {
+      "id": "EG",
+      "name": "Egypt",
+      "parent_id": null,
+      "iso_alpha2": "EG",
+      "region": "Middle East",
+      "flag_emoji": "🇪🇬"
+    },
+    {
+      "id": "IR",
+      "name": "Iran",
+      "parent_id": null,
+      "iso_alpha2": "IR",
+      "region": "Middle East",
+      "flag_emoji": "🇮🇷"
+    },
+    {
+      "id": "IQ",
+      "name": "Iraq",
+      "parent_id": null,
+      "iso_alpha2": "IQ",
+      "region": "Middle East",
+      "flag_emoji": "🇮🇶"
+    },
+    {
+      "id": "IL",
+      "name": "Israel",
+      "parent_id": null,
+      "iso_alpha2": "IL",
+      "region": "Middle East",
+      "flag_emoji": "🇮🇱"
+    },
+    {
+      "id": "JO",
+      "name": "Jordan",
+      "parent_id": null,
+      "iso_alpha2": "JO",
+      "region": "Middle East",
+      "flag_emoji": "🇯🇴"
+    },
+    {
+      "id": "KW",
+      "name": "Kuwait",
+      "parent_id": null,
+      "iso_alpha2": "KW",
+      "region": "Middle East",
+      "flag_emoji": "🇰🇼"
+    },
+    {
+      "id": "LB",
+      "name": "Lebanon",
+      "parent_id": null,
+      "iso_alpha2": "LB",
+      "region": "Middle East",
+      "flag_emoji": "🇱🇧"
+    },
+    {
+      "id": "OM",
+      "name": "Oman",
+      "parent_id": null,
+      "iso_alpha2": "OM",
+      "region": "Middle East",
+      "flag_emoji": "🇴🇲"
+    },
+    {
+      "id": "QA",
+      "name": "Qatar",
+      "parent_id": null,
+      "iso_alpha2": "QA",
+      "region": "Middle East",
+      "flag_emoji": "🇶🇦"
+    },
+    {
+      "id": "SA",
+      "name": "Saudi Arabia",
+      "parent_id": null,
+      "iso_alpha2": "SA",
+      "region": "Middle East",
+      "flag_emoji": "🇸🇦"
+    },
+    {
+      "id": "SY",
+      "name": "Syria",
+      "parent_id": null,
+      "iso_alpha2": "SY",
+      "region": "Middle East",
+      "flag_emoji": "🇸🇾"
+    },
+    {
+      "id": "TR",
+      "name": "Turkey",
+      "parent_id": null,
+      "iso_alpha2": "TR",
+      "region": "Middle East",
+      "flag_emoji": "🇹🇷"
+    },
+    {
+      "id": "AE",
+      "name": "United Arab Emirates",
+      "parent_id": null,
+      "iso_alpha2": "AE",
+      "region": "Middle East",
+      "flag_emoji": "🇦🇪"
+    },
+    {
+      "id": "YE",
+      "name": "Yemen",
+      "parent_id": null,
+      "iso_alpha2": "YE",
+      "region": "Middle East",
+      "flag_emoji": "🇾🇪"
+    },
+    {
+      "id": "BB",
+      "name": "Barbados",
+      "parent_id": null,
+      "iso_alpha2": "BB",
+      "region": "North America",
+      "flag_emoji": "🇧🇧"
+    },
+    {
+      "id": "BZ",
+      "name": "Belize",
+      "parent_id": null,
+      "iso_alpha2": "BZ",
+      "region": "North America",
+      "flag_emoji": "🇧🇿"
+    },
+    {
+      "id": "CA",
+      "name": "Canada",
+      "parent_id": null,
+      "iso_alpha2": "CA",
+      "region": "North America",
+      "flag_emoji": "🇨🇦"
+    },
+    {
+      "id": "CR",
+      "name": "Costa Rica",
+      "parent_id": null,
+      "iso_alpha2": "CR",
+      "region": "North America",
+      "flag_emoji": "🇨🇷"
+    },
+    {
+      "id": "CU",
+      "name": "Cuba",
+      "parent_id": null,
+      "iso_alpha2": "CU",
+      "region": "North America",
+      "flag_emoji": "🇨🇺"
+    },
+    {
+      "id": "DO",
+      "name": "Dominican Republic",
+      "parent_id": null,
+      "iso_alpha2": "DO",
+      "region": "North America",
+      "flag_emoji": "🇩🇴"
+    },
+    {
+      "id": "SV",
+      "name": "El Salvador",
+      "parent_id": null,
+      "iso_alpha2": "SV",
+      "region": "North America",
+      "flag_emoji": "🇸🇻"
+    },
+    {
+      "id": "GL",
+      "name": "Greenland",
+      "parent_id": null,
+      "iso_alpha2": "GL",
+      "region": "North America",
+      "flag_emoji": "🇬🇱"
+    },
+    {
+      "id": "GT",
+      "name": "Guatemala",
+      "parent_id": null,
+      "iso_alpha2": "GT",
+      "region": "North America",
+      "flag_emoji": "🇬🇹"
+    },
+    {
+      "id": "HN",
+      "name": "Honduras",
+      "parent_id": null,
+      "iso_alpha2": "HN",
+      "region": "North America",
+      "flag_emoji": "🇭🇳"
+    },
+    {
+      "id": "JM",
+      "name": "Jamaica",
+      "parent_id": null,
+      "iso_alpha2": "JM",
+      "region": "North America",
+      "flag_emoji": "🇯🇲"
+    },
+    {
+      "id": "MX",
+      "name": "Mexico",
+      "parent_id": null,
+      "iso_alpha2": "MX",
+      "region": "North America",
+      "flag_emoji": "🇲🇽"
+    },
+    {
+      "id": "NI",
+      "name": "Nicaragua",
+      "parent_id": null,
+      "iso_alpha2": "NI",
+      "region": "North America",
+      "flag_emoji": "🇳🇮"
+    },
+    {
+      "id": "PA",
+      "name": "Panama",
+      "parent_id": null,
+      "iso_alpha2": "PA",
+      "region": "North America",
+      "flag_emoji": "🇵🇦"
+    },
+    {
+      "id": "TT",
+      "name": "Trinidad and Tobago",
+      "parent_id": null,
+      "iso_alpha2": "TT",
+      "region": "North America",
+      "flag_emoji": "🇹🇹"
+    },
+    {
+      "id": "US",
+      "name": "United States",
+      "parent_id": null,
+      "iso_alpha2": "US",
+      "region": "North America",
+      "flag_emoji": "🇺🇸"
+    },
+    {
+      "id": "AR",
+      "name": "Argentina",
+      "parent_id": null,
+      "iso_alpha2": "AR",
+      "region": "South America",
+      "flag_emoji": "🇦🇷"
+    },
+    {
+      "id": "BO",
+      "name": "Bolivia",
+      "parent_id": null,
+      "iso_alpha2": "BO",
+      "region": "South America",
+      "flag_emoji": "🇧🇴"
+    },
+    {
+      "id": "BR",
+      "name": "Brazil",
+      "parent_id": null,
+      "iso_alpha2": "BR",
+      "region": "South America",
+      "flag_emoji": "🇧🇷"
+    },
+    {
+      "id": "CL",
+      "name": "Chile",
+      "parent_id": null,
+      "iso_alpha2": "CL",
+      "region": "South America",
+      "flag_emoji": "🇨🇱"
+    },
+    {
+      "id": "CO",
+      "name": "Colombia",
+      "parent_id": null,
+      "iso_alpha2": "CO",
+      "region": "South America",
+      "flag_emoji": "🇨🇴"
+    },
+    {
+      "id": "EC",
+      "name": "Ecuador",
+      "parent_id": null,
+      "iso_alpha2": "EC",
+      "region": "South America",
+      "flag_emoji": "🇪🇨"
+    },
+    {
+      "id": "GY",
+      "name": "Guyana",
+      "parent_id": null,
+      "iso_alpha2": "GY",
+      "region": "South America",
+      "flag_emoji": "🇬🇾"
+    },
+    {
+      "id": "PY",
+      "name": "Paraguay",
+      "parent_id": null,
+      "iso_alpha2": "PY",
+      "region": "South America",
+      "flag_emoji": "🇵🇾"
+    },
+    {
+      "id": "PE",
+      "name": "Peru",
+      "parent_id": null,
+      "iso_alpha2": "PE",
+      "region": "South America",
+      "flag_emoji": "🇵🇪"
+    },
+    {
+      "id": "SR",
+      "name": "Suriname",
+      "parent_id": null,
+      "iso_alpha2": "SR",
+      "region": "South America",
+      "flag_emoji": "🇸🇷"
+    },
+    {
+      "id": "UY",
+      "name": "Uruguay",
+      "parent_id": null,
+      "iso_alpha2": "UY",
+      "region": "South America",
+      "flag_emoji": "🇺🇾"
+    },
+    {
+      "id": "VE",
+      "name": "Venezuela",
+      "parent_id": null,
+      "iso_alpha2": "VE",
+      "region": "South America",
+      "flag_emoji": "🇻🇪"
+    }
   ]
 }

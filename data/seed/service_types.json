@@ -8,8 +8,7 @@
     { "id": "direct_messaging", "label": "Direct Messaging", "description": "Instant messaging, chat apps, private communication tools" },
     { "id": "app_store", "label": "App Store", "description": "Application distribution platforms and stores" },
     { "id": "os_provider", "label": "OS Provider", "description": "Operating system providers with age-gate functionality" },
-    { "id": "adult_content", "label": "Adult Content", "description": "Platforms with adult-oriented content" },
-    { "id": "pornography", "label": "Pornography", "description": "Pornographic and sexually explicit content platforms" },
+    { "id": "adult_content", "label": "Adult Content", "description": "Platforms with adult-oriented content, including pornographic and sexually explicit material" },
     { "id": "online_marketplace", "label": "Online Marketplace", "description": "E-commerce and online marketplaces" },
     { "id": "streaming", "label": "Streaming", "description": "Video streaming, live streaming platforms" },
     { "id": "other", "label": "Other", "description": "Other online services not categorized above" }

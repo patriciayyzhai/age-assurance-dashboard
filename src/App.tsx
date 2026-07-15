@@ -37,10 +37,10 @@ function Header() {
             <span className="text-2xl">🛡️</span>
             <div>
               <h1 className="text-lg font-bold text-slate-900 leading-tight">
-                Age Assurance Regulation Dashboard
+                Trust &amp; Safety Priorities Dashboard
               </h1>
               <p className="text-xs text-slate-500 leading-tight">
-                Tracking global regulatory developments
+                Global regulatory severity, China sentiment &amp; key obligations · H1 2026
               </p>
             </div>
           </div>
@@ -88,10 +88,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-slate-500">
           <p>
-            Age Assurance Regulation Dashboard — Automated regulatory intelligence
+            Trust &amp; Safety Priorities Dashboard — Global regulatory intelligence
           </p>
           <p>
-            Data auto-updated daily at 9:00 AM SGT via GitHub Actions
+            158 markets · Regulatory severity, China sentiment &amp; key obligations (H1 2026)
           </p>
         </div>
       </div>

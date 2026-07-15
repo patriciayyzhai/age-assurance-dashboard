@@ -20,6 +20,7 @@ OVERRIDES_FILE = DATA_DIR / "overrides.json"
 SEEN_URLS_FILE = DATA_DIR / "seen_urls.json"
 NEWS_ITEMS_FILE = DATA_DIR / "news_items.json"
 JURISDICTIONS_FILE = SEED_DIR / "jurisdictions.json"
+MARKETS_FILE = DATA_DIR / "markets.json"
 SERVICE_TYPES_FILE = SEED_DIR / "service_types.json"
 MERGED_FILE = PUBLIC_DATA_DIR / "merged.json"
 

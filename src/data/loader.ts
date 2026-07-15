@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { MergedData, FilterState, Regulation, ServiceTypeId } from '../types'
-import { STATUS_META } from '../types'
+import type {
+  MergedData, FilterState, Market, ServiceTypeId,
+  CountryRiskScore, HeatmapMetric,
+} from '../types'
+import { STATUS_META, bandFromScore } from '../types'
 
 // --- Data Loading ---
 
@@ -20,87 +23,63 @@ export const DEFAULT_FILTERS: FilterState = {
   jurisdiction_ids: [],
   service_type_ids: [],
   obligation_types: [],
-  year_range: null,
+  severity_bands: [],
+  regions: [],
 }
 
-export function filterRegulations(
-  regulations: Regulation[],
-  filters: FilterState
-): Regulation[] {
-  return regulations.filter((reg) => {
-    // Search
+export function filterMarkets(
+  markets: Market[],
+  filters: FilterState,
+  jurisdictions: { id: string; region: string }[],
+): Market[] {
+  const regionOf = new Map(jurisdictions.map((j) => [j.id, j.region]))
+  return markets.filter((m) => {
     if (filters.search) {
-      const search = filters.search.toLowerCase()
-      const matchesSearch =
-        reg.name.toLowerCase().includes(search) ||
-        reg.summary.toLowerCase().includes(search) ||
-        reg.jurisdiction_id.toLowerCase().includes(search)
-      if (!matchesSearch) return false
+      const s = filters.search.toLowerCase()
+      const hit =
+        m.country.toLowerCase().includes(s) ||
+        m.assessment_note.toLowerCase().includes(s) ||
+        m.regulatory_status_label.toLowerCase().includes(s) ||
+        m.jurisdiction_id.toLowerCase().includes(s)
+      if (!hit) return false
     }
-
-    // Status filter
-    if (filters.statuses.length > 0 && !filters.statuses.includes(reg.status)) {
-      return false
+    if (filters.statuses.length && !filters.statuses.includes(m.regulatory_status)) return false
+    if (filters.jurisdiction_ids.length && !filters.jurisdiction_ids.includes(m.jurisdiction_id)) return false
+    if (filters.service_type_ids.length &&
+        !m.service_type_ids.some((st) => filters.service_type_ids.includes(st))) return false
+    if (filters.obligation_types.length &&
+        !m.obligation_ids.some((o) => filters.obligation_types.includes(o))) return false
+    if (filters.severity_bands.length &&
+        !filters.severity_bands.includes(m.regulatory_severity_band)) return false
+    if (filters.regions.length) {
+      const region = regionOf.get(m.jurisdiction_id)
+      if (!region || !filters.regions.includes(region)) return false
     }
-
-    // Jurisdiction filter
-    if (filters.jurisdiction_ids.length > 0) {
-      // Check direct match or parent match
-      const matches = filters.jurisdiction_ids.some(
-        (jid) => reg.jurisdiction_id === jid || reg.jurisdiction_id.startsWith(jid + '-')
-      )
-      if (!matches) return false
-    }
-
-    // Service type filter
-    if (filters.service_type_ids.length > 0) {
-      const matches = reg.service_type_ids.some((stid) =>
-        filters.service_type_ids.includes(stid)
-      )
-      if (!matches) return false
-    }
-
-    // Obligation type filter
-    if (filters.obligation_types.length > 0) {
-      const matches = reg.obligations.some((obl) =>
-        filters.obligation_types.includes(obl.type)
-      )
-      if (!matches) return false
-    }
-
-    // Year range filter
-    if (filters.year_range) {
-      const [min, max] = filters.year_range
-      if (reg.year < min || reg.year > max) return false
-    }
-
     return true
   })
 }
 
-export function sortRegulations(
-  regulations: Regulation[],
-  sortBy: 'name' | 'jurisdiction' | 'status' | 'year' | 'obligations',
-  sortOrder: 'asc' | 'desc'
-): Regulation[] {
-  const sorted = [...regulations].sort((a, b) => {
+export type MarketSortKey =
+  | 'country' | 'status' | 'regulatory_severity' | 'china_sentiment' | 'obligations'
+
+export function sortMarkets(
+  markets: Market[],
+  sortBy: MarketSortKey,
+  sortOrder: 'asc' | 'desc',
+): Market[] {
+  const sorted = [...markets].sort((a, b) => {
     let cmp = 0
     switch (sortBy) {
-      case 'name':
-        cmp = a.name.localeCompare(b.name)
-        break
-      case 'jurisdiction':
-        cmp = a.jurisdiction_id.localeCompare(b.jurisdiction_id)
-        break
+      case 'country':
+        cmp = a.country.localeCompare(b.country); break
       case 'status':
-        cmp = STATUS_META[a.status].order - STATUS_META[b.status].order
-        break
-      case 'year':
-        cmp = a.year - b.year
-        break
+        cmp = STATUS_META[a.regulatory_status].order - STATUS_META[b.regulatory_status].order; break
+      case 'regulatory_severity':
+        cmp = a.regulatory_severity - b.regulatory_severity; break
+      case 'china_sentiment':
+        cmp = a.china_sentiment - b.china_sentiment; break
       case 'obligations':
-        cmp = a.obligations.length - b.obligations.length
-        break
+        cmp = a.obligation_ids.length - b.obligation_ids.length; break
     }
     return sortOrder === 'asc' ? cmp : -cmp
   })
@@ -109,107 +88,36 @@ export function sortRegulations(
 
 // --- Heatmap Utilities ---
 
-export interface CountryRiskScore {
-  jurisdiction_id: string
-  country_name: string
-  iso_alpha2: string
-  risk_score: number
-  regulation_count: number
-  total_obligations: number
-  sub_national_breakdown?: {
-    jurisdiction_id: string
-    name: string
-    risk_score: number
-    regulation_count: number
-  }[]
-}
-
+// Drive the heatmap directly from the spreadsheet's 0-100 scores.
+// `metric` selects regulatory severity vs China sentiment.
+// An optional service-type filter narrows to markets whose scope includes it.
 export function calculateRiskScores(
-  regulations: Regulation[],
-  jurisdictions: { id: string; name: string; iso_alpha2: string; parent_id: string | null }[],
-  serviceTypeFilter: ServiceTypeId | 'all'
+  markets: Market[],
+  metric: HeatmapMetric,
+  serviceTypeFilter: ServiceTypeId | 'all',
 ): CountryRiskScore[] {
-  // Group regulations by parent jurisdiction (country level)
-  const countryRegs = new Map<string, Regulation[]>()
-  const subNationalRegs = new Map<string, Regulation[]>()
-
-  for (const reg of regulations) {
-    const jurisdiction = jurisdictions.find((j) => j.id === reg.jurisdiction_id)
-    if (!jurisdiction) continue
-
-    // Filter by service type
-    if (serviceTypeFilter !== 'all') {
-      const matchesService = reg.service_type_ids.includes(serviceTypeFilter) ||
-        reg.obligations.some((o) => o.applies_to_service_types.includes(serviceTypeFilter))
-      if (!matchesService) continue
-    }
-
-    if (jurisdiction.parent_id) {
-      // Sub-national: add to parent country
-      const parentId = jurisdiction.parent_id
-      if (!countryRegs.has(parentId)) countryRegs.set(parentId, [])
-      countryRegs.get(parentId)!.push(reg)
-
-      if (!subNationalRegs.has(parentId)) subNationalRegs.set(parentId, [])
-      subNationalRegs.get(parentId)!.push(reg)
-    } else {
-      // Country-level
-      if (!countryRegs.has(jurisdiction.id)) countryRegs.set(jurisdiction.id, [])
-      countryRegs.get(jurisdiction.id)!.push(reg)
-    }
-  }
-
-  const MAX_RAW_SCORE = 500 // Normalization factor
-
   const results: CountryRiskScore[] = []
-  for (const [countryId, regs] of countryRegs) {
-    const jurisdiction = jurisdictions.find((j) => j.id === countryId)
-    if (!jurisdiction) continue
-
-    let rawScore = 0
-    let totalObligations = 0
-
-    for (const reg of regs) {
-      const statusWeight = STATUS_META[reg.status]?.weight || 0
-      const obligationCount = serviceTypeFilter === 'all'
-        ? reg.obligations.length
-        : reg.obligations.filter((o) => o.applies_to_service_types.includes(serviceTypeFilter)).length
-
-      totalObligations += obligationCount
-      rawScore += statusWeight * (1 + obligationCount * 0.3)
-    }
-
-    const riskScore = Math.min(Math.round((rawScore / MAX_RAW_SCORE) * 100), 100)
-
-    // Build sub-national breakdown
-    const subNationals = (subNationalRegs.get(countryId) || []).map((reg) => ({
-      jurisdiction_id: reg.jurisdiction_id,
-      name: jurisdictions.find((j) => j.id === reg.jurisdiction_id)?.name || reg.jurisdiction_id,
-      risk_score: STATUS_META[reg.status]?.weight || 0,
-      regulation_count: 1,
-    }))
-
-    // Deduplicate sub-nationals
-    const seenSubs = new Set<string>()
-    const uniqueSubs = subNationals.filter((s) => {
-      if (seenSubs.has(s.jurisdiction_id)) return false
-      seenSubs.add(s.jurisdiction_id)
-      return true
-    })
-
+  for (const m of markets) {
+    if (serviceTypeFilter !== 'all' && !m.service_type_ids.includes(serviceTypeFilter)) continue
+    const value = metric === 'china_sentiment' ? m.china_sentiment : m.regulatory_severity
     results.push({
-      jurisdiction_id: countryId,
-      country_name: jurisdiction.name,
-      iso_alpha2: jurisdiction.iso_alpha2,
-      risk_score: riskScore,
-      regulation_count: regs.length,
-      total_obligations: totalObligations,
-      sub_national_breakdown: uniqueSubs.length > 0 ? uniqueSubs : undefined,
+      jurisdiction_id: m.jurisdiction_id,
+      country_name: m.country,
+      iso_alpha2: m.jurisdiction_id,
+      risk_score: value,
+      metric,
+      regulatory_severity: m.regulatory_severity,
+      china_sentiment: m.china_sentiment,
+      regulation_count: 1,
+      total_obligations: m.obligation_ids.length,
+      obligation_ids: m.obligation_ids,
+      status: m.regulatory_status,
     })
   }
-
   return results.sort((a, b) => b.risk_score - a.risk_score)
 }
+
+export { bandFromScore }
 
 // --- Hooks ---
 

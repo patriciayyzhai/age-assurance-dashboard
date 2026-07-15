@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useFilters } from '../../context/FilterContext'
 import { useData } from '../../context/DataContext'
 import { useDebounce } from '../../data/loader'
-import type { RegulationStatus, ServiceTypeId, ObligationType } from '../../types'
-import { STATUS_META, SERVICE_TYPE_META, OBLIGATION_TYPE_META } from '../../types'
+import type { RegulationStatus, ServiceTypeId, ObligationType, SeverityBand } from '../../types'
+import { STATUS_META, SERVICE_TYPE_META, OBLIGATION_TYPE_META, BAND_META } from '../../types'
 
 function normalizeForSearch(value: string) {
   return value
@@ -31,6 +31,9 @@ function jurisdictionMatchScore(text: string, query: string) {
   return 99
 }
 
+// Database is scoped to Moderate-or-higher severity, so only offer those bands.
+const BAND_ORDER: SeverityBand[] = ['moderate', 'high', 'severe']
+
 export default function FilterBar() {
   const { data } = useData()
   const { filters, dispatch } = useFilters()
@@ -50,7 +53,8 @@ export default function FilterBar() {
     filters.jurisdiction_ids.length +
     filters.service_type_ids.length +
     filters.obligation_types.length +
-    (filters.year_range ? 1 : 0)
+    filters.severity_bands.length +
+    filters.regions.length
 
   // Get unique jurisdictions from data, sorted by region then name
   const jurisdictions = data
@@ -60,6 +64,12 @@ export default function FilterBar() {
           : a.name.localeCompare(b.name)
       )
     : []
+
+  // Distinct regions present in the data
+  const regions = useMemo(
+    () => (data ? Array.from(new Set(data.jurisdictions.map((j) => j.region))).sort() : []),
+    [data]
+  )
 
   const normalizedJurisdictionQuery = normalizeForSearch(jurisdictionQuery.trim())
   const visibleJurisdictions = jurisdictions
@@ -96,15 +106,11 @@ export default function FilterBar() {
       return a.name.localeCompare(b.name)
     })
 
-  // Get year range from data
-  const minYear = data ? Math.min(...data.regulations.map((r) => r.year)) : 2020
-  const maxYear = data ? Math.max(...data.regulations.map((r) => r.year)) : 2025
-
   const toggleStatus = (s: RegulationStatus) => dispatch({ type: 'TOGGLE_STATUS', value: s })
   const toggleServiceType = (s: ServiceTypeId) => dispatch({ type: 'TOGGLE_SERVICE_TYPE', value: s })
   const toggleObligationType = (o: ObligationType) => dispatch({ type: 'TOGGLE_OBLIGATION_TYPE', value: o })
-
-  const [yearMin, yearMax] = filters.year_range || [minYear, maxYear]
+  const toggleBand = (b: SeverityBand) => dispatch({ type: 'TOGGLE_SEVERITY_BAND', value: b })
+  const toggleRegion = (r: string) => dispatch({ type: 'TOGGLE_REGION', value: r })
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 space-y-4">
@@ -118,7 +124,7 @@ export default function FilterBar() {
             type="text"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Search regulations by name, summary, or jurisdiction..."
+            placeholder="Search markets by country, status, or assessment..."
             className="w-full pl-10 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
@@ -138,9 +144,36 @@ export default function FilterBar() {
         )}
       </div>
 
+      {/* Severity band filters */}
+      <div>
+        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Regulatory Severity Band</label>
+        <div className="flex flex-wrap gap-1.5">
+          {BAND_ORDER.map((b) => {
+            const meta = BAND_META[b]
+            const active = filters.severity_bands.includes(b)
+            return (
+              <button
+                key={b}
+                onClick={() => toggleBand(b)}
+                className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all border ${
+                  active ? 'shadow-sm' : 'hover:opacity-80'
+                }`}
+                style={
+                  active
+                    ? { backgroundColor: meta.color, color: b === 'severe' ? '#fff' : '#1e293b', borderColor: meta.color }
+                    : { backgroundColor: `${meta.color}22`, color: '#475569', borderColor: `${meta.color}55` }
+                }
+              >
+                {meta.label} <span className="opacity-70">({meta.range})</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
       {/* Status filters */}
       <div>
-        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Status</label>
+        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Regulatory Status</label>
         <div className="flex flex-wrap gap-1.5">
           {(Object.keys(STATUS_META) as RegulationStatus[]).map((s) => {
             const meta = STATUS_META[s]
@@ -165,7 +198,7 @@ export default function FilterBar() {
 
       {/* Service type filters */}
       <div>
-        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Service Type</label>
+        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Scope / Service Type</label>
         <div className="flex flex-wrap gap-1.5">
           {(Object.keys(SERVICE_TYPE_META) as ServiceTypeId[]).map((stid) => {
             const meta = SERVICE_TYPE_META[stid]
@@ -189,7 +222,7 @@ export default function FilterBar() {
 
       {/* Obligation type filters */}
       <div>
-        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Obligation Type</label>
+        <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">Key Obligation</label>
         <div className="flex flex-wrap gap-1.5">
           {(Object.keys(OBLIGATION_TYPE_META) as ObligationType[]).map((o) => {
             const meta = OBLIGATION_TYPE_META[o]
@@ -212,12 +245,40 @@ export default function FilterBar() {
         </div>
       </div>
 
-      {/* Jurisdiction + Year in a row */}
+      {/* Region + Jurisdiction in a row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Region */}
+        <div>
+          <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">
+            Region {filters.regions.length > 0 && `(${filters.regions.length})`}
+          </label>
+          <div className="flex flex-wrap gap-1.5">
+            {regions.map((r) => {
+              const active = filters.regions.includes(r)
+              return (
+                <button
+                  key={r}
+                  onClick={() => toggleRegion(r)}
+                  className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
+                    active
+                      ? 'bg-slate-800 text-white shadow-sm'
+                      : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  }`}
+                >
+                  {r}
+                </button>
+              )
+            })}
+            {regions.length === 0 && (
+              <span className="text-xs text-slate-400">No regions available</span>
+            )}
+          </div>
+        </div>
+
         {/* Jurisdiction */}
         <div>
           <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">
-            Jurisdiction {filters.jurisdiction_ids.length > 0 && `(${filters.jurisdiction_ids.length})`}
+            Market {filters.jurisdiction_ids.length > 0 && `(${filters.jurisdiction_ids.length})`}
           </label>
           <div className="space-y-2">
             <div className="relative">
@@ -258,51 +319,12 @@ export default function FilterBar() {
                 })}
                 {visibleJurisdictions.length === 0 && (
                   <p className="px-2 py-6 text-center text-sm text-slate-400">
-                    No jurisdictions match "{jurisdictionQuery}".
+                    No markets match "{jurisdictionQuery}".
                   </p>
                 )}
               </div>
             </div>
-            <p className="text-xs text-slate-400">Search supports partial and fuzzy matches. Click to toggle multiple jurisdictions.</p>
-          </div>
-        </div>
-
-        {/* Year range */}
-        <div>
-          <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5 block">
-            Year Range: {yearMin} — {yearMax}
-          </label>
-          <div className="space-y-2 pt-1">
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-500 w-8">{minYear}</span>
-              <input
-                type="range"
-                min={minYear}
-                max={maxYear}
-                value={yearMin}
-                onChange={(e) => {
-                  const newMin = Math.min(Number(e.target.value), yearMax)
-                  dispatch({ type: 'SET_YEAR_RANGE', value: [newMin, yearMax] })
-                }}
-                className="flex-1 accent-blue-600"
-              />
-              <span className="text-xs text-slate-500 w-8">{maxYear}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-500 w-8">Min</span>
-              <input
-                type="range"
-                min={minYear}
-                max={maxYear}
-                value={yearMax}
-                onChange={(e) => {
-                  const newMax = Math.max(Number(e.target.value), yearMin)
-                  dispatch({ type: 'SET_YEAR_RANGE', value: [yearMin, newMax] })
-                }}
-                className="flex-1 accent-blue-600"
-              />
-              <span className="text-xs text-slate-500 w-8">Max</span>
-            </div>
+            <p className="text-xs text-slate-400">Search supports partial and fuzzy matches. Click to toggle multiple markets.</p>
           </div>
         </div>
       </div>

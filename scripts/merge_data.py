@@ -7,7 +7,7 @@ import hashlib
 import json
 from config import (
     REGULATIONS_FILE, REGULATION_METADATA_FILE, OVERRIDES_FILE, JURISDICTIONS_FILE,
-    SERVICE_TYPES_FILE, NEWS_ITEMS_FILE, MERGED_FILE, load_json, save_json, now_iso,
+    MARKETS_FILE, SERVICE_TYPES_FILE, NEWS_ITEMS_FILE, MERGED_FILE, load_json, save_json, now_iso,
 )
 
 
@@ -126,6 +126,9 @@ def run() -> dict:
     jurisdictions_data = load_json(JURISDICTIONS_FILE) if JURISDICTIONS_FILE.exists() else {
         "version": "1.0.0", "last_updated": now_iso(), "jurisdictions": []
     }
+    markets_data = load_json(MARKETS_FILE) if MARKETS_FILE.exists() else {
+        "version": "1.0.0", "last_updated": now_iso(), "markets": []
+    }
     
     service_types_data = load_json(SERVICE_TYPES_FILE) if SERVICE_TYPES_FILE.exists() else {
         "version": "1.0.0", "last_updated": now_iso(), "service_types": []
@@ -150,8 +153,9 @@ def run() -> dict:
     
     # Build merged output
     merged = {
-        "version": regs_data.get("version", "1.0.0"),
-        "last_updated": regs_data.get("last_updated", now_iso()),
+        "version": markets_data.get("version", "2.0.0"),
+        "last_updated": markets_data.get("last_updated", now_iso()),
+        "markets": markets_data.get("markets", []),
         "regulations": merged_regulations,
         "news_items": news_items_data.get("news_items", []),
         "jurisdictions": jurisdictions_data.get("jurisdictions", []),
@@ -166,7 +170,8 @@ def run() -> dict:
         "regulations": next_metadata,
     })
     
-    print(f"[merge_data] Merged {len(merged_regulations)} regulations → {MERGED_FILE}")
+    print(f"[merge_data] Merged {len(merged_regulations)} regulations, "
+          f"{len(merged.get('markets', []))} markets → {MERGED_FILE}")
     return merged
 
 
