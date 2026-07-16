@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2026-07-15T16:12:11Z",
+  "last_updated": "2026-07-16T08:02:57Z",
   "markets": [
     {
       "id": "GB",
@@ -11,7 +11,9 @@
       "service_type_ids": [
         "social_media",
         "streaming",
-        "adult_content"
+        "adult_content",
+        "gaming",
+        "ai_service"
       ],
       "regulatory_severity": 100,
       "regulatory_severity_band": "severe",
@@ -31,7 +33,7 @@
       ],
       "assessment_note": "Ofcom illegal-harms and child-safety codes in active enforcement; age-assurance duties for pornography and high-risk services biting across social media and streaming.",
       "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/roadmap-to-regulation",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AU",
@@ -40,7 +42,9 @@
       "regulatory_status": "passed",
       "regulatory_status_label": "Passed (pre-enforcement)",
       "service_type_ids": [
-        "social_media"
+        "social_media",
+        "gaming",
+        "ai_service"
       ],
       "regulatory_severity": 82,
       "regulatory_severity_band": "severe",
@@ -59,7 +63,7 @@
       ],
       "assessment_note": "Under-16 social-media minimum-age regime moving toward Dec-2025/2026 commencement; eSafety age-assurance expectations dominate the H1 agenda.",
       "source_url": "https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "DE",
@@ -72,7 +76,8 @@
         "online_marketplace",
         "streaming",
         "app_store",
-        "ai_service"
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 86,
       "regulatory_severity_band": "severe",
@@ -93,7 +98,7 @@
       ],
       "assessment_note": "DSA in full enforcement plus EU AI Act implementation phase; broad multi-service compliance load with strong child-safety focus.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "FR",
@@ -105,7 +110,9 @@
         "social_media",
         "adult_content",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 76,
       "regulatory_severity_band": "high",
@@ -126,7 +133,7 @@
       ],
       "assessment_note": "SREN age-verification law effective; ARCOM enforcing pornography age checks alongside DSA duties.",
       "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NL",
@@ -138,7 +145,9 @@
         "social_media",
         "online_marketplace",
         "streaming",
-        "app_store"
+        "app_store",
+        "gaming",
+        "ai_service"
       ],
       "regulatory_severity": 73,
       "regulatory_severity_band": "high",
@@ -159,7 +168,7 @@
       ],
       "assessment_note": "DSA enforcement phase with empowered national coordinator; AI Act layering additional obligations.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IE",
@@ -172,7 +181,8 @@
         "online_marketplace",
         "streaming",
         "app_store",
-        "ai_service"
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 74,
       "regulatory_severity_band": "high",
@@ -193,7 +203,7 @@
       ],
       "assessment_note": "As EU platform HQ hub, Coimisiun na Mean and DSA duties create elevated compliance exposure; Online Safety Code in force.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KR",
@@ -222,9 +232,9 @@
         "risk_assessment",
         "transparency_reporting"
       ],
-      "assessment_note": "Youth Protection Act youth-harmful-media enforcement plus PIPC data-security actions; scrutiny of Chinese AI apps sustained into H1.",
+      "assessment_note": "Youth Protection Act youth-harmful-media enforcement plus PIPC data-security actions; scrutiny of Chinese AI apps sustained into H1. Gaming: Game Industry Promotion Act Art.12-3 requires legal-representative consent for under-18 and identity/real-name verification for game accounts (stricter than typical peers).",
       "source_url": "https://www.reuters.com/technology/south-korea-agency-says-deepseek-transferred-user-info-prompts-without-consent-2025-04-24/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LT",
@@ -235,7 +245,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 67,
       "regulatory_severity_band": "high",
@@ -254,7 +266,7 @@
       ],
       "assessment_note": "DSA enforcement with strong security framing; Baltic caution on Chinese tech elevates sentiment.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "DK",
@@ -265,7 +277,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 67,
       "regulatory_severity_band": "high",
@@ -284,7 +298,7 @@
       ],
       "assessment_note": "DSA enforcement plus national debate on minimum social-media age; moderate China posture.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SE",
@@ -295,7 +309,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 67,
       "regulatory_severity_band": "high",
@@ -314,7 +330,7 @@
       ],
       "assessment_note": "DSA enforcement; child-online-safety and defence-linked tech caution frame the market.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "FI",
@@ -325,7 +341,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 65,
       "regulatory_severity_band": "high",
@@ -344,7 +362,7 @@
       ],
       "assessment_note": "DSA enforcement; moderate but security-tinged stance on Chinese platforms.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IT",
@@ -356,7 +374,8 @@
         "social_media",
         "online_marketplace",
         "streaming",
-        "ai_service"
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 70,
       "regulatory_severity_band": "high",
@@ -376,7 +395,7 @@
       ],
       "assessment_note": "DSA enforcement plus AGCOM age-verification rules and AI Act layering; broad service coverage.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ES",
@@ -388,7 +407,8 @@
         "social_media",
         "online_marketplace",
         "streaming",
-        "ai_service"
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 70,
       "regulatory_severity_band": "high",
@@ -408,7 +428,7 @@
       ],
       "assessment_note": "DSA enforcement plus draft minors-online-protection law; strong child-safety agenda.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AT",
@@ -419,7 +439,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 65,
       "regulatory_severity_band": "high",
@@ -438,7 +460,7 @@
       ],
       "assessment_note": "DSA enforcement with national KoPl-G platform duties; moderate China stance.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PL",
@@ -449,7 +471,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 67,
       "regulatory_severity_band": "high",
@@ -468,7 +492,7 @@
       ],
       "assessment_note": "DSA enforcement; frontline-security framing raises Chinese-tech scrutiny.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NO",
@@ -498,7 +522,7 @@
       ],
       "assessment_note": "EEA-adopted DSA-equivalent duties plus proposed social-media minimum age; moderate China posture.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IN",
@@ -510,7 +534,8 @@
         "social_media",
         "ai_service",
         "streaming",
-        "online_marketplace"
+        "online_marketplace",
+        "gaming"
       ],
       "regulatory_severity": 67,
       "regulatory_severity_band": "high",
@@ -527,9 +552,9 @@
         "transparency_reporting",
         "ai_transparency"
       ],
-      "assessment_note": "IT Rules and DPDP Act obligations biting; sustained restriction posture toward Chinese apps is the dominant sentiment driver.",
+      "assessment_note": "IT Rules and DPDP Act obligations biting; sustained restriction posture toward Chinese apps is the dominant sentiment driver. Gaming: DPDP Act Rule 10 verifiable parental consent for under-18 applies to game data controllers (in force from ~2027-05-13; not yet a hard floor).",
       "source_url": "https://www.meity.gov.in/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GR",
@@ -540,7 +565,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 63,
       "regulatory_severity_band": "high",
@@ -559,7 +586,7 @@
       ],
       "assessment_note": "DSA enforcement plus national age-verification app initiative; moderate China posture.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PT",
@@ -570,7 +597,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 61,
       "regulatory_severity_band": "high",
@@ -589,7 +618,7 @@
       ],
       "assessment_note": "DSA enforcement; child-safety focus consistent with EU peers.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SG",
@@ -600,7 +629,8 @@
       "service_type_ids": [
         "social_media",
         "app_store",
-        "streaming"
+        "streaming",
+        "ai_service"
       ],
       "regulatory_severity": 76,
       "regulatory_severity_band": "high",
@@ -618,7 +648,7 @@
       ],
       "assessment_note": "Online Safety (Relief and Accountability) Act 2025 (OSRAA): Online Safety Commission commences 29 Jun 2026 with content-removal powers and statutory victim torts. App Distribution Services CoP (effective 1 Apr 2026): app stores must enforce age assurance for under-18. IMDA Online Safety Code, SMS CoP, OCHA, POFMA, PDPA child framework. Enforcement: X & TikTok under Enhanced Supervision (Mar 2026) for CSEA/terrorism detection gaps; first OCHA directive against Meta with S$1M fine (Nov 2025).",
       "source_url": "https://www.imda.gov.sg/regulations-and-licensing-listing/content-standards-and-classification",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BR",
@@ -630,7 +660,8 @@
         "social_media",
         "online_marketplace",
         "streaming",
-        "gaming"
+        "gaming",
+        "ai_service"
       ],
       "regulatory_severity": 79,
       "regulatory_severity_band": "high",
@@ -649,7 +680,7 @@
       ],
       "assessment_note": "ECA Digital (Law 15,211/2025), effective Mar 2026: hard child-safety code - mandatory age verification, under-16 accounts linked to a guardian, bans infinite scroll/autoplay and profiling-based ads for minors, strict loot-box ban; fines up to R$50M or 10% of revenue. STF platform-liability ruling (Jun 2025) plus ANPD full autonomy (Apr 2026). Enforcement: X banned + fined R$28.6M (2024); Roblox restricted for under-18 over loot boxes (2026).",
       "source_url": "https://www.gov.br/anpd/pt-br",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CZ",
@@ -660,7 +691,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 63,
       "regulatory_severity_band": "high",
@@ -679,7 +712,7 @@
       ],
       "assessment_note": "DSA enforcement; NUKIB-style security caution nudges Chinese-tech sentiment up.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "HU",
@@ -690,7 +723,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 59,
       "regulatory_severity_band": "moderate",
@@ -708,7 +743,7 @@
       ],
       "assessment_note": "DSA enforcement applies, but national posture toward Chinese investment is accommodative.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ID",
@@ -737,7 +772,7 @@
       ],
       "assessment_note": "Under-16 social-media and high-risk-service restrictions (PP Tunas / child-protection regs) in force; heavy platform obligations, low China targeting.",
       "source_url": "https://www.rajahtannasia.com/wp-content/uploads/2025/04/AHPClientUpdate-15April2025.pdf",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "RO",
@@ -748,7 +783,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 61,
       "regulatory_severity_band": "high",
@@ -767,7 +804,7 @@
       ],
       "assessment_note": "DSA enforcement intensified after election-integrity concerns; moderate China posture.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "VN",
@@ -795,7 +832,7 @@
       ],
       "assessment_note": "Decree 147 real-name and content-control obligations effective; heavy platform duties, low China-specific framing.",
       "source_url": "https://www.reuters.com/technology/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MY",
@@ -821,7 +858,7 @@
       ],
       "assessment_note": "MCMC social-media licensing and under-16 age-verification push in force; Chinese apps licensed under the same regime.",
       "source_url": "https://www.reuters.com/technology/malaysia-pushes-tiktok-age-verification-protect-minors-2025-09-04/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "US",
@@ -855,7 +892,7 @@
       ],
       "assessment_note": "Dense patchwork of state age-verification/design-code laws (TX, FL, UT, CA) plus federal foreign-adversary-app law; highest China-sentiment anchor globally.",
       "source_url": "https://www.whitehouse.gov/presidential-actions/2025/01/application-of-protecting-americans-from-foreign-adversary-controlled-applications-act-to-tiktok/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NZ",
@@ -878,7 +915,7 @@
       ],
       "assessment_note": "Parliamentary debate on a teen social-media ban signals intent; no enforceable age-assurance regime yet.",
       "source_url": "https://www.reuters.com/world/asia-pacific/new-zealand-parliament-debate-teen-social-media-ban-2025-10-23/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SK",
@@ -889,7 +926,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 59,
       "regulatory_severity_band": "moderate",
@@ -907,7 +946,7 @@
       ],
       "assessment_note": "DSA enforcement applies; national posture moderate.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BG",
@@ -918,7 +957,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 59,
       "regulatory_severity_band": "moderate",
@@ -936,7 +977,7 @@
       ],
       "assessment_note": "DSA enforcement applies; limited national elaboration.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "HR",
@@ -947,7 +988,9 @@
       "service_type_ids": [
         "social_media",
         "online_marketplace",
-        "streaming"
+        "streaming",
+        "ai_service",
+        "gaming"
       ],
       "regulatory_severity": 59,
       "regulatory_severity_band": "moderate",
@@ -965,7 +1008,7 @@
       ],
       "assessment_note": "DSA enforcement applies; moderate posture.",
       "source_url": "https://commission.europa.eu/news-and-media/news/digital-services-act-keeping-us-safe-online-2025-09-22_en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "JP",
@@ -977,7 +1020,8 @@
         "social_media",
         "ai_service",
         "streaming",
-        "online_marketplace"
+        "online_marketplace",
+        "gaming"
       ],
       "regulatory_severity": 58,
       "regulatory_severity_band": "moderate",
@@ -993,9 +1037,9 @@
         "transparency_reporting",
         "ai_transparency"
       ],
-      "assessment_note": "Info-distribution platform law and economic-security reporting reforms effective; scrutiny of Chinese tech rising but measured.",
+      "assessment_note": "Info-distribution platform law and economic-security reporting reforms effective; scrutiny of Chinese tech rising but measured. Gaming: Youth Internet Environment Act (Act No.79/2008) Arts.16-19 place filtering-activation duties on mobile carriers, ISPs and device makers; obligations sit mostly on carriers rather than game platforms.",
       "source_url": "https://www.reuters.com/markets/asia/citing-security-japan-plug-loophole-reporting-rules-foreign-investment-2025-01-23/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IL",
@@ -1020,7 +1064,7 @@
       ],
       "assessment_note": "Privacy-protection amendments and minor-protection online duties effective; moderate scope.",
       "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CH",
@@ -1044,7 +1088,7 @@
       ],
       "assessment_note": "Platform-regulation and youth-protection proposals under review; limited enforceable duties.",
       "source_url": "https://www.bakom.admin.ch/bakom/en/homepage.html",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CA",
@@ -1056,7 +1100,8 @@
         "social_media",
         "ai_service",
         "adult_content",
-        "streaming"
+        "streaming",
+        "gaming"
       ],
       "regulatory_severity": 51,
       "regulatory_severity_band": "moderate",
@@ -1071,9 +1116,9 @@
         "content_moderation",
         "ai_transparency"
       ],
-      "assessment_note": "Bill C-34 Safe Social Media Act proposed with broad service scope; TikTok national-security wind-up keeps China sentiment elevated.",
+      "assessment_note": "Bill C-34 Safe Social Media Act proposed with broad service scope; TikTok national-security wind-up keeps China sentiment elevated. Gaming: Quebec Law 25 privacy-by-default and under-14 guardian-consent duties reach game operators; federal Bill C-63 pending.",
       "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2024/11/government-of-canada-orders-the-wind-up-of-tiktok-technology-canada-inc-following-a-national-security-review-under-the-investment-canada-act.html",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PH",
@@ -1097,7 +1142,7 @@
       ],
       "assessment_note": "Online-safety and anti-scam bills advancing; South China Sea tensions lift China sentiment.",
       "source_url": "https://www.officialgazette.gov.ph/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TR",
@@ -1122,7 +1167,7 @@
       ],
       "assessment_note": "Social-media/disinformation law with representative and content duties effective; low China-specific framing.",
       "source_url": "https://www.resmigazete.gov.tr/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ZA",
@@ -1147,7 +1192,7 @@
       ],
       "assessment_note": "Films and Publications Act online-content duties effective; accommodative China posture.",
       "source_url": "https://freedomhouse.org/country/south-africa/freedom-net/2025",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SA",
@@ -1174,7 +1219,7 @@
       ],
       "assessment_note": "CITC/GAMR content and licensing duties effective; strengthening bilateral ties with China.",
       "source_url": "https://www.citc.gov.sa/en/Pages/default.aspx",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AE",
@@ -1203,7 +1248,7 @@
       ],
       "assessment_note": "Cabinet Resolution No. 106 of 2026 (Jun 2026): under-15 social-media ban - no account creation, supervised access for 15-16, no parental overrides, strict age verification, 12-month transition. Federal Decree-Law No. 26 of 2025 on Child Digital Safety (effective Jan 2026, enforceable Jan 2027): under-13 data bans, targeted-ad prohibition, privacy-by-default, legal definition of 'Virtual Worlds'. Among the most aggressive age-gating regimes globally (cf. Australia under-16). TDRA content/cybercrime duties in force.",
       "source_url": "https://tdra.gov.ae/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MX",
@@ -1228,7 +1273,7 @@
       ],
       "assessment_note": "Platform-labour and telecom reforms effective; child-safety duties nascent.",
       "source_url": "https://www.gtlaw.com/en/insights/2025/1/reform-to-mexicos-federal-labor-law-related-to-digital-platforms",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CL",
@@ -1252,7 +1297,7 @@
       ],
       "assessment_note": "Platform and data-protection reforms under review; limited enforceable online-safety duties.",
       "source_url": "https://www.bcn.cl/leychile",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NG",
@@ -1277,7 +1322,7 @@
       ],
       "assessment_note": "NITDA code of practice for platforms effective; growing but modest obligations.",
       "source_url": "https://nitda.gov.ng/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "EG",
@@ -1302,7 +1347,7 @@
       ],
       "assessment_note": "Cybercrime and media-regulation duties effective; state-control focus, low China framing.",
       "source_url": "https://mcit.gov.eg/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "QA",
@@ -1327,7 +1372,7 @@
       ],
       "assessment_note": "CRA content and cybercrime duties effective; accommodative China stance.",
       "source_url": "https://www.cra.gov.qa/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "UA",
@@ -1351,7 +1396,7 @@
       ],
       "assessment_note": "Media and platform-regulation reforms in wartime context; enforceable age-assurance limited.",
       "source_url": "https://www.kmu.gov.ua/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CR",
@@ -1374,7 +1419,7 @@
       ],
       "assessment_note": "Data-protection and online-safety proposals early stage; limited platform duties.",
       "source_url": "https://www.pgrweb.go.cr/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CO",
@@ -1397,7 +1442,7 @@
       ],
       "assessment_note": "Child-online-protection and data bills advancing; limited enforceable duties.",
       "source_url": "https://www.mintic.gov.co/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PE",
@@ -1420,7 +1465,7 @@
       ],
       "assessment_note": "Data-protection and platform proposals early; accommodative China stance.",
       "source_url": "https://www.gob.pe/mtc",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AR",
@@ -1443,7 +1488,7 @@
       ],
       "assessment_note": "Data and platform reforms under discussion; limited enforceable online-safety duties.",
       "source_url": "https://www.argentina.gob.ar/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "EC",
@@ -1466,7 +1511,7 @@
       ],
       "assessment_note": "Nascent data-protection and platform framework; limited duties.",
       "source_url": "https://www.gob.ec/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "DO",
@@ -1489,7 +1534,7 @@
       ],
       "assessment_note": "Early-stage digital and child-safety proposals; limited enforceable duties.",
       "source_url": "https://www.optic.gob.do/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KE",
@@ -1514,7 +1559,7 @@
       ],
       "assessment_note": "Data Protection Act and computer-misuse duties effective; modest platform obligations.",
       "source_url": "https://www.odpc.go.ke/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GH",
@@ -1537,7 +1582,7 @@
       ],
       "assessment_note": "Data-protection and cybersecurity duties with platform proposals advancing; limited scope.",
       "source_url": "https://www.dataprotection.org.gh/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SV",
@@ -1560,7 +1605,7 @@
       ],
       "assessment_note": "Nascent digital-regulation framework; limited enforceable online-safety duties.",
       "source_url": "https://www.asamblea.gob.sv/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PK",
@@ -1585,7 +1630,7 @@
       ],
       "assessment_note": "PECA and PTA content-removal/social-media rules effective; state-control focus, no China targeting.",
       "source_url": "https://www.pta.gov.pk/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KW",
@@ -1610,7 +1655,7 @@
       ],
       "assessment_note": "Cybercrime and media duties effective; accommodative China posture.",
       "source_url": "https://www.citra.gov.kw/sites/en/Pages/default.aspx",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LK",
@@ -1634,7 +1679,7 @@
       ],
       "assessment_note": "Online Safety Act platform duties effective; limited age-assurance elaboration.",
       "source_url": "https://www.parliament.lk/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "DZ",
@@ -1657,7 +1702,7 @@
       ],
       "assessment_note": "Cybercrime and media rules with platform proposals; limited enforceable duties.",
       "source_url": "https://www.joradp.dz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TN",
@@ -1681,7 +1726,7 @@
       ],
       "assessment_note": "Decree-Law 54 cyber-content duties effective; state-control focus, low China framing.",
       "source_url": "https://www.iort.gov.tn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LB",
@@ -1704,7 +1749,7 @@
       ],
       "assessment_note": "Fragmented cyber/media rules; enforceable online-safety duties limited.",
       "source_url": "https://www.tra.gov.lb/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BY",
@@ -1729,7 +1774,7 @@
       ],
       "assessment_note": "Heavy state-control media/content duties effective; strongly accommodative to China.",
       "source_url": "https://mininform.gov.by/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AZ",
@@ -1753,7 +1798,7 @@
       ],
       "assessment_note": "Media and information-law content duties effective; low China framing.",
       "source_url": "https://mincom.gov.az/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "VE",
@@ -1778,7 +1823,7 @@
       ],
       "assessment_note": "Anti-hate and social-media control laws effective; strongly accommodative to China.",
       "source_url": "https://www.conatel.gob.ve/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BB",
@@ -1801,7 +1846,7 @@
       ],
       "assessment_note": "Early-stage data-protection and platform framework; limited duties.",
       "source_url": "https://www.gov.bb/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AO",
@@ -1824,7 +1869,7 @@
       ],
       "assessment_note": "Nascent data and cybercrime framework; limited enforceable online-safety duties.",
       "source_url": "https://www.governo.gov.ao/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KZ",
@@ -1849,7 +1894,7 @@
       ],
       "assessment_note": "Online-platforms and cyber-content law duties effective; accommodative China stance.",
       "source_url": "https://www.gov.kz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "UZ",
@@ -1873,7 +1918,7 @@
       ],
       "assessment_note": "Personal-data localisation and content duties effective; low China framing.",
       "source_url": "https://mitc.uz/en",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MG",
@@ -1896,7 +1941,7 @@
       ],
       "assessment_note": "Early-stage cyber/data framework; minimal enforceable platform duties.",
       "source_url": "https://www.mpttdn.gov.mg/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KP",
@@ -1921,7 +1966,7 @@
       ],
       "assessment_note": "No open internet; domestic intranet (Kwangmyong) only with near-zero foreign platform access. Maximal state control.",
       "source_url": "https://freedomhouse.org/country/north-korea/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IR",
@@ -1948,7 +1993,7 @@
       ],
       "assessment_note": "Pervasive filtering plus User Protection Bill / cyberspace regulatory system: IRGC gateway control, ID-to-access, VPN criminalization. National-internet build-out.",
       "source_url": "https://www.article19.org/resources/iran-user-protection-bill/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "RU",
@@ -1976,7 +2021,7 @@
       ],
       "assessment_note": "Sovereign Internet Law, data-localization (242-FZ), Roskomnadzor blocking. WhatsApp blocked, state Max messenger pushed, mass VPN crackdown.",
       "source_url": "https://www.roskomsvoboda.org/en/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MM",
@@ -2002,7 +2047,7 @@
       ],
       "assessment_note": "Cybersecurity Law (in force Jul 2025): VPN licensing/ban, local incorporation for large platforms, 3-yr data retention, takedown powers. Frequent shutdowns.",
       "source_url": "https://www.article19.org/resources/myanmar-cybersecurity-law/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CU",
@@ -2026,7 +2071,7 @@
       ],
       "assessment_note": "Decree-Law 370 and Decree-Law 35 criminalize online dissent; state telecom monopoly enables shutdowns during unrest.",
       "source_url": "https://freedomhouse.org/country/cuba/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LA",
@@ -2050,7 +2095,7 @@
       ],
       "assessment_note": "Decree on Internet Information Management plus cybercrime laws; national committee reviewing 2026 amendments; new anti-online-fraud center.",
       "source_url": "https://www.article19.org/resources/laos-internet-decree/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KH",
@@ -2075,7 +2120,7 @@
       ],
       "assessment_note": "Building China-style National Internet Gateway; cybercrime and cybersecurity law drafts; 2021 data-management sub-decree.",
       "source_url": "https://stateofsurveillance.org/articles/government/southeast-asia-surveillance-digital-control",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GE",
@@ -2100,7 +2145,7 @@
       ],
       "assessment_note": "Foreign Agents Act (criminal penalties) and 2025 broadcasting amendments expanding content powers, plus an illiberal minors-protection package.",
       "source_url": "https://www.venice.coe.int/webforms/documents/?country=17&year=all",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "JO",
@@ -2125,7 +2170,7 @@
       ],
       "assessment_note": "Cybercrime Law 2023 (broad speech offenses, VPN penalties, platform-manager liability) plus 2023 PDP Law in transition.",
       "source_url": "https://www.cybertainty.com/jordan-enacts-controversial-cybercrime-legislation/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BD",
@@ -2149,7 +2194,7 @@
       ],
       "assessment_note": "Cyber Security Act 2023 (replaced Digital Security Act) still speech-restrictive; interim government reviewing; Data Protection Act pending.",
       "source_url": "https://www.article19.org/resources/bangladesh-cyber-security-act/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TH",
@@ -2176,7 +2221,7 @@
       ],
       "assessment_note": "Computer Crime Act plus PDPA (first fine waves 2024-25) and Emergency Decree on Technology Crimes imposing platform/bank/telecom liability. Heavy URL blocking.",
       "source_url": "https://www.pdpc.or.th/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NP",
@@ -2200,7 +2245,7 @@
       ],
       "assessment_note": "2023 Social Media Directive (registration/local contact) enforced Sept 2025; Social Media Bill 2025 withdrawn Feb 2026 after protests; ETA s.47 active.",
       "source_url": "https://nepallegalfirm.com.np/articles/social-media-regulation-bill-nepal-2025",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "OM",
@@ -2224,7 +2269,7 @@
       ],
       "assessment_note": "PDPL fully enforceable Feb 2026 (GDPR-like) plus Cyber Crime Law covering content and NCII. Regulator MTCIT.",
       "source_url": "https://www.mtcit.gov.om/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BH",
@@ -2247,7 +2292,7 @@
       ],
       "assessment_note": "PDPL (in force 2019), one of the Gulf's earliest, with active regulator plus content controls via press/cyber laws.",
       "source_url": "https://www.pdp.gov.bh/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ET",
@@ -2271,7 +2316,7 @@
       ],
       "assessment_note": "Personal Data Protection Proclamation 1321/2024 in force with strict data localization; Computer Crime Proclamation. Enforcement still ramping.",
       "source_url": "https://www.inpdp.gov.et/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "UG",
@@ -2294,7 +2339,7 @@
       ],
       "assessment_note": "Data Protection & Privacy Act 2019 (first conviction 2025) plus amended Computer Misuse Act with speech-restrictive provisions.",
       "source_url": "https://www.pdpo.go.ug/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ZW",
@@ -2318,7 +2363,7 @@
       ],
       "assessment_note": "Cyber & Data Protection Act with 2024 licensing and 2026 aggressive POTRAZ enforcement plus criminal fake-news/cyberbullying provisions.",
       "source_url": "https://potraz.gov.zw/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TZ",
@@ -2342,7 +2387,7 @@
       ],
       "assessment_note": "Personal Data Protection Act 2022 plus Online Content Regulations 2020 that are genuinely restrictive on bloggers and platforms.",
       "source_url": "https://www.pdpc.go.tz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "RW",
@@ -2365,7 +2410,7 @@
       ],
       "assessment_note": "Law 058/2021 (GDPR-style, extraterritorial, data localization, 48-hr breach notice) enforced by NCSA.",
       "source_url": "https://dpo.gov.rw/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CM",
@@ -2388,7 +2433,7 @@
       ],
       "assessment_note": "New comprehensive DP Law (Dec 2024, strict consent, 18-month grace) plus older cybercrime law; history of regional shutdowns.",
       "source_url": "https://www.antic.cm/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MA",
@@ -2411,7 +2456,7 @@
       ],
       "assessment_note": "Law 09-08 on Personal Data Protection (CNDP regulator, one of the region's oldest) plus cybercrime code; no dedicated platform-safety law.",
       "source_url": "https://www.cndp.ma/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SN",
@@ -2434,7 +2479,7 @@
       ],
       "assessment_note": "DP Law 2008 (CDP regulator, one of Africa's oldest), reform underway; episodic election-period restrictions.",
       "source_url": "https://www.cdp.sn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BW",
@@ -2455,7 +2500,7 @@
       ],
       "assessment_note": "Data Protection Act 2018 operationalized 2024-25 with a Data Protection Commission; minimal platform-content control.",
       "source_url": "https://www.bocra.org.bw/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CI",
@@ -2476,7 +2521,7 @@
       ],
       "assessment_note": "DP Law 2013 (ARTCI regulator) within the ECOWAS DP framework; minimal platform-specific regulation.",
       "source_url": "https://www.artci.ci/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CD",
@@ -2497,7 +2542,7 @@
       ],
       "assessment_note": "Digital Code (2023) includes some data provisions with weak enforcement; episodic shutdowns during unrest.",
       "source_url": "https://www.arptc.cd/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NA",
@@ -2518,7 +2563,7 @@
       ],
       "assessment_note": "No comprehensive DP law yet; Data Protection Bill in draft. Minimal platform regulation.",
       "source_url": "https://www.cran.na/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ML",
@@ -2539,7 +2584,7 @@
       ],
       "assessment_note": "Limited DP framework; minimal platform-specific regulation; periodic connectivity restrictions.",
       "source_url": "https://amrtp.ml/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BF",
@@ -2560,7 +2605,7 @@
       ],
       "assessment_note": "General data-protection baseline; minimal platform-specific regulation; episodic restrictions.",
       "source_url": "https://www.arcep.bf/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NE",
@@ -2581,7 +2626,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; general data-protection provisions only.",
       "source_url": "https://www.arcep.ne/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TD",
@@ -2602,7 +2647,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; general data-protection baseline; history of shutdowns.",
       "source_url": "https://www.arcep.td/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GA",
@@ -2623,7 +2668,7 @@
       ],
       "assessment_note": "Data-protection framework in place (CNPDCP); minimal platform-specific regulation.",
       "source_url": "https://cnpdcp.ga/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CG",
@@ -2644,7 +2689,7 @@
       ],
       "assessment_note": "Limited data-protection framework; minimal platform-specific regulation.",
       "source_url": "https://www.arpce.cg/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MZ",
@@ -2665,7 +2710,7 @@
       ],
       "assessment_note": "Emerging data-protection framework; minimal platform-specific regulation.",
       "source_url": "https://www.incm.gov.mz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ZM",
@@ -2687,7 +2732,7 @@
       ],
       "assessment_note": "Data Protection Act 2021 plus Cyber Security & Cyber Crimes Act; some content-control provisions.",
       "source_url": "https://www.zicta.zm/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MW",
@@ -2708,7 +2753,7 @@
       ],
       "assessment_note": "Data Protection Act 2024 passed; minimal platform-specific regulation.",
       "source_url": "https://www.macra.mw/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LS",
@@ -2729,7 +2774,7 @@
       ],
       "assessment_note": "Data Protection Act 2011 with limited enforcement; minimal platform-specific regulation.",
       "source_url": "https://www.lca.org.ls/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SZ",
@@ -2750,7 +2795,7 @@
       ],
       "assessment_note": "Data Protection Act 2022; minimal platform-specific regulation.",
       "source_url": "https://www.sccom.org.sz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MU",
@@ -2773,7 +2818,7 @@
       ],
       "assessment_note": "Data Protection Act 2017 (GDPR-aligned, active regulator); ICT Act content provisions.",
       "source_url": "https://dataprotection.govmu.org/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GN",
@@ -2794,7 +2839,7 @@
       ],
       "assessment_note": "Limited data-protection framework; minimal platform-specific regulation; episodic shutdowns.",
       "source_url": "https://arpt.gov.gn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SL",
@@ -2815,7 +2860,7 @@
       ],
       "assessment_note": "Emerging data-protection framework; minimal platform-specific regulation.",
       "source_url": "https://natcom.gov.sl/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LR",
@@ -2836,7 +2881,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; general data-protection provisions only.",
       "source_url": "https://www.lta.gov.lr/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TG",
@@ -2857,7 +2902,7 @@
       ],
       "assessment_note": "Data Protection Law 2019 (IPCDP regulator); minimal platform-specific regulation; a 2021 shutdown noted.",
       "source_url": "https://ipcdp.tg/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BJ",
@@ -2879,7 +2924,7 @@
       ],
       "assessment_note": "Digital Code (2017-18) with data-protection provisions (APDP regulator); some restrictive digital-content history.",
       "source_url": "https://apdp.bj/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MR",
@@ -2900,7 +2945,7 @@
       ],
       "assessment_note": "Data Protection Law 2017 with limited enforcement; minimal platform-specific regulation.",
       "source_url": "https://www.aramtel.mr/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ER",
@@ -2923,7 +2968,7 @@
       ],
       "assessment_note": "One of the most restricted information environments; near-total state control of connectivity.",
       "source_url": "https://freedomhouse.org/country/eritrea/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "DJ",
@@ -2945,7 +2990,7 @@
       ],
       "assessment_note": "State telecom monopoly; data-protection law 2013; content control during sensitive periods.",
       "source_url": "https://www.anm.dj/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "CF",
@@ -2966,7 +3011,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; nascent data-protection framework.",
       "source_url": "https://www.art-rca.org/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GQ",
@@ -2989,7 +3034,7 @@
       ],
       "assessment_note": "Heavy state control of connectivity with periodic shutdowns; minimal formal platform framework.",
       "source_url": "https://freedomhouse.org/country/equatorial-guinea",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SO",
@@ -3010,7 +3055,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; emerging data-protection discussions; security-driven restrictions.",
       "source_url": "https://nca.gov.so/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SD",
@@ -3033,7 +3078,7 @@
       ],
       "assessment_note": "Conflict-era shutdowns and content controls; Cybercrime Law 2020 speech-restrictive.",
       "source_url": "https://www.tpra.gov.sd/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SS",
@@ -3054,7 +3099,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; periodic conflict-driven restrictions.",
       "source_url": "https://nca.gov.ss/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LY",
@@ -3075,7 +3120,7 @@
       ],
       "assessment_note": "Fragmented regulatory environment; periodic connectivity disruptions; no unified platform framework.",
       "source_url": "https://lptic.ly/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "KG",
@@ -3099,7 +3144,7 @@
       ],
       "assessment_note": "2021 'false information' law plus 2023 mass-media law tightening; data-protection framework; content-control powers.",
       "source_url": "https://digital.gov.kg/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TJ",
@@ -3122,7 +3167,7 @@
       ],
       "assessment_note": "Extensive filtering and periodic blocking of social platforms; state-controlled connectivity.",
       "source_url": "https://freedomhouse.org/country/tajikistan/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TM",
@@ -3145,7 +3190,7 @@
       ],
       "assessment_note": "One of the world's most restricted internets; most social platforms and VPNs blocked; total state control.",
       "source_url": "https://freedomhouse.org/country/turkmenistan/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AM",
@@ -3166,7 +3211,7 @@
       ],
       "assessment_note": "Data Protection Law 2015 (aligning toward GDPR); minimal platform-specific regulation.",
       "source_url": "https://foi.am/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MN",
@@ -3187,7 +3232,7 @@
       ],
       "assessment_note": "Personal Data Protection Law (in force 2022) plus Cyber Security Law; minimal platform-content control.",
       "source_url": "https://itc.gov.mn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AF",
@@ -3210,7 +3255,7 @@
       ],
       "assessment_note": "Taliban-era morality-driven content restrictions and periodic platform bans; no formal data-protection regime.",
       "source_url": "https://freedomhouse.org/country/afghanistan/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BT",
@@ -3231,7 +3276,7 @@
       ],
       "assessment_note": "Information, Communications & Media Act plus data-protection provisions; minimal platform-specific regulation.",
       "source_url": "https://www.bicma.gov.bt/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BN",
@@ -3252,7 +3297,7 @@
       ],
       "assessment_note": "No comprehensive DP law (PDPA in consultation); content governed by Sharia and sedition provisions.",
       "source_url": "https://www.aiti.gov.bn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PG",
@@ -3273,7 +3318,7 @@
       ],
       "assessment_note": "Cybercrime Code Act 2016 with speech-restrictive provisions; no comprehensive DP law; periodic Facebook-restriction proposals.",
       "source_url": "https://www.nicta.gov.pg/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "FJ",
@@ -3295,7 +3340,7 @@
       ],
       "assessment_note": "Online Safety Act 2018 (Online Safety Commission) plus data-protection provisions; genuine platform-content oversight.",
       "source_url": "https://www.onlinesafety.org.fj/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TL",
@@ -3316,7 +3361,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; emerging data-protection discussions.",
       "source_url": "https://www.anc.tl/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IQ",
@@ -3339,7 +3384,7 @@
       ],
       "assessment_note": "Periodic platform blocking and morality-driven content controls; draft cybercrime law; limited data-protection framework.",
       "source_url": "https://www.cmc.iq/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "YE",
@@ -3362,7 +3407,7 @@
       ],
       "assessment_note": "Conflict-driven fragmentation with Houthi-area filtering and periodic shutdowns; no unified framework.",
       "source_url": "https://freedomhouse.org/country/yemen/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SY",
@@ -3385,7 +3430,7 @@
       ],
       "assessment_note": "Post-transition environment with legacy filtering and surveillance; content controls; no modern DP regime.",
       "source_url": "https://freedomhouse.org/country/syria/freedom-net",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "IS",
@@ -3412,7 +3457,7 @@
       ],
       "assessment_note": "GDPR applies via EEA; EU Digital Services Act being transposed via EEA, bringing platform risk and transparency duties.",
       "source_url": "https://www.personuvernd.is/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "RS",
@@ -3434,7 +3479,7 @@
       ],
       "assessment_note": "GDPR-aligned Data Protection Law (2018) enforced by the Commissioner; media-freedom concerns; no dedicated platform-safety law.",
       "source_url": "https://www.poverenik.rs/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AL",
@@ -3458,7 +3503,7 @@
       ],
       "assessment_note": "GDPR-aligned DP law with 2024 amendments; a temporary TikTok ban in 2025 over minor-safety concerns raised platform scrutiny.",
       "source_url": "https://www.idp.al/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BA",
@@ -3479,7 +3524,7 @@
       ],
       "assessment_note": "Personal Data Protection Law with an active agency; EU-alignment reform underway; no dedicated platform-safety law.",
       "source_url": "https://azlp.ba/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MK",
@@ -3500,7 +3545,7 @@
       ],
       "assessment_note": "GDPR-aligned Personal Data Protection Law (2020); EU-alignment reforms; no dedicated platform-safety law.",
       "source_url": "https://azlp.mk/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "ME",
@@ -3521,7 +3566,7 @@
       ],
       "assessment_note": "GDPR-aligned DP framework with EU-accession reforms; no dedicated platform-safety law.",
       "source_url": "https://www.azlp.me/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "MD",
@@ -3544,7 +3589,7 @@
       ],
       "assessment_note": "GDPR-aligning DP law with reform in progress; active anti-disinformation and foreign-interference measures (Russia-facing).",
       "source_url": "https://datepersonale.md/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "UY",
@@ -3565,7 +3610,7 @@
       ],
       "assessment_note": "Mature Data Protection & Habeas Data Law (EU adequacy, URCDP regulator); no platform-safety/age-assurance law.",
       "source_url": "https://www.gub.uy/unidad-reguladora-control-datos-personales/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PY",
@@ -3587,7 +3632,7 @@
       ],
       "assessment_note": "Comprehensive DP Law 7593/2025 (effective 2027) with enhanced child/adolescent protections; minimal platform regulation until then.",
       "source_url": "https://www.dataguidance.com/news/paraguay-president-assents-data-protection-law",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BO",
@@ -3608,7 +3653,7 @@
       ],
       "assessment_note": "No comprehensive DP law (constitutional habeas-data only); DP bill under discussion; minimal platform regulation.",
       "source_url": "https://www.att.gob.bo/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GY",
@@ -3629,7 +3674,7 @@
       ],
       "assessment_note": "Data Protection Act 2023 passed; minimal platform-specific regulation.",
       "source_url": "https://dpa.gov.gy/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "SR",
@@ -3650,7 +3695,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; emerging data-protection discussions.",
       "source_url": "https://gov.sr/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GT",
@@ -3671,7 +3716,7 @@
       ],
       "assessment_note": "No comprehensive DP law in force; DP bill under discussion; minimal platform regulation.",
       "source_url": "https://www.sib.gob.gt/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "PA",
@@ -3692,7 +3737,7 @@
       ],
       "assessment_note": "DP Law 81/2019 (in force 2021, ANTAI regulator); constitutional privacy; no platform-safety/age-assurance law.",
       "source_url": "https://www.antai.gob.pa/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "HN",
@@ -3713,7 +3758,7 @@
       ],
       "assessment_note": "Constitutional habeas-data; no comprehensive DP law in force; minimal platform regulation.",
       "source_url": "https://www.conatel.gob.hn/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "NI",
@@ -3737,7 +3782,7 @@
       ],
       "assessment_note": "Special Cybercrime Law 2020 (speech-restrictive) plus 2022 personal-data law; state pressure on online expression.",
       "source_url": "https://www.telcor.gob.ni/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "JM",
@@ -3758,7 +3803,7 @@
       ],
       "assessment_note": "Data Protection Act 2020 (in force with an Information Commissioner); no dedicated platform-safety law.",
       "source_url": "https://www.oic.gov.jm/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "TT",
@@ -3779,7 +3824,7 @@
       ],
       "assessment_note": "Data Protection Act (partially proclaimed) plus cybercrime provisions; limited platform-specific regulation.",
       "source_url": "https://ttcsirt.gov.tt/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "BZ",
@@ -3800,7 +3845,7 @@
       ],
       "assessment_note": "Minimal platform-specific regulation; nascent data-protection discussions.",
       "source_url": "https://www.puc.bz/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "AD",
@@ -3821,7 +3866,7 @@
       ],
       "assessment_note": "Data Protection Act (GDPR-adequate, APDA regulator); no dedicated platform-safety law.",
       "source_url": "https://www.apda.ad/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "LI",
@@ -3846,7 +3891,7 @@
       ],
       "assessment_note": "GDPR applies via EEA; EU Digital Services Act transposed via EEA, bringing platform duties.",
       "source_url": "https://www.datenschutzstelle.li/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     },
     {
       "id": "GL",
@@ -3867,7 +3912,7 @@
       ],
       "assessment_note": "Danish/EU data-protection framework applies; limited domestic platform-specific regulation.",
       "source_url": "https://www.datatilsynet.dk/",
-      "updated_at": "2026-07-15T16:12:11Z"
+      "updated_at": "2026-07-16T08:02:57Z"
     }
   ]
 }

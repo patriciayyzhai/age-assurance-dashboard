@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import type {
   MergedData, FilterState, Market, ServiceTypeId,
-  CountryRiskScore, HeatmapMetric,
+  CountryRiskScore, HeatmapMetric, ObligationType,
 } from '../types'
 import { STATUS_META, bandFromScore } from '../types'
 
@@ -91,14 +91,17 @@ export function sortMarkets(
 // Drive the heatmap directly from the spreadsheet's 0-100 scores.
 // `metric` selects regulatory severity vs China sentiment.
 // An optional service-type filter narrows to markets whose scope includes it.
+// An optional obligation filter narrows to markets carrying that obligation.
 export function calculateRiskScores(
   markets: Market[],
   metric: HeatmapMetric,
   serviceTypeFilter: ServiceTypeId | 'all',
+  obligationFilter: ObligationType | 'all' = 'all',
 ): CountryRiskScore[] {
   const results: CountryRiskScore[] = []
   for (const m of markets) {
     if (serviceTypeFilter !== 'all' && !m.service_type_ids.includes(serviceTypeFilter)) continue
+    if (obligationFilter !== 'all' && !m.obligation_ids.includes(obligationFilter)) continue
     const value = metric === 'china_sentiment' ? m.china_sentiment : m.regulatory_severity
     results.push({
       jurisdiction_id: m.jurisdiction_id,

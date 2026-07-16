@@ -21,18 +21,22 @@ export default function HeatmapPage() {
   const { dispatch } = useFilters()
   const navigate = useNavigate()
   const [serviceTypeFilter, setServiceTypeFilter] = useState<ServiceTypeId | 'all'>('all')
+  const [obligationFilter, setObligationFilter] = useState<ObligationType | 'all'>('all')
   const [metric, setMetric] = useState<HeatmapMetric>('regulatory_severity')
 
   const riskScores = useMemo(() => {
     if (!data) return []
-    return calculateRiskScores(data.markets, metric, serviceTypeFilter)
-  }, [data, metric, serviceTypeFilter])
+    return calculateRiskScores(data.markets, metric, serviceTypeFilter, obligationFilter)
+  }, [data, metric, serviceTypeFilter, obligationFilter])
 
   const scopedMarkets = useMemo(() => {
     if (!data) return []
-    if (serviceTypeFilter === 'all') return data.markets
-    return data.markets.filter((m) => m.service_type_ids.includes(serviceTypeFilter))
-  }, [data, serviceTypeFilter])
+    return data.markets.filter(
+      (m) =>
+        (serviceTypeFilter === 'all' || m.service_type_ids.includes(serviceTypeFilter)) &&
+        (obligationFilter === 'all' || m.obligation_ids.includes(obligationFilter)),
+    )
+  }, [data, serviceTypeFilter, obligationFilter])
 
   // Priority-theme coverage across the scoped markets (breadth of T&S expectations)
   const priorityCoverage = useMemo(() => {
@@ -105,6 +109,37 @@ export default function HeatmapPage() {
               }`}
             >
               {meta.icon} {meta.label}
+            </button>
+          )
+        })}
+      </div>
+
+      {/* Obligation Filter */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-sm font-medium text-slate-700 mr-2">Key obligation:</span>
+        <button
+          onClick={() => setObligationFilter('all')}
+          className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+            obligationFilter === 'all'
+              ? 'bg-blue-600 text-white'
+              : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+          }`}
+        >
+          All
+        </button>
+        {(Object.keys(OBLIGATION_TYPE_META) as ObligationType[]).map((oid) => {
+          const meta = OBLIGATION_TYPE_META[oid]
+          const active = obligationFilter === oid
+          return (
+            <button
+              key={oid}
+              onClick={() => setObligationFilter(oid)}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                active ? 'text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+              style={active ? { backgroundColor: meta.color } : {}}
+            >
+              {meta.label}
             </button>
           )
         })}
